@@ -1,0 +1,1311 @@
+[
+  {
+    "objectID": "5_dictionary.html",
+    "href": "5_dictionary.html",
+    "title": "Dictionary",
+    "section": "",
+    "text": "A dictionary in Python is an unordered collection of key-value pairs. It is also referred to as an associative array, hash table, or hash map in other programming languages. Dictionaries are defined by curly braces { } and contain key:value pairs.\nThe key features of dictionaries are:\n\nThey are mutable (can be modified after creation)\nKeys must be unique and immutable (strings, numbers, or tuples)\nValues can be of any type\nThey are unordered (in Python versions &lt; 3.7)",
+    "crumbs": [
+      "Data Types",
+      "Dictionary"
+    ]
+  },
+  {
+    "objectID": "5_dictionary.html#introduction-to-dictionaries",
+    "href": "5_dictionary.html#introduction-to-dictionaries",
+    "title": "Dictionary",
+    "section": "",
+    "text": "A dictionary in Python is an unordered collection of key-value pairs. It is also referred to as an associative array, hash table, or hash map in other programming languages. Dictionaries are defined by curly braces { } and contain key:value pairs.\nThe key features of dictionaries are:\n\nThey are mutable (can be modified after creation)\nKeys must be unique and immutable (strings, numbers, or tuples)\nValues can be of any type\nThey are unordered (in Python versions &lt; 3.7)",
+    "crumbs": [
+      "Data Types",
+      "Dictionary"
+    ]
+  },
+  {
+    "objectID": "5_dictionary.html#creating-dictionaries",
+    "href": "5_dictionary.html#creating-dictionaries",
+    "title": "Dictionary",
+    "section": "Creating Dictionaries",
+    "text": "Creating Dictionaries\nThere are multiple methods to create dictionaries in Python. Consider the following examples:\n\nEmpty dictionary\n\n\nempty_dict = {}\nprint(\"Empty dictionary:\", empty_dict)\n\nEmpty dictionary: {}\n\n\n\nDictionary with initial key-value pairs\n\n\nperson = {\"name\": \"Alice\", \"age\": 30, \"city\": \"New York\"}\nprint(\"Person dictionary:\", person)\n\nPerson dictionary: {'name': 'Alice', 'age': 30, 'city': 'New York'}\n\n\n\nUsing dict() constructor\n\n\nanother_person = dict(name=\"Bob\", age=25, city=\"San Francisco\")\nprint(\"Another person dictionary:\", another_person)\n\nAnother person dictionary: {'name': 'Bob', 'age': 25, 'city': 'San Francisco'}\n\n\n\nCreating a dictionary from two lists using zip()\n\n\nkeys = [\"a\", \"b\", \"c\"]\nvalues = [1, 2, 3]\ncombined = dict(zip(keys, values))\nprint(\"Combined dictionary:\", combined)\n\nCombined dictionary: {'a': 1, 'b': 2, 'c': 3}",
+    "crumbs": [
+      "Data Types",
+      "Dictionary"
+    ]
+  },
+  {
+    "objectID": "5_dictionary.html#accessing-and-modifying-dictionary-elements",
+    "href": "5_dictionary.html#accessing-and-modifying-dictionary-elements",
+    "title": "Dictionary",
+    "section": "Accessing and Modifying Dictionary Elements",
+    "text": "Accessing and Modifying Dictionary Elements\nThe contents of dictionaries can be access using [key] or get() method.\n\nperson = {\"name\": \"Alice\", \"age\": 30, \"city\": \"New York\"}\n\n# Using square bracket notation\nprint(\"Name:\", person[\"name\"])\n\n# Using get() method\nprint(\"Age:\", person.get(\"age\"))\n\n# Using get() with a default value\nprint(\"Country:\", person.get(\"country\", \"Unknown\"))\n\nName: Alice\nAge: 30\nCountry: Unknown\n\n\nThe get() method is particularly useful as it allows for the specification of a default value if the key does not exist.",
+    "crumbs": [
+      "Data Types",
+      "Dictionary"
+    ]
+  },
+  {
+    "objectID": "5_dictionary.html#modifying-dictionary-elements",
+    "href": "5_dictionary.html#modifying-dictionary-elements",
+    "title": "Dictionary",
+    "section": "Modifying Dictionary Elements",
+    "text": "Modifying Dictionary Elements\nThese operations illustrate the dynamic nature of dictionaries.\n\nperson = {\"name\": \"Alice\", \"age\": 30, \"city\": \"New York\"}\n\n# Changing a value\nperson[\"age\"] = 31\nprint(\"Updated age:\", person[\"age\"])\n\n# Adding a new key-value pair\nperson[\"job\"] = \"Engineer\"\nprint(\"Updated dictionary:\", person)\n\n# Updating multiple key-value pairs\nperson.update({\"age\": 32, \"country\": \"USA\"})\nprint(\"Dictionary after update:\", person)\n\nUpdated age: 31\nUpdated dictionary: {'name': 'Alice', 'age': 31, 'city': 'New York', 'job': 'Engineer'}\nDictionary after update: {'name': 'Alice', 'age': 32, 'city': 'New York', 'job': 'Engineer', 'country': 'USA'}\n\n\nThese operations illustrate the dynamic nature of dictionaries.\n\n# Removing a key-value pair\ndel person[\"city\"]\nprint(\"Dictionary after deletion:\", person)\n\n# Removing and returning a value\njob = person.pop(\"job\")\nprint(\"Removed job:\", job)\nprint(\"Dictionary after pop:\", person)\n\nDictionary after deletion: {'name': 'Alice', 'age': 32, 'job': 'Engineer', 'country': 'USA'}\nRemoved job: Engineer\nDictionary after pop: {'name': 'Alice', 'age': 32, 'country': 'USA'}",
+    "crumbs": [
+      "Data Types",
+      "Dictionary"
+    ]
+  },
+  {
+    "objectID": "5_dictionary.html#dictionary-methods",
+    "href": "5_dictionary.html#dictionary-methods",
+    "title": "Dictionary",
+    "section": "Dictionary Methods",
+    "text": "Dictionary Methods\nPython provides several useful methods for working with dictionaries:\n\nperson = {\"name\": \"Alice\", \"age\": 30, \"city\": \"New York\"}\n\n# Get all keys\nprint(\"Keys:\", person.keys())\n\n# Get all values\nprint(\"Values:\", person.values())\n\n# Get all key-value pairs\nprint(\"Items:\", person.items())\n\n# Clear the dictionary\nprint(\"After clear:\", person.clear())\n\nKeys: dict_keys(['name', 'age', 'city'])\nValues: dict_values(['Alice', 30, 'New York'])\nItems: dict_items([('name', 'Alice'), ('age', 30), ('city', 'New York')])\nAfter clear: None\n\n\nTo copy a dictionary:\n\n# Create a new reference\noriginal = {\"x\": 1, \"y\": 2}\nreference = original\nreference[\"z\"] = 3\nprint(\"Original:\", original)\nprint(\"Reference:\", reference)\n\nOriginal: {'x': 1, 'y': 2, 'z': 3}\nReference: {'x': 1, 'y': 2, 'z': 3}\n\n\n\n# Create a copy\noriginal = {\"x\": 1, \"y\": 2}\ncopy = original.copy()\ncopy[\"z\"] = 3\nprint(\"Original:\", original)\nprint(\"Copy:\", copy)\n\nOriginal: {'x': 1, 'y': 2}\nCopy: {'x': 1, 'y': 2, 'z': 3}",
+    "crumbs": [
+      "Data Types",
+      "Dictionary"
+    ]
+  },
+  {
+    "objectID": "12_pandas.html",
+    "href": "12_pandas.html",
+    "title": "Pandas",
+    "section": "",
+    "text": "PPandas is a powerful Python library used for data manipulation and analysis. It provides data structures for efficiently storing large datasets and tools for working with them. The two primary data structures in pandas are:\nSeries: A one-dimensional labeled array\nDataFrame: A two-dimensional labeled data structure with columns of potentially different types\nBefore we begin, make sure Pandas is installed:\npip install pandas\nFor Excel support, we also need:\npip install openpyxl\nLet’s start by importing Pandas:\n\nimport pandas as pd",
+    "crumbs": [
+      "Library",
+      "Pandas"
+    ]
+  },
+  {
+    "objectID": "12_pandas.html#introduction-to-pandas",
+    "href": "12_pandas.html#introduction-to-pandas",
+    "title": "Pandas",
+    "section": "",
+    "text": "PPandas is a powerful Python library used for data manipulation and analysis. It provides data structures for efficiently storing large datasets and tools for working with them. The two primary data structures in pandas are:\nSeries: A one-dimensional labeled array\nDataFrame: A two-dimensional labeled data structure with columns of potentially different types\nBefore we begin, make sure Pandas is installed:\npip install pandas\nFor Excel support, we also need:\npip install openpyxl\nLet’s start by importing Pandas:\n\nimport pandas as pd",
+    "crumbs": [
+      "Library",
+      "Pandas"
+    ]
+  },
+  {
+    "objectID": "12_pandas.html#creating-dataframes",
+    "href": "12_pandas.html#creating-dataframes",
+    "title": "Pandas",
+    "section": "Creating DataFrames",
+    "text": "Creating DataFrames\n\nFrom a dictionary\nWhen creating a DataFrame from a dictionary, the keys become column names, and the values become the data in those columns.\n\ndata = {\n    'Name': ['John', 'Anna', 'Peter', 'Linda'],\n    'Age': [28, 34, 29, 32],\n    'City': ['New York', 'Paris', 'Berlin', 'London']\n}\n\ndf = pd.DataFrame(data)\n\nprint(df)\ndisplay(df)\n\n    Name  Age      City\n0   John   28  New York\n1   Anna   34     Paris\n2  Peter   29    Berlin\n3  Linda   32    London\n\n\n\n\n\n\n\n\n\nName\nAge\nCity\n\n\n\n\n0\nJohn\n28\nNew York\n\n\n1\nAnna\n34\nParis\n\n\n2\nPeter\n29\nBerlin\n\n\n3\nLinda\n32\nLondon\n\n\n\n\n\n\n\n\n\nFrom a list of dictionaries\nSometimes, your data might be in the form of a list of dictionaries, where each dictionary represents a row of data. This method allows for more flexibility in the data structure, as each dictionary (row) doesn’t necessarily need to have the same keys (columns).\n\ndata = [\n    {'Name': 'John', 'Age': 28, 'City': 'New York'},\n    {'Name': 'Anna', 'Age': 34, 'City': 'Paris'},\n    {'Name': 'Peter', 'Age': 29, 'City': 'Berlin'},\n    {'Name': 'Linda', 'Age': 32, 'City': 'London'}\n]\n\ndf = pd.DataFrame(data)\nprint(df)\n\n    Name  Age      City\n0   John   28  New York\n1   Anna   34     Paris\n2  Peter   29    Berlin\n3  Linda   32    London\n\n\n\n\nFrom a NumPy array\nNumPy arrays are efficient for numerical computations. When you have data in a NumPy array, you can easily convert it to a DataFrame for further analysis.\n\nimport numpy as np\n\narr = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\n\ndf = pd.DataFrame(arr, columns=['A', 'B', 'C'])\n\nprint(df)\n\n   A  B  C\n0  1  2  3\n1  4  5  6\n2  7  8  9\n\n\nNote that when creating a DataFrame from a NumPy array, you need to specify column names separately, as arrays don’t have built-in column labels.\n\n\nFrom a CSV file\nCSV (Comma-Separated Values) files are one of the most common formats for storing tabular data. Pandas makes it easy to read these files into DataFrames.\n\ndf = pd.read_csv('ex_csv.csv')\nprint(df.head())\n\n  Serie  Value 1  Value 2  Value 3\n0     A        9       96        2\n1     B       61       71       28\n2     C       36       87       38\n3     D       54       77       60\n4     E       18       32       99\n\n\n\n\nFrom an Excel Files\nPandas uses the read_excel() function for reading Excel files.\nYou may need to install additional library.\npip install openpyxl\n\n# Basic reading\ndf = pd.read_excel('ex_excel.xlsx')\nprint('Basic reading')\nprint(df.head())\n\n# Reading a specific sheet\ndf = pd.read_excel('ex_excel.xlsx', sheet_name='Sheet2')\nprint('\\nSheet2')\nprint(df.head())\n\n# Reading multiple sheets\nxlsx = pd.ExcelFile('ex_excel.xlsx')\ndf1 = pd.read_excel(xlsx, 'Sheet1')\ndf2 = pd.read_excel(xlsx, 'Sheet2')\n\nBasic reading\n  Serie  Value 1  Value 2  Value 3\n0     A        9       96        2\n1     B       61       71       28\n2     C       36       87       38\n3     D       54       77       60\n4     E       18       32       99\n\nSheet2\n  Serie  Value 4  Value 5  Value 6\n0     K       46       98       99\n1     L       71       68       13\n2     M       55       45       77\n3     N       59        0       15\n4     O        5       32       96",
+    "crumbs": [
+      "Library",
+      "Pandas"
+    ]
+  },
+  {
+    "objectID": "12_pandas.html#export-dataframe",
+    "href": "12_pandas.html#export-dataframe",
+    "title": "Pandas",
+    "section": "Export DataFrame",
+    "text": "Export DataFrame\n\nWriting DataFrames to CSV files\nWriting DataFrames to CSV files is just as straightforward with the to_csv() method.\n# Basic writing\ndf.to_csv('output.csv')\n\n# Writing with specific options\ndf.to_csv('output.csv',\n          index=False,  # Don't write index\n          columns=['Name', 'Age'],  # Only write specific columns\n          sep=';',  # Use semicolon as separator\n          encoding='utf-8')  # Specify encoding\n\n# Writing without header\ndf.to_csv('output.csv', header=False)\n\n\nWriting Excel Files with Pandas\nWriting to Excel files is done using the to_excel() method.\n# Basic writing\ndf.to_excel('output.xlsx', sheet_name='Sheet1')\n\n# Writing multiple DataFrames to different sheets\nwith pd.ExcelWriter('output.xlsx') as writer:\n    df1.to_excel(writer, sheet_name='Sheet1')\n    df2.to_excel(writer, sheet_name='Sheet2')",
+    "crumbs": [
+      "Library",
+      "Pandas"
+    ]
+  },
+  {
+    "objectID": "12_pandas.html#basic-dataframe-operations",
+    "href": "12_pandas.html#basic-dataframe-operations",
+    "title": "Pandas",
+    "section": "Basic DataFrame Operations",
+    "text": "Basic DataFrame Operations\nOnce you have a DataFrame, there are numerous operations you can perform to explore and manipulate your data:\n\nViewing Data\nThese methods allow you to quickly inspect your DataFrame:\n\ndata = {\n    'Name': ['John', 'Anna', 'Peter', 'Linda'],\n    'Age': [28, 34, 29, 32],\n    'City': ['New York', 'Paris', 'Berlin', 'London']\n}\ndf = pd.DataFrame(data)\n\n\n\n\nprint(df.head(3))  # First 3 rows\n\n    Name  Age      City\n0   John   28  New York\n1   Anna   34     Paris\n2  Peter   29    Berlin\n\n\n\n\nprint(df.tail(3))  # Last 3 rows\n\n    Name  Age    City\n1   Anna   34   Paris\n2  Peter   29  Berlin\n3  Linda   32  London\n\n\n\n\n\n\nDataFrame info, including column types and non-null counts\n\nprint(df.info())\n\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 4 entries, 0 to 3\nData columns (total 3 columns):\n #   Column  Non-Null Count  Dtype \n---  ------  --------------  ----- \n 0   Name    4 non-null      object\n 1   Age     4 non-null      int64 \n 2   City    4 non-null      object\ndtypes: int64(1), object(2)\nmemory usage: 228.0+ bytes\nNone\n\n\n\nStatistical summary of numerical columns\n\nprint(df.describe())\n\n             Age\ncount   4.000000\nmean   30.750000\nstd     2.753785\nmin    28.000000\n25%    28.750000\n50%    30.500000\n75%    32.500000\nmax    34.000000\n\n\n\n\nThese operations are crucial for getting a quick overview of your data, understanding its structure, and identifying potential issues or patterns.\n\n\nAccessing Data\n\n\nAccessing a single column\n\nprint(df['Name'])\n\n0     John\n1     Anna\n2    Peter\n3    Linda\nName: Name, dtype: object\n\n\nAccessing multiple columns\n\nprint(df[['Name', 'Age']])\n\n    Name  Age\n0   John   28\n1   Anna   34\n2  Peter   29\n3  Linda   32\n\n\n\nAccessing a row by label\n\nprint(df.loc[0])\n\nName        John\nAge           28\nCity    New York\nName: 0, dtype: object\n\n\nAccessing a row by integer index\n\nprint(df.iloc[0])\n\nName        John\nAge           28\nCity    New York\nName: 0, dtype: object\n\n\nAccessing a specific value\n\nprint(df.loc[0, 'Name'])\n\nJohn\n\n\n\n\n\n\nAdding and Deleting Columns\nDataFrames are mutable, allowing you to add or remove columns as needed:\n\n\nAdding a new column\n\ndf['Salary'] = [50000,60000,55000,65000]\nprint(df)\n\n    Name  Age      City  Salary\n0   John   28  New York   50000\n1   Anna   34     Paris   60000\n2  Peter   29    Berlin   55000\n3  Linda   32    London   65000\n\n\n\nDeleting a column\n\ndf = df.drop('Salary', axis=1)\nprint(df)\n\n    Name  Age      City\n0   John   28  New York\n1   Anna   34     Paris\n2  Peter   29    Berlin\n3  Linda   32    London\n\n\n\n\n\n\nFiltering row\nFiltering allows you to focus on specific subsets of your data:\n\n\n\nprint(df[df['Age'] &gt; 30])\n\n    Name  Age    City\n1   Anna   34   Paris\n3  Linda   32  London\n\n\n\n\nprint(df[df['Age'] &gt; 30]['City'])\n\n1     Paris\n3    London\nName: City, dtype: object\n\n\n\n\n\nprint(df[(df['Age'] &gt; 30) & (df['City'] == 'London')])  # AND condition\n\n    Name  Age    City\n3  Linda   32  London\n\n\n\nprint(df[(df['Age'] &gt; 30) | (df['City'] == 'New York')])  # OR condition\n\n    Name  Age      City\n0   John   28  New York\n1   Anna   34     Paris\n3  Linda   32    London\n\n\n\n\nFiltering row (using .loc())\nFiltering allows you to focus on specific subsets of your data:\n\n\n\nprint(df.loc[df['Age'] &gt; 30])\n\n    Name  Age    City\n1   Anna   34   Paris\n3  Linda   32  London\n\n\n\n\nprint(df.loc[df['Age'] &gt; 30, 'City'])\n\n1     Paris\n3    London\nName: City, dtype: object\n\n\n\n\n\nprint(df.loc[(df['Age'] &gt; 30) & (df['City'] == 'London')])  # AND condition\n\n    Name  Age    City\n3  Linda   32  London\n\n\n\nprint(df.loc[(df['Age'] &gt; 30) | (df['City'] == 'New York')])  # OR condition\n\n    Name  Age      City\n0   John   28  New York\n1   Anna   34     Paris\n3  Linda   32    London",
+    "crumbs": [
+      "Library",
+      "Pandas"
+    ]
+  },
+  {
+    "objectID": "12_pandas.html#data-manipulation",
+    "href": "12_pandas.html#data-manipulation",
+    "title": "Pandas",
+    "section": "Data Manipulation",
+    "text": "Data Manipulation\nData manipulation is at the heart of data analysis. Pandas provides powerful tools for sorting, grouping, aggregating, and transforming data:\n\nSorting\nSorting allows you to order your data based on one or more columns:\n\nprint(df.sort_values('Age', ascending=False))  # Sort descending\n\n    Name  Age      City\n1   Anna   34     Paris\n3  Linda   32    London\n2  Peter   29    Berlin\n0   John   28  New York\n\n\n\nprint(df.sort_values(['City', 'Age']))  # Sort by multiple columns\n\n    Name  Age      City\n2  Peter   29    Berlin\n3  Linda   32    London\n0   John   28  New York\n1   Anna   34     Paris\n\n\n\n\nGrouping and Aggregation\nGrouping allows you to split your data into groups based on some criteria and then perform calculations on each group:\n\nprint(df.groupby('City')['Age'].mean())  # Mean age by city\n\nCity\nBerlin      29.0\nLondon      32.0\nNew York    28.0\nParis       34.0\nName: Age, dtype: float64\n\n\n\nprint(df.groupby('City').agg({'Age': 'mean', 'Name': 'count'}))  # Multiple aggregations\n\n           Age  Name\nCity                \nBerlin    29.0     1\nLondon    32.0     1\nNew York  28.0     1\nParis     34.0     1\n\n\nPandas provides a wide range of aggregation functions. Here are some commonly used ones:\n\ncount(): Count of non-null values\nsum(): Sum of values\nmean(): Arithmetic mean of values\nmedian(): Median of values\nmin(), max(): Minimum and maximum values\nstd(), var(): Standard deviation and variance\nfirst(), last(): First and last non-null values\nnunique(): Number of unique values\nquantile(): Quantile of values\nagg(): Allows applying multiple aggregation functions at once\n\n\n\nApplying Functions\nYou can apply custom functions to your data using the apply method:\n\ndf['Name_Length'] = df['Name'].apply(len)  # Apply a function to a column\nprint(df)\n\n    Name  Age      City  Name_Length\n0   John   28  New York            4\n1   Anna   34     Paris            4\n2  Peter   29    Berlin            5\n3  Linda   32    London            5\n\n\nThis allows for complex transformations and feature engineering.\n\n\nMerging\nCombining data from different sources is a common task in data analysis:\n\ndf2 = pd.DataFrame({\n    'City': ['New York', 'Paris', 'Berlin', 'London'],\n    'Country': ['USA', 'France', 'Germany', 'UK']\n})\nmerged_df = pd.merge(df, df2, on='City')\nprint(merged_df)\n\n    Name  Age      City  Name_Length  Country\n0   John   28  New York            4      USA\n1   Anna   34     Paris            4   France\n2  Peter   29    Berlin            5  Germany\n3  Linda   32    London            5       UK\n\n\nMerging allows you to combine data from different sources based on common columns or indices.\n\n\nMapping DataFrames\nMapping allows you to replace values in a DataFrame based on a dictionary:\n\ndata = {\n    'Name': ['John', 'Anna', 'Peter', 'Linda'],\n    'Age': [28, 34, 29, 32],\n    'City': ['New York', 'Paris', 'Berlin', 'London']\n}\ndf = pd.DataFrame(data)\n\n# Create a mapping dictionary\ncity_country = {\n    'New York': 'USA',\n    'Paris': 'France',\n    'Berlin': 'Germany',\n    'London': 'UK'\n}\n\n# Apply the mapping to create a new column\ndf['Country'] = df['City'].map(city_country)\nprint(df)\n\n    Name  Age      City  Country\n0   John   28  New York      USA\n1   Anna   34     Paris   France\n2  Peter   29    Berlin  Germany\n3  Linda   32    London       UK\n\n\nMapping is useful for categorizing data, replacing codes with meaningful labels, or performing lookups based on a dictionary.\n\n\nConcatenating DataFrames\nConcatenation allows you to combine DataFrames along a particular axis:\n\ndf1 = pd.DataFrame({'A': ['A0', 'A1', 'A2'],\n                  'B': ['B0', 'B1', 'B2']},\n                  index=['K0', 'K1', 'K2'])\n\ndf2 = pd.DataFrame({'C': ['C0', 'C1', 'C2'],\n                  'D': ['D0', 'D1', 'D2']},\n                  index=['K0', 'K1', 'K2'])\n\nConcatenate along columns (axis=1)\n\nresult = pd.concat([df1, df2], axis=1)\nprint(result)\n\n     A   B   C   D\nK0  A0  B0  C0  D0\nK1  A1  B1  C1  D1\nK2  A2  B2  C2  D2\n\n\nConcatenate along rows (axis=0)\n\ndf3 = pd.DataFrame({'A': ['A3', 'A4'],\n                    'B': ['B3', 'B4']},\n                    index=['K3', 'K4'])\n\nresult = pd.concat([df1, df3])\nprint(result)\n\n     A   B\nK0  A0  B0\nK1  A1  B1\nK2  A2  B2\nK3  A3  B3\nK4  A4  B4\n\n\nConcatenate with different indexes\n\ndf4 = pd.DataFrame({'A': ['A5', 'A6'],\n                    'C': ['C5', 'C6']},\n                    index=['K1', 'K6'])\n\nresult = pd.concat([df1, df4])\nprint(result)\n\n     A    B    C\nK0  A0   B0  NaN\nK1  A1   B1  NaN\nK2  A2   B2  NaN\nK1  A5  NaN   C5\nK6  A6  NaN   C6\n\n\n\nresult = pd.concat([df1, df4], ignore_index=True)\nprint(result)\n\n    A    B    C\n0  A0   B0  NaN\n1  A1   B1  NaN\n2  A2   B2  NaN\n3  A5  NaN   C5\n4  A6  NaN   C6\n\n\n\nresult = pd.concat([df1, df4]).reset_index() # reset index of DataFrame\nprint(result)\n\n  index   A    B    C\n0    K0  A0   B0  NaN\n1    K1  A1   B1  NaN\n2    K2  A2   B2  NaN\n3    K1  A5  NaN   C5\n4    K6  A6  NaN   C6",
+    "crumbs": [
+      "Library",
+      "Pandas"
+    ]
+  },
+  {
+    "objectID": "12_pandas.html#handling-missing-data",
+    "href": "12_pandas.html#handling-missing-data",
+    "title": "Pandas",
+    "section": "Handling Missing Data",
+    "text": "Handling Missing Data\nMissing data is common in real-world datasets. Let’s see how to handle it:\n\ndf = pd.DataFrame({\n    'A': [1, np.nan, 4],\n    'B': [5, np.nan, np.nan],\n    'C': [9, 10, 11]})\n\n\n\nCheck for missing values\n\nprint(df.isnull())\n\n       A      B      C\n0  False  False  False\n1   True   True  False\n2  False   True  False\n\n\nDrop rows with missing values\n\nprint(df.dropna())\n\n     A    B  C\n0  1.0  5.0  9\n\n\n\nFill missing values with 0\n\nprint(df.fillna(0))\n\n     A    B   C\n0  1.0  5.0   9\n1  0.0  0.0  10\n2  4.0  0.0  11\n\n\nFill missing values with mean\n\ndf['B'] = df['B'].fillna(df['B'].mean())\nprint(df)\n\n     A    B   C\n0  1.0  5.0   9\n1  NaN  5.0  10\n2  4.0  5.0  11",
+    "crumbs": [
+      "Library",
+      "Pandas"
+    ]
+  },
+  {
+    "objectID": "12_pandas.html#reshaping-data",
+    "href": "12_pandas.html#reshaping-data",
+    "title": "Pandas",
+    "section": "Reshaping Data",
+    "text": "Reshaping Data\nIn data analysis, we often need to reshape our data. Two common operations for this are pivot and unpivot, which transform data between “wide” and “long” formats.\n\nWide vs. Long Tables\nWide Format (or Wide Table):\n\nEach subject’s repeated responses are in a single row.\nEach response is in a separate column.\nUsually easier for humans to read.\n\nLong Format (or Long Table):\n\nEach row is a single subject-response combination.\nUsually easier for machines to process and for certain types of analysis.\n\nLet’s look at an example:\nWide format data\n\nwide_data = pd.DataFrame({\n    'Name': ['Alice', 'Bob'],\n    'Math': [90, 70],\n    'Science': [85, 80]\n})\n\nprint(\"Wide Format:\")\nprint(wide_data)\n\nWide Format:\n    Name  Math  Science\n0  Alice    90       85\n1    Bob    70       80\n\n\nLong format data\n\nlong_data = pd.DataFrame({\n    'Name': ['Alice', 'Alice', 'Bob', 'Bob'],\n    'Subject': ['Math', 'Science', 'Math', 'Science'],\n    'Score': [90, 85, 70, 80]\n})\n\nprint(\"Long Format:\")\nprint(long_data)\n\nLong Format:\n    Name  Subject  Score\n0  Alice     Math     90\n1  Alice  Science     85\n2    Bob     Math     70\n3    Bob  Science     80\n\n\n\n\nUnpivot (Wide to Long)\nUnpivot (also known as “melt” in Pandas) is the opposite operation, transforming data from wide format to long format.\n\nIt turns columns into rows.\nIn Pandas, we use the melt() function for this operation.\n\n\n# Unpivot operation (Wide to Long)\nmelted = wide_data.melt(id_vars=['Name'], var_name='Subject', value_name='Score')\n\nprint(\"After Melt (Wide to Long):\")\nprint(melted)\n\nAfter Melt (Wide to Long):\n    Name  Subject  Score\n0  Alice     Math     90\n1    Bob     Math     70\n2  Alice  Science     85\n3    Bob  Science     80\n\n\n\n\nPivot (Long to Wide)\nPivot is an operation that transforms data from long format to wide format.\n\nIt typically uses one column to create new columns.\nValues from another column fill these new columns.\n\n\n# Pivot operation (Long to Wide)\npivoted = long_data.pivot(index='Name', columns='Subject', values='Score')\n\nprint(\"After Pivot (Long to Wide):\")\nprint(pivoted)\n\nAfter Pivot (Long to Wide):\nSubject  Math  Science\nName                  \nAlice      90       85\nBob        70       80\n\n\nWhen to Use Each Format\n\nUse Long Format when:\n\nPerforming statistical analyses that assume each observation is a row.\nCreating certain types of visualizations (e.g., with libraries like Seaborn).\nWorking with time-series data.\n\nUse Wide Format when:\n\nCreating summary tables for reports.\nPerforming operations that require values to be in the same row.",
+    "crumbs": [
+      "Library",
+      "Pandas"
+    ]
+  },
+  {
+    "objectID": "13_data_visualization.html",
+    "href": "13_data_visualization.html",
+    "title": "Data Visualization",
+    "section": "",
+    "text": "Data visualization is a crucial part of data analysis and communication. It allows us to represent data graphically, making it easier to identify patterns, trends, and outliers. Python offers several powerful libraries for data visualization, with Matplotlib and Plotly being two of the most popular. Let’s explore the concept of data visualization and how these libraries can be used to create effective visualizations.\n\n\n\nUnderstand Data Quickly: Visualizations can help you grasp large amounts of complex data at a glance.\nIdentify Patterns and Trends: Visual representations make it easier to spot trends, correlations, and patterns in data.\nCommunicate Insights Effectively: Visuals can convey information more quickly and memorably than text or raw numbers.\nExplore and Analyze Data: Interactive visualizations allow for data exploration and can lead to new insights.\n\n\n\n\n\nClarity: The visualization should clearly convey the intended information.\nAccuracy: The visual representation must accurately reflect the underlying data.\nEfficiency: Use the minimum amount of visual elements to convey the maximum amount of information.\nAesthetics: While not the primary goal, an aesthetically pleasing visualization can enhance engagement and comprehension.",
+    "crumbs": [
+      "Library",
+      "Data Visualization"
+    ]
+  },
+  {
+    "objectID": "13_data_visualization.html#introduction-to-data-visualization-in-python",
+    "href": "13_data_visualization.html#introduction-to-data-visualization-in-python",
+    "title": "Data Visualization",
+    "section": "",
+    "text": "Data visualization is a crucial part of data analysis and communication. It allows us to represent data graphically, making it easier to identify patterns, trends, and outliers. Python offers several powerful libraries for data visualization, with Matplotlib and Plotly being two of the most popular. Let’s explore the concept of data visualization and how these libraries can be used to create effective visualizations.\n\n\n\nUnderstand Data Quickly: Visualizations can help you grasp large amounts of complex data at a glance.\nIdentify Patterns and Trends: Visual representations make it easier to spot trends, correlations, and patterns in data.\nCommunicate Insights Effectively: Visuals can convey information more quickly and memorably than text or raw numbers.\nExplore and Analyze Data: Interactive visualizations allow for data exploration and can lead to new insights.\n\n\n\n\n\nClarity: The visualization should clearly convey the intended information.\nAccuracy: The visual representation must accurately reflect the underlying data.\nEfficiency: Use the minimum amount of visual elements to convey the maximum amount of information.\nAesthetics: While not the primary goal, an aesthetically pleasing visualization can enhance engagement and comprehension.",
+    "crumbs": [
+      "Library",
+      "Data Visualization"
+    ]
+  },
+  {
+    "objectID": "13_data_visualization.html#python-libraries-for-data-visualization",
+    "href": "13_data_visualization.html#python-libraries-for-data-visualization",
+    "title": "Data Visualization",
+    "section": "Python Libraries for Data Visualization",
+    "text": "Python Libraries for Data Visualization\nPython offers several libraries for creating data visualizations. Two of the most popular are Matplotlib and Plotly:\n\nMatplotlib\nMatplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python. It provides a MATLAB-like interface and is known for its flexibility and fine-grained control.\nKey features:\n\nSuitable for publication-quality figures\nHighly customizable\nGood for static images and basic interactivity\nIntegrates well with NumPy and pandas\n\n\n\nPlotly\nPlotly is a modern, interactive plotting library that creates web-based visualizations. It’s excellent for creating interactive and web-ready charts and plots.\nKey features:\n\nCreates interactive, web-based visualizations\nExcellent for dashboards and web applications\nSupports a wide range of chart types\nOffers both high-level (Plotly Express) and low-level APIs",
+    "crumbs": [
+      "Library",
+      "Data Visualization"
+    ]
+  },
+  {
+    "objectID": "13_data_visualization.html#import-libraries",
+    "href": "13_data_visualization.html#import-libraries",
+    "title": "Data Visualization",
+    "section": "Import Libraries",
+    "text": "Import Libraries\nFirst, let’s import the necessary libraries:\n\nMatplotlibPlotly\n\n\n\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\n\n\n\n\nimport plotly.express as px\nimport plotly.graph_objects as go\nimport pandas as pd\nimport numpy as np\n\n# import this when using notebook (Jupyter, Google Colab, ...)\nimport plotly.io as pio\npio.renderers.default = \"notebook\"",
+    "crumbs": [
+      "Library",
+      "Data Visualization"
+    ]
+  },
+  {
+    "objectID": "13_data_visualization.html#line-plot",
+    "href": "13_data_visualization.html#line-plot",
+    "title": "Data Visualization",
+    "section": "Line Plot",
+    "text": "Line Plot\nLine plots are great for showing trends over time or any continuous data.\n\nyears = np.arange(2010, 2021)\npopulation = [8.5, 8.7, 8.9, 9.1,\n            9.3, 9.5, 9.7, 9.9,\n            10.1, 10.3, 10.5]\n\ndf = pd.DataFrame({'Year': years, 'Population': population})\n\n\nMatplotlibPlotly\n\n\n\n# Create the plot\nplt.figure(figsize = (10, 6))\nplt.plot(df['Year'], df['Population'], marker = 'o')\n\n# Customize the layout\nplt.title('Population Growth Over Time')\nplt.xlabel('Year')\nplt.ylabel('Population (in billions)')\nplt.grid(True)\n\n# Show the plot\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n# Create the plot\nfig = px.line(df, x = 'Year', y = 'Population', markers = True,\n              title = 'Population Growth Over Time',\n              labels = {'Population': 'Population (in billions)'},\n              )\n\n# Customize the layout\nfig.update_layout(\n    font = dict(size = 12),\n    height = 600,\n    width = 800\n)\n\n# Show the plot\nfig.show()",
+    "crumbs": [
+      "Library",
+      "Data Visualization"
+    ]
+  },
+  {
+    "objectID": "13_data_visualization.html#vertical-bar-plot",
+    "href": "13_data_visualization.html#vertical-bar-plot",
+    "title": "Data Visualization",
+    "section": "Vertical Bar Plot",
+    "text": "Vertical Bar Plot\nBar plots are useful for comparing quantities across different categories.\n\ndata = {\n    'Country': ['USA', 'China', 'Japan', 'Germany', 'UK'],\n    'GDP': [21.43, 14.34, 5.08, 3.86, 2.83]\n}\n\ndf = pd.DataFrame(data)\n\n\nMatplotlibPoltly\n\n\n\n# Create the plot\nplt.figure(figsize = (10, 6))\nplt.bar(df['Country'], df['GDP'])\n\n# Customize the layout\nplt.title('GDP by Country (2020)')\nplt.xlabel('Country')\nplt.ylabel('GDP (in trillion USD)')\n\n# Show the plot\nplt.show()\n\n\n\n\n\n\n\n\nWe can use the ax.bar_label() method, which is a more straightforward way, to add labels to bar plots.\n\nfig, ax = plt.subplots(figsize = (10, 6)) \nbars = ax.bar(df['Country'], df['GDP'])\nax.set_title('GDP by Country (2020)')\nax.set_xlabel('Country')\nax.set_ylabel('GDP (in trillion USD)')\n\n# Add value labels on the bars\nax.bar_label(bars, fmt = '%.2f', padding = 3)\n\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n# Create the plot\nfig = px.bar(df, x = 'Country', y = 'GDP', \n             title = 'GDP by Country (2020)',\n             labels = {'GDP': 'GDP (in trillion USD)'},\n             text = 'GDP',  # This will display the GDP values on the bars\n             height = 600, width = 800)\n\n# Customize the layout\nfig.update_traces(texttemplate = '%{text:.2f}', textposition = 'outside')\nfig.update_layout(uniformtext_minsize = 8, uniformtext_mode = 'hide')\n\n# Show the plot\nfig.show()",
+    "crumbs": [
+      "Library",
+      "Data Visualization"
+    ]
+  },
+  {
+    "objectID": "13_data_visualization.html#horizontal-bar-plot",
+    "href": "13_data_visualization.html#horizontal-bar-plot",
+    "title": "Data Visualization",
+    "section": "Horizontal Bar Plot",
+    "text": "Horizontal Bar Plot\n\ncountries = ['China', 'Japan', 'USA',\n            'Germany', 'UK']\ngdp = [14.34, 5.08, 21.43, 3.86, 2.83]\n\ndf = pd.DataFrame({\n    'Country': countries,\n    'GDP': gdp,\n})\ndf.sort_values(by = 'GDP', inplace = True)\nprint(df)\n\n   Country    GDP\n4       UK   2.83\n3  Germany   3.86\n1    Japan   5.08\n0    China  14.34\n2      USA  21.43\n\n\n\nMatplotlibPlotly\n\n\n\n# Create the plot\nplt.figure(figsize = (10, 6))\n\n# Customize the layout\nplt.barh(df['Country'], df['GDP'])\nplt.title('GDP by Country (2020)')\nplt.xlabel('GDP (in trillion USD)')\nplt.ylabel('Country')\n\n# Show the plot\nplt.show()\n\n\n\n\n\n\n\n\nWe can use the ax.bar_label() method, which is a more straightforward way, to add labels to bar plots.\n\n# Create the plot\nfig, ax = plt.subplots(figsize = (10, 6))\nbars = ax.barh(df['Country'], df['GDP'])\n\n# Add value labels on the bars\nax.bar_label(bars, fmt = '%.2f', padding = 5)\n\n# Customize the plot\nax.set_title('GDP by Country (2020)')\nax.set_xlabel('GDP (in trillion USD)')\nax.set_ylabel('Country')\n\n# Adjust layout to prevent clipping of labels\nplt.tight_layout()\n\n# Show the plot\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n# Create the plot\nfig = px.bar(df, \n             x = 'GDP', \n             y = 'Country', \n             orientation = 'h',\n             title = 'GDP by Country (2020)',\n             labels = {'GDP': 'GDP (in trillion USD)'},\n             text = 'GDP',\n             height = 500,\n             width = 800)\n\n# Customize the layout\nfig.update_traces(texttemplate = '%{text:.2f}', textposition = 'outside')\nfig.update_layout(yaxis = {'categoryorder':'total ascending'})\n\n# Show the plot\nfig.show()",
+    "crumbs": [
+      "Library",
+      "Data Visualization"
+    ]
+  },
+  {
+    "objectID": "13_data_visualization.html#scatter-plot",
+    "href": "13_data_visualization.html#scatter-plot",
+    "title": "Data Visualization",
+    "section": "Scatter Plot",
+    "text": "Scatter Plot\nScatter plots are excellent for showing the relationship between two variables.\n\nheight = np.random.normal(170, 10, 100)\nweight = np.random.normal(70, 10, 100)\n\ndf = pd.DataFrame({\n    'Height (cm)': height,\n    'Weight (kg)': weight\n})\n\n\nMatplotlibPlotly\n\n\n\n# Create the plot\nplt.figure(figsize = (10, 6))\nplt.scatter(height, weight)\n\n# Customize the layout\nplt.title('Height vs Weight')\nplt.xlabel('Height (cm)')\nplt.ylabel('Weight (kg)')\n\n# Show the plot\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n# Create the plot\nfig = px.scatter(df, x = 'Height (cm)', y = 'Weight (kg)', \n                 title = 'Height vs Weight',\n                 labels = {'Height (cm)': 'Height (cm)', 'Weight (kg)': 'Weight (kg)'},\n                 height = 600, width = 800)\n\n# Customize the layout\nfig.update_traces(marker = dict(size = 8))\nfig.update_layout(\n    title_font_size = 20,\n    xaxis_title_font_size = 14,\n    yaxis_title_font_size = 14\n)\n\n# Show the plot\nfig.show()",
+    "crumbs": [
+      "Library",
+      "Data Visualization"
+    ]
+  },
+  {
+    "objectID": "13_data_visualization.html#histogram",
+    "href": "13_data_visualization.html#histogram",
+    "title": "Data Visualization",
+    "section": "Histogram",
+    "text": "Histogram\nHistograms show the distribution of a dataset.\n\ndata = np.random.normal(0, 1, 1000)\ndf = pd.DataFrame({'Value': data})\n\n\nMatplotlibPlotly\n\n\n\n# Create the plot\nplt.figure(figsize = (10, 6))\nplt.hist(data, bins = 30, edgecolor = 'black')\n\n# Customize the layout\nplt.title('Normal Distribution')\nplt.xlabel('Value')\nplt.ylabel('Frequency')\n\n# Show the plot\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n# Create the plot\nfig = px.histogram(df, x = 'Value', \n                   nbins = 30,\n                   title = 'Normal Distribution',\n                   labels = {'Value': 'Value', 'count': 'Frequency'},\n                   height = 600, width = 800)\n\n# Customize the layout\nfig.update_traces(marker_line_color = \"black\", marker_line_width = 1)\nfig.update_layout(\n    title_font_size = 20,\n    xaxis_title_font_size = 14,\n    yaxis_title_font_size = 14\n)\n\n# Show the plot\nfig.show()",
+    "crumbs": [
+      "Library",
+      "Data Visualization"
+    ]
+  },
+  {
+    "objectID": "13_data_visualization.html#pie-chart",
+    "href": "13_data_visualization.html#pie-chart",
+    "title": "Data Visualization",
+    "section": "Pie Chart",
+    "text": "Pie Chart\nPie charts are used to show proportions of a whole.\n\ncategories = ['Housing', 'Food',\n    'Transport', 'Entertainment',\n    'Savings']\nexpenses = [35, 25, 15, 10, 15]\n\ndf = pd.DataFrame({\n    'Category': categories,\n    'Expense': expenses\n})\n\n\nMatplotlibPlotly\n\n\n\n# Create the plot\nplt.figure(figsize = (10, 6))\nplt.pie(expenses, labels = categories, autopct = '%1.1f%%', startangle = 90)\n\n# Customize the layout\nplt.title('Monthly Expenses')\nplt.axis('equal')  # Equal aspect ratio\n\n# Show the plot\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n# Create the plot\nfig = px.pie(df, \n             values = 'Expense', \n             names = 'Category', \n             title = 'Monthly Expenses',\n             height = 600, \n             width = 800)\n\n# Customize the layout\nfig.update_traces(textposition = 'inside', textinfo = 'percent+label')\nfig.update_layout(\n    title_font_size = 20,\n    legend_title_font_size = 14,\n    uniformtext_minsize = 12,\n    uniformtext_mode = 'hide'\n)\n\n# Show the plot\nfig.show()",
+    "crumbs": [
+      "Library",
+      "Data Visualization"
+    ]
+  },
+  {
+    "objectID": "13_data_visualization.html#subplots",
+    "href": "13_data_visualization.html#subplots",
+    "title": "Data Visualization",
+    "section": "Subplots",
+    "text": "Subplots\nSubplots allow you to combine multiple plots in one figure.\n\nx = np.linspace(0, 10, 100)\ny1 = np.sin(x)\ny2 = np.cos(x)\n\n\nMatplotlibPlotly\n\n\n\nfig, axs = plt.subplots(1, 2, figsize = (10,6))\n\naxs[0].plot(x, y1)\naxs[0].set_title('Sine Wave')\naxs[0].set_xlabel('x')\naxs[0].set_ylabel('sin(x)')\n\naxs[1].scatter(x, y2)\naxs[1].set_title('Cosine Wave')\naxs[1].set_xlabel('x')\naxs[1].set_ylabel('cos(x)')\n\nplt.tight_layout()\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\nfrom plotly.subplots import make_subplots\n\n# Create subplots\nfig = make_subplots(rows = 1, cols = 2, subplot_titles = (\"Sine Wave\", \"Cosine Wave\"))\n\n# Add traces for sine wave\nfig.add_trace(\n    go.Scatter(x = x, y = y1, name = \"sin(x)\"),\n    row = 1, col = 1\n)\n\n# Add traces for cosine wave\nfig.add_trace(\n    go.Scatter(x = x, y = y2, name = \"cos(x)\", mode = \"markers\"),\n    row = 1, col = 2\n)\n\n# Update layout\nfig.update_layout(\n    height = 600, width = 1000,\n    title_text = \"Sine and Cosine Waves\",\n    showlegend = False\n)\n\n# Update x and y axis labels\nfig.update_xaxes(title_text = \"x\", row = 1, col = 1)\nfig.update_xaxes(title_text = \"x\", row = 1, col = 2)\nfig.update_yaxes(title_text = \"sin(x)\", row = 1, col = 1)\nfig.update_yaxes(title_text = \"cos(x)\", row = 1, col = 2)\n\n# Show the plot\nfig.show()",
+    "crumbs": [
+      "Library",
+      "Data Visualization"
+    ]
+  },
+  {
+    "objectID": "13_data_visualization.html#box-plot",
+    "href": "13_data_visualization.html#box-plot",
+    "title": "Data Visualization",
+    "section": "Box Plot",
+    "text": "Box Plot\nBox plots are useful for showing the distribution of data and identifying outliers:\n\ndf = pd.DataFrame({\n    'value_a': np.random.randn(100),\n    'value_b': np.random.randn(100),\n})\n\n\nMatplotlibPlotly\n\n\n\ndf.boxplot(column = ['value_a', 'value_b'], figsize = (10, 6))\n\nplt.title('Box Plot of Values A and B')\nplt.ylabel('Value')\nplt.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n# Melt the DataFrame to long format\ndf_melted = df.melt(var_name = 'Variable', value_name = 'Value')\n\n# Create the box plot\nfig = px.box(df_melted, x = 'Variable', y = 'Value', \n             title = 'Box Plot of Values A and B',\n             labels = {'Variable': 'Variable', 'Value': 'Value'},\n             height = 600, width = 800)\n\n# Customize the layout\nfig.update_layout(\n    title_font_size = 20,\n    xaxis_title_font_size = 14,\n    yaxis_title_font_size = 14,\n    showlegend=False\n)\n\n# Add grid lines\nfig.update_yaxes(showgrid = True, gridwidth = 1, gridcolor = 'LightGrey')\n\n# Show the plot\nfig.show()",
+    "crumbs": [
+      "Library",
+      "Data Visualization"
+    ]
+  },
+  {
+    "objectID": "13_data_visualization.html#customizing-plots",
+    "href": "13_data_visualization.html#customizing-plots",
+    "title": "Data Visualization",
+    "section": "Customizing Plots",
+    "text": "Customizing Plots\nMatplotliband Plotly offers many customization options. Here’s an example with a customized line plot:\n\nx = np.linspace(0, 10, 100)\ny1 = np.exp(-x/10)*np.sin(x)\ny2 = x/10\n\n\nMatplotlibPoltly\n\n\n\n# Create the figure\nplt.figure(figsize = (10, 6))\n\n# Add traces\nplt.plot(x, y1, 'b-', label = 'Damped oscillation')\nplt.plot(x, y2, 'r--', label = 'Linear')\n\n# Update layout\nplt.title('Custom Plot', fontsize = 20)\nplt.xlabel('x', fontsize = 14)\nplt.ylabel('y', fontsize = 14)\nplt.legend(fontsize = 12)\n\n# Add grid\nplt.grid(True, linestyle = ':', alpha = 0.7)\n\n# Show the plot\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n# Create the figure\nfig = go.Figure()\n\n# Add traces\nfig.add_trace(go.Scatter(x = x, y = y1, mode = 'lines', name = 'Damped oscillation',\n                         line = dict(color = 'blue', width = 2)))\nfig.add_trace(go.Scatter(x = x, y = y2, mode = 'lines', name = 'Linear',\n                         line = dict(color = 'red', width = 2, dash = 'dash')))\n\n# Update layout\nfig.update_layout(\n    title = dict(text = 'Custom Plot', font = dict(size = 20)),\n    xaxis = dict(title = 'x', titlefont = dict(size = 14)),\n    yaxis = dict(title = 'y', titlefont = dict(size = 14)),\n    legend = dict(font = dict(size = 12)),\n    height = 600,\n    width = 1000,\n    hovermode = 'x unified',\n)\n\n# Add grid\nfig.update_xaxes(showgrid = True, gridwidth = 1, gridcolor = 'rgba(0,0,0,0.1)')\nfig.update_yaxes(showgrid = True, gridwidth = 1, gridcolor = 'rgba(0,0,0,0.1)')\n\n# Show the plot\nfig.show()",
+    "crumbs": [
+      "Library",
+      "Data Visualization"
+    ]
+  },
+  {
+    "objectID": "13_data_visualization.html#exporting-plots",
+    "href": "13_data_visualization.html#exporting-plots",
+    "title": "Data Visualization",
+    "section": "Exporting Plots",
+    "text": "Exporting Plots\nExport plot as image files.\n\nMatplotlibPlotly\n\n\nSaving as an image file: You can save your plot as an image file (PNG, JPG, SVG, etc.) using the savefig() method.\n# Save as PNG\nplt.savefig('matplotlib_1.png', dpi = 300, bbox_inches = 'tight')\n\n# Save as SVG\nplt.savefig('matplotlib_2.svg', bbox_inches = 'tight')\n\n\n\n\nPNG\n\n\n\n\nSaving as a static image: You can save a Plotly figure as a static image using the write_image() method. This requires the kaleido package.\npip install kaleido\n# Save as PNG\nfig.write_image(\"plotly_1.png\", scale = 2)\n\n# Save as SVG\nfig.write_image(\"plotly_2.svg\")\n\n\n\n\nPNG",
+    "crumbs": [
+      "Library",
+      "Data Visualization"
+    ]
+  },
+  {
+    "objectID": "1_variable.html",
+    "href": "1_variable.html",
+    "title": "Variable",
+    "section": "",
+    "text": "In computer programming, variables act as containers that store data in a program. They allow for easy management of information throughout a program’s run. Python uses a system called dynamic typing, which figures out the type of data in a variable based on what is stored in it. This feature helps make Python easy for new programmers to learn.",
+    "crumbs": [
+      "Variable"
+    ]
+  },
+  {
+    "objectID": "1_variable.html#introduction",
+    "href": "1_variable.html#introduction",
+    "title": "Variable",
+    "section": "",
+    "text": "In computer programming, variables act as containers that store data in a program. They allow for easy management of information throughout a program’s run. Python uses a system called dynamic typing, which figures out the type of data in a variable based on what is stored in it. This feature helps make Python easy for new programmers to learn.",
+    "crumbs": [
+      "Variable"
+    ]
+  },
+  {
+    "objectID": "1_variable.html#variable-naming-rules",
+    "href": "1_variable.html#variable-naming-rules",
+    "title": "Variable",
+    "section": "Variable Naming Rules",
+    "text": "Variable Naming Rules\nWhen creating variables in Python, certain naming rules must be followed:\n\nThe first character must be a letter (a-z, A-Z) or an underscore (_).\nAfter the first character, the name can include letters, numbers, and underscores.\nVariable names are case-sensitive. This means age, Age, and AGE are three different variables.\nPython keywords, which are special words used by Python, cannot be used as variable names.\n\n\nExamples of valid variable names: name, age, student_count, _private_var, total2\nExamples of invalid variable names: 2total (starts with a number), my-var (has a hyphen), for (Python keyword)\n\nWhile Python allows variables to start with an underscore, this is generally avoided unless there’s a specific reason to do so.",
+    "crumbs": [
+      "Variable"
+    ]
+  },
+  {
+    "objectID": "1_variable.html#variable-assignment",
+    "href": "1_variable.html#variable-assignment",
+    "title": "Variable",
+    "section": "Variable Assignment",
+    "text": "Variable Assignment\nStoring data in variables is called assignment. In Python, this is done using the equals sign (=). The basic format is:\nvariable_name = value\nHere are some examples:\n\nx = 5\nname = \"Alice\"\npi = 3.14159\n\nThese examples create three variables:\n\nx is given the integer value 5\nname is given the string value “Alice”\npi is given the decimal value 3.14159",
+    "crumbs": [
+      "Variable"
+    ]
+  },
+  {
+    "objectID": "1_variable.html#multiple-assignment",
+    "href": "1_variable.html#multiple-assignment",
+    "title": "Variable",
+    "section": "Multiple Assignment",
+    "text": "Multiple Assignment\nPython allows assigning values to multiple variables in one line of code. This can be done in two main ways:\n\na, b, c = 1, 2, 3\nprint(f\"a = {a}, b = {b}, c = {c}\")\n\na = 1, b = 2, c = 3\n\n\nThis gives a the value 1, b the value 2, and c the value 3.\nAnother way is to give the same value to multiple variables at once:\n\na = b = c = 0\nprint(f\"a = {a}, b = {b}, c = {c}\")\n\na = 0, b = 0, c = 0\n\n\nThis sets x, y, and z all equal to 0.\nWhile multiple assignment can make code shorter, it should be used carefully to keep the code easy to read.",
+    "crumbs": [
+      "Variable"
+    ]
+  },
+  {
+    "objectID": "1_variable.html#variable-types",
+    "href": "1_variable.html#variable-types",
+    "title": "Variable",
+    "section": "Variable Types",
+    "text": "Variable Types\nPython is a dynamically typed language, which means you don’t need to declare the type of a variable when you create it. The interpreter infers the type based on the value assigned. However, understanding the basic types is crucial for effective programming.\n\nNumeric Types:\n\nint: Integers → 5, -3, 0\nfloat: Floating-point numbers → 3.14, -0.001, 2.0e-4\ncomplex: Complex numbers → 3+4j\n\nSequence Types:\n\nstr: Strings → \"Hello\", 'Python'\nlist: Mutable sequences → [1, 2, 3]\ntuple: Immutable sequences → (1, 2, 3)\n\n\nPython is a dynamically typed language, which means you don’t need to declare the type of a variable when you create it. The interpreter infers the type based on the value assigned. However, understanding the basic types is crucial for effective programming.\n\nMapping Type:\n\ndict: Key-value pairs → {\"name\": \"John\", \"age\": 30}\n\nSet Types:\n\nset: Unordered collection of unique elements → {1, 2, 3}\nfrozenset: Immutable version of set\n\nBoolean Type:\n\nbool: True or False\n\nNone Type:\n\nNone: Represents the absence of a value",
+    "crumbs": [
+      "Variable"
+    ]
+  },
+  {
+    "objectID": "1_variable.html#check-variable-types",
+    "href": "1_variable.html#check-variable-types",
+    "title": "Variable",
+    "section": "Check Variable Types",
+    "text": "Check Variable Types\nYou can check the type of a variable using the type() function:\n\nage = 25          # integer (int)\nheight = 1.75     # floating-point number (float)\nname = \"Bob\"      # string (str)\nis_student = True # boolean (bool)\n\nprint(type(age))\nprint(type(height))\nprint(type(name))\nprint(type(is_student))\n\n&lt;class 'int'&gt;\n&lt;class 'float'&gt;\n&lt;class 'str'&gt;\n&lt;class 'bool'&gt;",
+    "crumbs": [
+      "Variable"
+    ]
+  },
+  {
+    "objectID": "1_variable.html#variable-types-conversion",
+    "href": "1_variable.html#variable-types-conversion",
+    "title": "Variable",
+    "section": "Variable Types Conversion",
+    "text": "Variable Types Conversion\nPython also allows type conversion between compatible types:\n\na = int(3.14)    # Converts float to int: 3\nb = float(5)     # Converts int to float: 5.0\nc = str(42)      # Converts int to str: \"42\"\nd = bool(1)      # Converts int to bool: True\n\nprint(type(a))\nprint(type(b))\nprint(type(c))\nprint(type(d))\n\n&lt;class 'int'&gt;\n&lt;class 'float'&gt;\n&lt;class 'str'&gt;\n&lt;class 'bool'&gt;",
+    "crumbs": [
+      "Variable"
+    ]
+  },
+  {
+    "objectID": "1_variable.html#variable-reassignment",
+    "href": "1_variable.html#variable-reassignment",
+    "title": "Variable",
+    "section": "Variable Reassignment",
+    "text": "Variable Reassignment\nA useful feature of Python’s dynamic typing is the ability to change both the value and the type of a variable. For example:\n\nx = 5\nprint(x)\nx = \"Hello\"\nprint(x)\n\n5\nHello\n\n\nHere, x starts as an integer but is then changed to a string. While this flexibility can be useful, it should be used thoughtfully to avoid confusion.",
+    "crumbs": [
+      "Variable"
+    ]
+  },
+  {
+    "objectID": "1_variable.html#variable-type-annotation",
+    "href": "1_variable.html#variable-type-annotation",
+    "title": "Variable",
+    "section": "Variable Type Annotation",
+    "text": "Variable Type Annotation\nVariable type annotation, introduced in Python 3.5, allows programmers to clearly state the expected types of variables. This practice makes code easier to read, improves documentation, and helps find potential errors before the program runs.\nExamples of type annotations in Python:\n\nname: str = \"Alice\"\nage: int = 30\nheight: float = 1.75\nis_student: bool = True\nprint(f\"{age}: type {type(age)}\")\n\n30: type &lt;class 'int'&gt;\n\n\nThe annotation has nothing to do with the data type assigned.\n\nage: int = 30.5\nprint(f\"{age}: type {type(age)}\")\n\n30.5: type &lt;class 'float'&gt;",
+    "crumbs": [
+      "Variable"
+    ]
+  },
+  {
+    "objectID": "index.html#course-objectives",
+    "href": "index.html#course-objectives",
+    "title": "Basic Python for Econ Students",
+    "section": "Course Objectives",
+    "text": "Course Objectives\nBy the end of this course, students will be able to:\n1. Understand Python Basics\n\nExplain core Python concepts including data types, control structures, functions, and modules\nWrite and execute basic Python scripts\n\n2. Perform Numerical Computations (with NumPy)\n\nUtilize NumPy for mathematical and statistical calculations\n\n3. Manipulate Data and Analyze Data with Pandas\n\nLoad data from various sources (CSV, Excel, databases) into Pandas DataFrames\nUse lists, dictionaries, and other data structures to organize and manage data\nPerform data cleaning and preprocessing tasks\nConduct exploratory data analysis using Pandas functions\n\n4. Visualize Data\n\nCreate various types of plots using Matplotlib (line plots, scatter plots, histograms, etc.)\nDevelop interactive visualizations using Plotly",
+    "crumbs": [
+      "Home"
+    ]
+  },
+  {
+    "objectID": "99_data.html",
+    "href": "99_data.html",
+    "title": "Economic Data Analysis",
+    "section": "",
+    "text": "Before we dive into our economic analysis, we need to set up our analytical environment. This involves importing the necessary Python libraries that will serve as our tools for data manipulation and visualization.\nWe’ll be using:\n\nPandas: A powerful library for data manipulation and analysis\nMatplotlib: A comprehensive library for creating static, animated, and interactive visualizations\n\nThese libraries will allow us to efficiently handle large datasets, perform complex calculations, and create insightful visualizations of economic trends and relationships.\nLet’s start by importing these libraries and loading our economic dataset:\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Load the economic data from our CSV file\ndf = pd.read_csv('data.csv')\n\n# Display the first few rows of the dataset to get an initial overview\ndisplay(df.head())\n\n# Show the overall shape of our dataset\nprint(\"Dataset shape:\", df.shape)\n\n\n\n\n\n\n\n\nCountry Name\nCountry Code\nSeries Name\nSeries Code\n1960 [YR1960]\n1961 [YR1961]\n1962 [YR1962]\n1963 [YR1963]\n1964 [YR1964]\n1965 [YR1965]\n...\n2014 [YR2014]\n2015 [YR2015]\n2016 [YR2016]\n2017 [YR2017]\n2018 [YR2018]\n2019 [YR2019]\n2020 [YR2020]\n2021 [YR2021]\n2022 [YR2022]\n2023 [YR2023]\n\n\n\n\n0\nThailand\nTHA\nGDP (current US$)\nNY.GDP.MKTP.CD\n2760750861\n3034037811\n3308912797\n3540403457\n3889129942\n4388937649\n...\n4.073390e+11\n4.012960e+11\n4.133660e+11\n4.563570e+11\n5.067540e+11\n5.439770e+11\n5.00462E+11\n5.06256E+11\n4.95645E+11\n5.14945E+11\n\n\n1\nThailand\nTHA\nPopulation, total\nSP.POP.TOTL\n26596584\n27399963\n28242174\n29114124\n30013573\n30940270\n...\n6.996094e+07\n7.029440e+07\n7.060704e+07\n7.089820e+07\n7.112780e+07\n7.130776e+07\n71475664\n71601103\n71697030\n71801279\n\n\n2\nThailand\nTHA\nUnemployment, total (% of total labor force) (...\nSL.UEM.TOTL.ZS\n..\n..\n..\n..\n..\n..\n...\n5.760000e-01\n5.970000e-01\n6.880000e-01\n8.300000e-01\n7.660000e-01\n7.160000e-01\n1.099\n1.215\n0.94\n0.913\n\n\n3\nThailand\nTHA\nInflation, consumer prices (annual %)\nFP.CPI.TOTL.ZG\n-0.765864333\n7.386990077\n3.696098563\n..\n-0.792079208\n0.166333998\n...\n1.895142e+00\n-9.004250e-01\n1.881497e-01\n6.656319e-01\n1.063898e+00\n7.067286e-01\n-0.845937147\n1.230395413\n6.077412284\n1.228026235\n\n\n4\nThailand\nTHA\nConsumer price index (2010 = 100)\nFP.CPI.TOTL\n10.21121022\n10.96551131\n11.37080742\n11.37080742\n11.28074161\n11.29950532\n...\n1.113459e+02\n1.103433e+02\n1.105509e+02\n1.112868e+02\n1.124708e+02\n1.132656e+02\n112.3074938\n113.68932\n120.5986887\n122.0796723\n\n\n\n\n5 rows × 68 columns\n\n\n\nDataset shape: (80, 68)\n\n\nBy executing this code, we’ll get our first look at the economic data we’ll be working with. The head() function will show us the first few rows of the dataset, giving us an idea of its structure and the types of economic indicators it contains. The shape attribute will tell us how many rows and columns are in our dataset, indicating the breadth of our economic data.\nSee columns label.\n\nprint(df.columns)\n\nIndex(['Country Name', 'Country Code', 'Series Name', 'Series Code',\n       '1960 [YR1960]', '1961 [YR1961]', '1962 [YR1962]', '1963 [YR1963]',\n       '1964 [YR1964]', '1965 [YR1965]', '1966 [YR1966]', '1967 [YR1967]',\n       '1968 [YR1968]', '1969 [YR1969]', '1970 [YR1970]', '1971 [YR1971]',\n       '1972 [YR1972]', '1973 [YR1973]', '1974 [YR1974]', '1975 [YR1975]',\n       '1976 [YR1976]', '1977 [YR1977]', '1978 [YR1978]', '1979 [YR1979]',\n       '1980 [YR1980]', '1981 [YR1981]', '1982 [YR1982]', '1983 [YR1983]',\n       '1984 [YR1984]', '1985 [YR1985]', '1986 [YR1986]', '1987 [YR1987]',\n       '1988 [YR1988]', '1989 [YR1989]', '1990 [YR1990]', '1991 [YR1991]',\n       '1992 [YR1992]', '1993 [YR1993]', '1994 [YR1994]', '1995 [YR1995]',\n       '1996 [YR1996]', '1997 [YR1997]', '1998 [YR1998]', '1999 [YR1999]',\n       '2000 [YR2000]', '2001 [YR2001]', '2002 [YR2002]', '2003 [YR2003]',\n       '2004 [YR2004]', '2005 [YR2005]', '2006 [YR2006]', '2007 [YR2007]',\n       '2008 [YR2008]', '2009 [YR2009]', '2010 [YR2010]', '2011 [YR2011]',\n       '2012 [YR2012]', '2013 [YR2013]', '2014 [YR2014]', '2015 [YR2015]',\n       '2016 [YR2016]', '2017 [YR2017]', '2018 [YR2018]', '2019 [YR2019]',\n       '2020 [YR2020]', '2021 [YR2021]', '2022 [YR2022]', '2023 [YR2023]'],\n      dtype='object')\n\n\nGet unique values in column.\n\nprint(df['Country Name'].unique())\n\n['Thailand' 'Russian Federation' 'China' 'India' 'Saudi Arabia'\n 'Indonesia' 'Myanmar' 'Japan' 'Viet Nam' 'Malaysia' 'Philippines'\n 'Lao PDR' 'Cambodia' 'Korea, Rep.' 'Hong Kong SAR, China' 'Singapore']\n\n\n\nold_series_names = df['Series Name'].unique()\nprint(old_series_names)\n\n['GDP (current US$)' 'Population, total'\n 'Unemployment, total (% of total labor force) (modeled ILO estimate)'\n 'Inflation, consumer prices (annual %)'\n 'Consumer price index (2010 = 100)']",
+    "crumbs": [
+      "Examples",
+      "Economic Data"
+    ]
+  },
+  {
+    "objectID": "99_data.html#setting-up-the-analysis-environment",
+    "href": "99_data.html#setting-up-the-analysis-environment",
+    "title": "Economic Data Analysis",
+    "section": "",
+    "text": "Before we dive into our economic analysis, we need to set up our analytical environment. This involves importing the necessary Python libraries that will serve as our tools for data manipulation and visualization.\nWe’ll be using:\n\nPandas: A powerful library for data manipulation and analysis\nMatplotlib: A comprehensive library for creating static, animated, and interactive visualizations\n\nThese libraries will allow us to efficiently handle large datasets, perform complex calculations, and create insightful visualizations of economic trends and relationships.\nLet’s start by importing these libraries and loading our economic dataset:\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\n\n# Load the economic data from our CSV file\ndf = pd.read_csv('data.csv')\n\n# Display the first few rows of the dataset to get an initial overview\ndisplay(df.head())\n\n# Show the overall shape of our dataset\nprint(\"Dataset shape:\", df.shape)\n\n\n\n\n\n\n\n\nCountry Name\nCountry Code\nSeries Name\nSeries Code\n1960 [YR1960]\n1961 [YR1961]\n1962 [YR1962]\n1963 [YR1963]\n1964 [YR1964]\n1965 [YR1965]\n...\n2014 [YR2014]\n2015 [YR2015]\n2016 [YR2016]\n2017 [YR2017]\n2018 [YR2018]\n2019 [YR2019]\n2020 [YR2020]\n2021 [YR2021]\n2022 [YR2022]\n2023 [YR2023]\n\n\n\n\n0\nThailand\nTHA\nGDP (current US$)\nNY.GDP.MKTP.CD\n2760750861\n3034037811\n3308912797\n3540403457\n3889129942\n4388937649\n...\n4.073390e+11\n4.012960e+11\n4.133660e+11\n4.563570e+11\n5.067540e+11\n5.439770e+11\n5.00462E+11\n5.06256E+11\n4.95645E+11\n5.14945E+11\n\n\n1\nThailand\nTHA\nPopulation, total\nSP.POP.TOTL\n26596584\n27399963\n28242174\n29114124\n30013573\n30940270\n...\n6.996094e+07\n7.029440e+07\n7.060704e+07\n7.089820e+07\n7.112780e+07\n7.130776e+07\n71475664\n71601103\n71697030\n71801279\n\n\n2\nThailand\nTHA\nUnemployment, total (% of total labor force) (...\nSL.UEM.TOTL.ZS\n..\n..\n..\n..\n..\n..\n...\n5.760000e-01\n5.970000e-01\n6.880000e-01\n8.300000e-01\n7.660000e-01\n7.160000e-01\n1.099\n1.215\n0.94\n0.913\n\n\n3\nThailand\nTHA\nInflation, consumer prices (annual %)\nFP.CPI.TOTL.ZG\n-0.765864333\n7.386990077\n3.696098563\n..\n-0.792079208\n0.166333998\n...\n1.895142e+00\n-9.004250e-01\n1.881497e-01\n6.656319e-01\n1.063898e+00\n7.067286e-01\n-0.845937147\n1.230395413\n6.077412284\n1.228026235\n\n\n4\nThailand\nTHA\nConsumer price index (2010 = 100)\nFP.CPI.TOTL\n10.21121022\n10.96551131\n11.37080742\n11.37080742\n11.28074161\n11.29950532\n...\n1.113459e+02\n1.103433e+02\n1.105509e+02\n1.112868e+02\n1.124708e+02\n1.132656e+02\n112.3074938\n113.68932\n120.5986887\n122.0796723\n\n\n\n\n5 rows × 68 columns\n\n\n\nDataset shape: (80, 68)\n\n\nBy executing this code, we’ll get our first look at the economic data we’ll be working with. The head() function will show us the first few rows of the dataset, giving us an idea of its structure and the types of economic indicators it contains. The shape attribute will tell us how many rows and columns are in our dataset, indicating the breadth of our economic data.\nSee columns label.\n\nprint(df.columns)\n\nIndex(['Country Name', 'Country Code', 'Series Name', 'Series Code',\n       '1960 [YR1960]', '1961 [YR1961]', '1962 [YR1962]', '1963 [YR1963]',\n       '1964 [YR1964]', '1965 [YR1965]', '1966 [YR1966]', '1967 [YR1967]',\n       '1968 [YR1968]', '1969 [YR1969]', '1970 [YR1970]', '1971 [YR1971]',\n       '1972 [YR1972]', '1973 [YR1973]', '1974 [YR1974]', '1975 [YR1975]',\n       '1976 [YR1976]', '1977 [YR1977]', '1978 [YR1978]', '1979 [YR1979]',\n       '1980 [YR1980]', '1981 [YR1981]', '1982 [YR1982]', '1983 [YR1983]',\n       '1984 [YR1984]', '1985 [YR1985]', '1986 [YR1986]', '1987 [YR1987]',\n       '1988 [YR1988]', '1989 [YR1989]', '1990 [YR1990]', '1991 [YR1991]',\n       '1992 [YR1992]', '1993 [YR1993]', '1994 [YR1994]', '1995 [YR1995]',\n       '1996 [YR1996]', '1997 [YR1997]', '1998 [YR1998]', '1999 [YR1999]',\n       '2000 [YR2000]', '2001 [YR2001]', '2002 [YR2002]', '2003 [YR2003]',\n       '2004 [YR2004]', '2005 [YR2005]', '2006 [YR2006]', '2007 [YR2007]',\n       '2008 [YR2008]', '2009 [YR2009]', '2010 [YR2010]', '2011 [YR2011]',\n       '2012 [YR2012]', '2013 [YR2013]', '2014 [YR2014]', '2015 [YR2015]',\n       '2016 [YR2016]', '2017 [YR2017]', '2018 [YR2018]', '2019 [YR2019]',\n       '2020 [YR2020]', '2021 [YR2021]', '2022 [YR2022]', '2023 [YR2023]'],\n      dtype='object')\n\n\nGet unique values in column.\n\nprint(df['Country Name'].unique())\n\n['Thailand' 'Russian Federation' 'China' 'India' 'Saudi Arabia'\n 'Indonesia' 'Myanmar' 'Japan' 'Viet Nam' 'Malaysia' 'Philippines'\n 'Lao PDR' 'Cambodia' 'Korea, Rep.' 'Hong Kong SAR, China' 'Singapore']\n\n\n\nold_series_names = df['Series Name'].unique()\nprint(old_series_names)\n\n['GDP (current US$)' 'Population, total'\n 'Unemployment, total (% of total labor force) (modeled ILO estimate)'\n 'Inflation, consumer prices (annual %)'\n 'Consumer price index (2010 = 100)']",
+    "crumbs": [
+      "Examples",
+      "Economic Data"
+    ]
+  },
+  {
+    "objectID": "99_data.html#restructuring-the-data-for-time-series-analysis",
+    "href": "99_data.html#restructuring-the-data-for-time-series-analysis",
+    "title": "Economic Data Analysis",
+    "section": "Restructuring the Data for Time Series Analysis",
+    "text": "Restructuring the Data for Time Series Analysis\nNow that we’ve loaded our data, we need to restructure it into a format that’s more suitable for time series analysis. Our current dataset likely has years as separate columns, which isn’t ideal for analyzing trends over time or comparing different economic indicators. We’ll also take this opportunity to simplify our data by renaming some columns and dropping unnecessary information.\nHere’s what we’re going to do:\n\nCreate a dictionary to store these renamed mappings for future use\nRename the economic indicators in the Series Name column for easier reference\nDrop the Country Code and Series Code column as we won’t be using it in our analysis\nConvert our wide-format data (where each year is a separate column) into a long format\nCreate a single Year column and a corresponding Value column\n\nLet’s start by creating a dictionary for our renamed series:\n\nnew_series_names = ['GDP', 'Population', 'Unemployment', 'Inflation', 'CPI']\n\nseries_names = dict(zip(old_series_names, new_series_names))\n\n# Display our mapping dictionary\nprint(\"Series name mappings:\")\nfor old_name, new_name in series_names.items():\n    print(f\"{old_name} -&gt; {new_name}\")\n\n# Rename the series using our mapping dictionary\ndf['Series Name'] = df['Series Name'].replace(series_names)\n\nSeries name mappings:\nGDP (current US$) -&gt; GDP\nPopulation, total -&gt; Population\nUnemployment, total (% of total labor force) (modeled ILO estimate) -&gt; Unemployment\nInflation, consumer prices (annual %) -&gt; Inflation\nConsumer price index (2010 = 100) -&gt; CPI\n\n\nDrop the Country Code and Series Code column\n\ndf = df.drop(columns = ['Country Code', 'Series Code'])\ndisplay(df)\n\n\n\n\n\n\n\n\nCountry Name\nSeries Name\n1960 [YR1960]\n1961 [YR1961]\n1962 [YR1962]\n1963 [YR1963]\n1964 [YR1964]\n1965 [YR1965]\n1966 [YR1966]\n1967 [YR1967]\n...\n2014 [YR2014]\n2015 [YR2015]\n2016 [YR2016]\n2017 [YR2017]\n2018 [YR2018]\n2019 [YR2019]\n2020 [YR2020]\n2021 [YR2021]\n2022 [YR2022]\n2023 [YR2023]\n\n\n\n\n0\nThailand\nGDP\n2760750861\n3034037811\n3308912797\n3540403457\n3889129942\n4388937649\n5279230817\n5638461442\n...\n4.073390e+11\n4.012960e+11\n4.133660e+11\n4.563570e+11\n5.067540e+11\n5.439770e+11\n5.00462E+11\n5.06256E+11\n4.95645E+11\n5.14945E+11\n\n\n1\nThailand\nPopulation\n26596584\n27399963\n28242174\n29114124\n30013573\n30940270\n31883754\n32839341\n...\n6.996094e+07\n7.029440e+07\n7.060704e+07\n7.089820e+07\n7.112780e+07\n7.130776e+07\n71475664\n71601103\n71697030\n71801279\n\n\n2\nThailand\nUnemployment\n..\n..\n..\n..\n..\n..\n..\n..\n...\n5.760000e-01\n5.970000e-01\n6.880000e-01\n8.300000e-01\n7.660000e-01\n7.160000e-01\n1.099\n1.215\n0.94\n0.913\n\n\n3\nThailand\nInflation\n-0.765864333\n7.386990077\n3.696098563\n..\n-0.792079208\n0.166333998\n4.035204251\n4.309656824\n...\n1.895142e+00\n-9.004250e-01\n1.881497e-01\n6.656319e-01\n1.063898e+00\n7.067286e-01\n-0.845937147\n1.230395413\n6.077412284\n1.228026235\n\n\n4\nThailand\nCPI\n10.21121022\n10.96551131\n11.37080742\n11.37080742\n11.28074161\n11.29950532\n11.75546344\n12.26208357\n...\n1.113459e+02\n1.103433e+02\n1.105509e+02\n1.112868e+02\n1.124708e+02\n1.132656e+02\n112.3074938\n113.68932\n120.5986887\n122.0796723\n\n\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n...\n\n\n75\nSingapore\nGDP\n704751700.3\n764629788.1\n826239211.8\n917608012.5\n894153311.4\n974644096.1\n1096425608\n1238035816\n...\n3.148640e+11\n3.079990e+11\n3.190540e+11\n3.432570e+11\n3.768930e+11\n3.769020e+11\n3.49488E+11\n4.34112E+11\n4.98475E+11\n5.01428E+11\n\n\n76\nSingapore\nPopulation\n1646400\n1702400\n1750200\n1795000\n1841600\n1886900\n1934400\n1977600\n...\n5.469724e+06\n5.535002e+06\n5.607283e+06\n5.612253e+06\n5.638676e+06\n5.703569e+06\n5685807\n5453566\n5637022\n5917648\n\n\n77\nSingapore\nUnemployment\n..\n..\n..\n..\n..\n..\n..\n..\n...\n3.740000e+00\n3.790000e+00\n4.080000e+00\n4.200000e+00\n3.613000e+00\n3.100000e+00\n4.1\n4.64\n3.591\n3.472\n\n\n78\nSingapore\nInflation\n..\n0.4\n0.41958042\n2.205199629\n1.726095844\n0.178611297\n2.005794517\n3.342800961\n...\n1.025148e+00\n-5.226182e-01\n-5.322687e-01\n5.762603e-01\n4.386201e-01\n5.652606e-01\n-0.181916667\n2.30485959\n6.12106004\n4.821467295\n\n\n79\nSingapore\nCPI\n27.51917493\n27.62925163\n27.74517856\n28.35701514\n28.8464844\n28.89800748\n29.47764213\n30.46302103\n...\n1.138144e+02\n1.132196e+02\n1.126170e+02\n1.132659e+02\n1.137627e+02\n1.144058e+02\n114.1976627\n116.8297585\n123.9809781\n129.9586804\n\n\n\n\n80 rows × 66 columns\n\n\n\nNow, let’s restructure our data:\n\n# Melt the dataframe to convert years from columns to rows\ndf_melted = df.melt(id_vars=['Country Name', 'Series Name'], var_name='Year', value_name='Value')\nprint(df_melted.head())\n\n  Country Name   Series Name           Year         Value\n0     Thailand           GDP  1960 [YR1960]    2760750861\n1     Thailand    Population  1960 [YR1960]      26596584\n2     Thailand  Unemployment  1960 [YR1960]            ..\n3     Thailand     Inflation  1960 [YR1960]  -0.765864333\n4     Thailand           CPI  1960 [YR1960]   10.21121022\n\n\nCheck data type of each columns.\n\nprint(df_melted.dtypes)\n\nCountry Name    object\nSeries Name     object\nYear            object\nValue           object\ndtype: object\n\n\nClean up the DataFrame.\n\n# Clean up the 'Year' column by removing any non-year text and convert to integer\ndf_melted['Year'] = df_melted['Year'].str[:4].astype(int)\n\n# Convert 'Value' to numeric, handling any non-numeric values\ndf_melted['Value'] = pd.to_numeric(df_melted['Value'], errors='coerce')\nprint(df_melted.head())\n\n  Country Name   Series Name  Year         Value\n0     Thailand           GDP  1960  2.760751e+09\n1     Thailand    Population  1960  2.659658e+07\n2     Thailand  Unemployment  1960           NaN\n3     Thailand     Inflation  1960 -7.658643e-01\n4     Thailand           CPI  1960  1.021121e+01\n\n\n\nprint(df_melted.dtypes)\n\nCountry Name     object\nSeries Name      object\nYear              int64\nValue           float64\ndtype: object\n\n\nThis transformation gives us a more flexible and streamlined dataset. Each row now represents a specific economic indicator for a particular country in a given year, with the indicator names simplified for easier reference.\nThe benefits of this restructured data include:\n\nEasier filtering and grouping by year, country, or economic indicator\nSimplified column names for more intuitive data manipulation\nA consistent format for time series analysis across different economic indicators\nRemoved unnecessary data to focus on the most relevant information\n\nThis format will make it much easier to perform time series analysis, compare different countries, or analyze trends across various economic indicators in our subsequent analyses.",
+    "crumbs": [
+      "Examples",
+      "Economic Data"
+    ]
+  },
+  {
+    "objectID": "99_data.html#exploratory-data-analysis",
+    "href": "99_data.html#exploratory-data-analysis",
+    "title": "Economic Data Analysis",
+    "section": "Exploratory Data Analysis",
+    "text": "Exploratory Data Analysis\nNow that we have our data in a suitable format, let’s explore it to get a better understanding of our economic indicators across different countries and years.\n\n# Get basic statistics for GDP indicator of Thailand\n\ncountry = 'Thailand'\nindicator = 'GDP'\n\nprint(df_melted[(df_melted['Country Name'] == country) &\n    (df_melted['Series Name'] == indicator)]['Value'].describe())\n\ncount    6.400000e+01\nmean     1.592162e+11\nstd      1.722203e+11\nmin      2.760751e+09\n25%      1.645960e+10\n50%      1.048439e+11\n75%      2.676350e+11\nmax      5.439770e+11\nName: Value, dtype: float64\n\n\nWe may loop through all avaliable indicators to get basic statistics for each economic indicator.\n\nfor indicator in df_melted['Series Name'].unique():\n\n    print('\\n')\n    print(indicator)\n\n    print(df_melted[(df_melted['Country Name'] == country) &\n        (df_melted['Series Name'] == indicator)]['Value'].describe())\n\n\n\nGDP\ncount    6.400000e+01\nmean     1.592162e+11\nstd      1.722203e+11\nmin      2.760751e+09\n25%      1.645960e+10\n50%      1.048439e+11\n75%      2.676350e+11\nmax      5.439770e+11\nName: Value, dtype: float64\n\n\nPopulation\ncount    6.400000e+01\nmean     5.376486e+07\nstd      1.447177e+07\nmin      2.659658e+07\n25%      4.163871e+07\n50%      5.651944e+07\n75%      6.695213e+07\nmax      7.180128e+07\nName: Value, dtype: float64\n\n\nUnemployment\ncount    33.000000\nmean      1.301909\nstd       0.743189\nmin       0.249000\n25%       0.766000\n50%       1.180000\n75%       1.490000\nmax       3.404000\nName: Value, dtype: float64\n\n\nInflation\ncount    63.000000\nmean      4.096830\nstd       4.560833\nmin      -0.900425\n25%       1.229211\n50%       3.312192\n75%       5.411977\nmax      24.313560\nName: Value, dtype: float64\n\n\nCPI\ncount     64.000000\nmean      58.696073\nstd       37.776153\nmin       10.211210\n25%       20.990245\n50%       53.688850\n75%       93.675617\nmax      122.079672\nName: Value, dtype: float64\n\n\nCheck for missing values\n\nprint(\"Missing values in each column:\")\nprint(df_melted.isnull().sum())\n\nMissing values in each column:\nCountry Name      0\nSeries Name       0\nYear              0\nValue           974\ndtype: int64\n\n\nGet the range of years in our dataset\n\nprint(f\"Year range: {df_melted['Year'].min()} to {df_melted['Year'].max()}\")\n\nYear range: 1960 to 2023\n\n\nWe may need to drop those missing value in Value column.\n\nprint(\"Melted dataset shape (before drop NaN):\", df_melted.shape)\n\ndf_melted.dropna(inplace = True)\n\nprint(\"\\nAfter drop NaN\")\nprint(\"Missing values in each column:\")\nprint(df_melted.isnull().sum())\nprint(\"Melted dataset shape:\", df_melted.shape)\n\nMelted dataset shape (before drop NaN): (5120, 4)\n\nAfter drop NaN\nMissing values in each column:\nCountry Name    0\nSeries Name     0\nYear            0\nValue           0\ndtype: int64\nMelted dataset shape: (4146, 4)",
+    "crumbs": [
+      "Examples",
+      "Economic Data"
+    ]
+  },
+  {
+    "objectID": "99_data.html#analyzing-economic-growth",
+    "href": "99_data.html#analyzing-economic-growth",
+    "title": "Economic Data Analysis",
+    "section": "Analyzing Economic Growth",
+    "text": "Analyzing Economic Growth\nLet’s analyze the GDP growth rate for a specific country over time.\nEquation: \\text{GDP Growth Rate} = \\frac{\\text{GDP}_t - \\text{GDP}_{t-1}}{\\text{GDP}_{t-1}} \\times 100\\%\n.pct_change(): Computes the fractional change from the immediately previous row by default. This is useful in comparing the fraction of change in a time series of elements.\n\ndf_melted = df_melted.dropna(axis='index')  # Drop rows with NaN\n\ndef calculate_gdp_growth(country):\n\n    gdp_data = df_melted[(df_melted['Series Name'] == 'GDP') &     # filter data by country\n                         (df_melted['Country Name'] == country)]\n\n    gdp_data = gdp_data.sort_values('Year')                        # sort data\n\n    gdp_data['GDP_Growth'] = gdp_data['Value'].pct_change() * 100  # calculate\n\n    return gdp_data\n\ncountry = 'China'\ngdp_growth_data = calculate_gdp_growth(country)\nprint(gdp_growth_data.head())\n\n    Country Name Series Name  Year         Value  GDP_Growth\n10         China         GDP  1960  5.971625e+10         NaN\n90         China         GDP  1961  5.005669e+10  -16.175770\n170        China         GDP  1962  4.720919e+10   -5.688550\n250        China         GDP  1963  5.070661e+10    7.408363\n330        China         GDP  1964  5.970813e+10   17.752143\n\n\n\nplt.figure(figsize = (10, 5))\n\nplt.plot(gdp_growth_data['Year'], gdp_growth_data['GDP_Growth'])\nplt.scatter(gdp_growth_data['Year'], gdp_growth_data['GDP_Growth'])\n\nplt.title(f\"{country}'s GDP Growth Rate Over Time\")\nplt.xlabel(\"Year\")\nplt.ylabel(\"GDP Growth Rate (%)\")\nplt.grid(True)\n\nplt.show()\n\n\n\n\n\n\n\n\n\nprint(f\"Average GDP Growth Rate for {country}: \\\n    {gdp_growth_data['GDP_Growth'].mean():.2f}%\")\n\nprint(f\"Highest GDP Growth Rate: {gdp_growth_data['GDP_Growth'].max():.2f}% in \\\n    {gdp_growth_data.loc[gdp_growth_data['GDP_Growth'].idxmax(), 'Year']}\")\n\nprint(f\"Lowest GDP Growth Rate: {gdp_growth_data['GDP_Growth'].min():.2f}% in \\\n    {gdp_growth_data.loc[gdp_growth_data['GDP_Growth'].idxmin(), 'Year']}\")\n\nAverage GDP Growth Rate for China:     9.92%\nHighest GDP Growth Rate: 30.15% in     1995\nLowest GDP Growth Rate: -16.18% in     1961\n\n\nThis analysis allows us to visualize a country’s economic growth trajectory and identify periods of rapid growth or recession.",
+    "crumbs": [
+      "Examples",
+      "Economic Data"
+    ]
+  },
+  {
+    "objectID": "99_data.html#comparing-economic-development-across-countries",
+    "href": "99_data.html#comparing-economic-development-across-countries",
+    "title": "Economic Data Analysis",
+    "section": "Comparing Economic Development Across Countries",
+    "text": "Comparing Economic Development Across Countries\nNext, let’s compare the GDP per capita across several countries.\n\ncountries = ['China', 'India', 'Japan', 'Thailand']\n\ngdp_data = df_melted[(df_melted['Series Name'] == 'GDP') & \n                        (df_melted['Country Name'].isin(countries))]\n\npopulation_data = df_melted[(df_melted['Series Name'] == 'Population') & \n                            (df_melted['Country Name'].isin(countries))]\n\nmerged_data = pd.merge(gdp_data, population_data, on=['Country Name', 'Year'])\nmerged_data['GDP_per_capita'] = merged_data['Value_x'] / merged_data['Value_y']\n\ngdp_per_capita_data = merged_data.copy()\n\nprint(gdp_per_capita_data.head())\n\n  Country Name Series Name_x  Year       Value_x Series Name_y      Value_y  \\\n0     Thailand           GDP  1960  2.760751e+09    Population   26596584.0   \n1        China           GDP  1960  5.971625e+10    Population  667070000.0   \n2        India           GDP  1960  3.702988e+10    Population  445954579.0   \n3        Japan           GDP  1960  4.741924e+10    Population   93216000.0   \n4     Thailand           GDP  1961  3.034038e+09    Population   27399963.0   \n\n   GDP_per_capita  \n0      103.800957  \n1       89.520214  \n2       83.035102  \n3      508.702779  \n4      110.731456  \n\n\n\nplt.figure(figsize = (10, 5))\n\nfor country in countries:\n    country_data = gdp_per_capita_data[gdp_per_capita_data['Country Name'] == country]\n    plt.plot(country_data['Year'], country_data['GDP_per_capita'], marker='o', label=country)\n\nplt.title(\"GDP per Capita Comparison\")\nplt.xlabel(\"Year\")\nplt.ylabel(\"GDP per Capita (current US$)\")\nplt.legend()\nplt.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\n\n# Print the most recent GDP per capita for each country\nlatest_year = gdp_per_capita_data['Year'].max()\nlatest_data = gdp_per_capita_data[gdp_per_capita_data['Year'] == latest_year]\n\nfor country in countries:\n    country_gdp_per_capita = \\\n        latest_data[latest_data['Country Name'] == country]['GDP_per_capita'].values[0]\n\n    print(f\"{country}'s GDP per capita in {latest_year}: ${country_gdp_per_capita:,.2f}\")\n\nChina's GDP per capita in 2023: $12,614.07\nIndia's GDP per capita in 2023: $2,484.85\nJapan's GDP per capita in 2023: $33,834.43\nThailand's GDP per capita in 2023: $7,171.81\n\n\nThis comparison helps us understand the relative economic development of different countries over time.\n\ndef compare_countries_bar(indicator, year, top_n=10):\n\n    data = df_melted[(df_melted['Series Name'] == indicator) & (df_melted['Year'] == year)]\n    data = data.sort_values('Value', ascending = True).tail(top_n)\n\n    # Convert GDP to billions of dollars\n    if indicator == 'GDP':\n        data.loc[:, 'Value'] = data['Value'] / 1e9  # Convert to billions\n    \n    plt.figure(figsize = (8, 5))\n    plt.barh(data['Country Name'], data['Value'])\n\n    plt.title(f\"Top {top_n} Countries by {indicator} in {year}\")\n    plt.xlabel(\"GDP (billion USD)\" if indicator == 'GDP' else indicator)\n    plt.ylabel(\"Country\")\n\n    plt.tight_layout()\n    plt.show()\n\ncompare_countries_bar('GDP', 2020)",
+    "crumbs": [
+      "Examples",
+      "Economic Data"
+    ]
+  },
+  {
+    "objectID": "99_data.html#inflation-analysis",
+    "href": "99_data.html#inflation-analysis",
+    "title": "Economic Data Analysis",
+    "section": "Inflation Analysis",
+    "text": "Inflation Analysis\nLet’s analyze inflation trends for a specific country.\n\ndef analyze_inflation(country):\n\n    inflation_data = df_melted[(df_melted['Series Name'] == 'Inflation') & \n                               (df_melted['Country Name'] == country)]\n    inflation_data = inflation_data.sort_values('Year')\n    return inflation_data\n\ncountry = 'Singapore'\ninflation_data = analyze_inflation(country)\n\n\nplt.figure(figsize = (10, 5))\nplt.plot(inflation_data['Year'], inflation_data['Value'])\nplt.scatter(inflation_data['Year'], inflation_data['Value'])\nplt.title(f\"Inflation Rate in {country} Over Time\")\nplt.xlabel(\"Year\")\nplt.ylabel(\"Inflation Rate (%)\")\nplt.grid(True)\n\nplt.show()\n\n\n\n\n\n\n\n\n\nprint(f\"Average Inflation Rate for {country}: {inflation_data['Value'].mean():.2f}%\")\n\nprint(f\"Highest Inflation Rate: {inflation_data['Value'].max():.2f}% \\\n    in {inflation_data.loc[inflation_data['Value'].idxmax(), 'Year']}\")\n\nprint(f\"Lowest Inflation Rate: {inflation_data['Value'].min():.2f}% \\\n    in {inflation_data.loc[inflation_data['Value'].idxmin(), 'Year']}\")\n\nAverage Inflation Rate for Singapore: 2.56%\nHighest Inflation Rate: 22.37%     in 1974\nLowest Inflation Rate: -1.84%     in 1976\n\n\nThis analysis helps us understand a country’s monetary stability and potential periods of economic stress.",
+    "crumbs": [
+      "Examples",
+      "Economic Data"
+    ]
+  },
+  {
+    "objectID": "99_data.html#unemployment-and-gdp-growth-relationship",
+    "href": "99_data.html#unemployment-and-gdp-growth-relationship",
+    "title": "Economic Data Analysis",
+    "section": "Unemployment and GDP Growth Relationship",
+    "text": "Unemployment and GDP Growth Relationship\nFinally, let’s examine the relationship between unemployment and GDP growth for a country.\n\ndef analyze_unemployment_gdp_relationship(country):\n\n    gdp_data = calculate_gdp_growth(country)\n\n    unemployment_data = df_melted[(df_melted['Series Name'] == 'Unemployment') & \n                                  (df_melted['Country Name'] == country)]\n    \n    merged_data = pd.merge(gdp_data[['Year', 'GDP_Growth']], unemployment_data, on='Year')\n    return merged_data\n\ncountry = 'Indonesia'\nrelationship_data = analyze_unemployment_gdp_relationship(country)\nprint(relationship_data.head())\n\n   Year  GDP_Growth Country Name   Series Name  Value\n0  1991    9.874601    Indonesia  Unemployment  2.617\n1  1992    9.779458    Indonesia  Unemployment  2.734\n2  1993   23.416935    Indonesia  Unemployment  2.782\n3  1994   11.952002    Indonesia  Unemployment  4.366\n4  1995   14.268593    Indonesia  Unemployment  4.611\n\n\n\nplt.figure(figsize = (6, 6))\nplt.scatter(relationship_data['GDP_Growth'], relationship_data['Value'])\n\nplt.title(f\"GDP Growth vs Unemployment Rate in {country}\")\nplt.xlabel(\"GDP Growth Rate (%)\")\nplt.ylabel(\"Unemployment Rate (%)\")\nplt.grid(True)\n\nplt.show()\n\ncorrelation = relationship_data['GDP_Growth'].corr(relationship_data['Value'])\nprint(f\"Correlation between GDP Growth and Unemployment Rate in {country}: {correlation:.2f}\")\n\n\n\n\n\n\n\n\nCorrelation between GDP Growth and Unemployment Rate in Indonesia: 0.23\n\n\nThis analysis helps us understand the relationship between economic growth and labor market conditions, potentially revealing Okun’s Law in action.\nThese steps provide a comprehensive analysis of various economic indicators, allowing students to derive insights about economic growth, development, monetary policy, and labor markets across different countries and time periods.",
+    "crumbs": [
+      "Examples",
+      "Economic Data"
+    ]
+  },
+  {
+    "objectID": "99_data.html#creating-an-economic-dashboard",
+    "href": "99_data.html#creating-an-economic-dashboard",
+    "title": "Economic Data Analysis",
+    "section": "Creating an Economic Dashboard",
+    "text": "Creating an Economic Dashboard\nFinally, let’s create a comprehensive economic dashboard for a country, bringing together multiple economic indicators.\n\ncountry = 'Thailand'\nindicators = ['GDP', 'Inflation', 'Unemployment']\n\ndashboard_data = df_melted[(df_melted['Country Name'] == country) & \n                           (df_melted['Series Name'].isin(indicators))]\n\nprint('------- Unpivot -------')\nprint(dashboard_data.head())\nprint('\\n')\n\ndashboard_pivot = dashboard_data.pivot(index='Year', columns='Series Name', values='Value')\nprint('------- Pivot -------')\nprint(dashboard_pivot.head())\n\n------- Unpivot -------\n    Country Name Series Name  Year         Value\n0       Thailand         GDP  1960  2.760751e+09\n3       Thailand   Inflation  1960 -7.658643e-01\n80      Thailand         GDP  1961  3.034038e+09\n83      Thailand   Inflation  1961  7.386990e+00\n160     Thailand         GDP  1962  3.308913e+09\n\n\n------- Pivot -------\nSeries Name           GDP  Inflation  Unemployment\nYear                                              \n1960         2.760751e+09  -0.765864           NaN\n1961         3.034038e+09   7.386990           NaN\n1962         3.308913e+09   3.696099           NaN\n1963         3.540403e+09        NaN           NaN\n1964         3.889130e+09  -0.792079           NaN",
+    "crumbs": [
+      "Examples",
+      "Economic Data"
+    ]
+  },
+  {
+    "objectID": "99_data.html#creating-an-economic-dashboard-1",
+    "href": "99_data.html#creating-an-economic-dashboard-1",
+    "title": "Economic Data Analysis",
+    "section": "Creating an Economic Dashboard",
+    "text": "Creating an Economic Dashboard\n\nfig, axes = plt.subplots(3, 1, figsize = (8, 10))\nfig.suptitle(f\"Economic Indicators Dashboard - {country}\")\n\nfor i, indicator in enumerate(indicators):\n    axes[i].plot(dashboard_pivot.index, dashboard_pivot[indicator])\n    axes[i].set_title(indicator)\n    axes[i].set_xlabel(\"Year\")\n    axes[i].set_ylabel(\"Value\")\n\nplt.tight_layout()\nplt.show()",
+    "crumbs": [
+      "Examples",
+      "Economic Data"
+    ]
+  },
+  {
+    "objectID": "3_string.html",
+    "href": "3_string.html",
+    "title": "String",
+    "section": "",
+    "text": "In Python, a string is an immutable sequence of characters. It can represent text of any length, from a single character to entire paragraphs.",
+    "crumbs": [
+      "Data Types",
+      "String"
+    ]
+  },
+  {
+    "objectID": "3_string.html#introduction",
+    "href": "3_string.html#introduction",
+    "title": "String",
+    "section": "",
+    "text": "In Python, a string is an immutable sequence of characters. It can represent text of any length, from a single character to entire paragraphs.",
+    "crumbs": [
+      "Data Types",
+      "String"
+    ]
+  },
+  {
+    "objectID": "3_string.html#creating-strings",
+    "href": "3_string.html#creating-strings",
+    "title": "String",
+    "section": "Creating Strings",
+    "text": "Creating Strings\nStrings can be created using single, double, or triple quotes:\n\nsingle_quoted = 'Hello, World!'\ndouble_quoted = \"Python Programming\"\ntriple_quoted = '''This string spans\nmultiple lines'''\nprint(single_quoted)\nprint(double_quoted)\nprint(triple_quoted)\n\nHello, World!\nPython Programming\nThis string spans\nmultiple lines\n\n\nOne quick tip: if you need to include quotes within your string, you can either use different quotes to enclose the string, or you can escape the quotes.\n\nprint('This\\'s a book')\n\nThis's a book",
+    "crumbs": [
+      "Data Types",
+      "String"
+    ]
+  },
+  {
+    "objectID": "3_string.html#common-escape-characters",
+    "href": "3_string.html#common-escape-characters",
+    "title": "String",
+    "section": "Common Escape Characters",
+    "text": "Common Escape Characters\n\n\n\n\\n - Newline\n\\t - Tab\n\\\\ - Backslash\n\\' - Single quote\n\n\n\n\\\" - Double quote\n\\r - Carriage return\n\\b - Backspace\n\\f - Form feed\n\n\n\n\nprint(\"Hello\\nWorld\\n\")  # Newline\nprint(\"Name:\\tJohn\")   # Tab\nprint(\"Path: C:\\\\Users\\\\John\")  # Backslash\nprint('It\\'s a beautiful day')  # Single quote in single-quoted string\nprint(\"She said, \\\"Hello!\\\"\")   # Double quote in double-quoted string\n\nHello\nWorld\n\nName:   John\nPath: C:\\Users\\John\nIt's a beautiful day\nShe said, \"Hello!\"",
+    "crumbs": [
+      "Data Types",
+      "String"
+    ]
+  },
+  {
+    "objectID": "3_string.html#string-operations",
+    "href": "3_string.html#string-operations",
+    "title": "String",
+    "section": "String Operations",
+    "text": "String Operations\n\nConcatenation\n\nfull_name = \"John\" + \" \" + \"Doe\"\nprint(full_name)\n\nJohn Doe\n\n\n\n\nRepetition\n\nrepeated = \"Python \" * 3\nprint(repeated)\n\nPython Python Python \n\n\n\n\nIndexing and Slicing\n\ntext = \"Python\"\n'''\n               \"P\" , \"y\" , \"t\" , \"h\" , \"o\", \"n\"\nPositive Index  0  ,  1  ,  2  ,  3  ,  4 ,  5\nNegative Index -6  , -5  , -4  , -3  , -2 , -1\n'''\n#### Indexing ####\nprint(text[0])  # First character\nprint(text[-1])  # Last character\nprint(text[3])  # Fourth character from start\n\n#### Slicing: The syntax is [ start : end ] ####\nprint(text[1:4])  # Characters from index 1 to  3\nprint(text[:3])  # Characters from the start to index 2\nprint(text[2:])  # Characters from index 2 to the end\n\nP\nn\nh\nyth\nPyt\nthon\n\n\n\n\nCase Conversion\n\ntext = \"Python Programming\"\nprint(text.upper())\nprint(text.lower())\nprint(text.title())\n\nPYTHON PROGRAMMING\npython programming\nPython Programming\n\n\n\n\nStrip Methods\nRemove spaces at the beginning and at the end of the string\n\ntext = \"   Python   \"\nprint(\"|\" + text.strip() + \"|\" + \"|\" + text.lstrip() + \"|\" + \"|\" + text.rstrip() + \"|\")\n\n|Python||Python   ||   Python|\n\n\n\n\nFind and Replace\n\ntext = \"Python is amazing\"\nprint(text.find(\"is\"))\nprint(text.replace(\"amazing\", \"awesome\"))\n\n7\nPython is awesome\n\n\n\n\nSplit and Join\n\ntext = \"Python,Java,C++\"\nlanguages = text.split(\",\")\nprint(languages)\n\njoined = \"-\".join(languages)\nprint(joined)\n\n['Python', 'Java', 'C++']\nPython-Java-C++",
+    "crumbs": [
+      "Data Types",
+      "String"
+    ]
+  },
+  {
+    "objectID": "3_string.html#string-formatting",
+    "href": "3_string.html#string-formatting",
+    "title": "String",
+    "section": "String Formatting",
+    "text": "String Formatting\n\nFormat Method\n\nname, age = \"Bob\", 25\nprint(\"My name is {} and I am {} years old.\".format(name, age))\nprint(\"My name is {} and I am {:.2f} years old.\".format(name, age))\n\nMy name is Bob and I am 25 years old.\nMy name is Bob and I am 25.00 years old.\n\n\n\n\n% Operator (older style)\n\nname, age = \"Charlie\", 35\nprint(\"My name is %s and I am %d years old.\" %(name, age))\nprint(\"My name is %s and I am %.2f years old.\" %(name, age))\n\nMy name is Charlie and I am 35 years old.\nMy name is Charlie and I am 35.00 years old.\n\n\n\n\nf-strings (Formatted Strings)\nF-strings provide a concise and readable way to embed expressions inside string literals. They are prefixed with ‘f’ or ‘F’.\n\nname = \"Alice\"\nage = 30\nprint(f\"My name is {name} and I am {age} years old.\")\n\nMy name is Alice and I am 30 years old.\n\n\n\n\nr-strings (Raw Strings)\nRaw strings, prefixed with ‘r’ or ‘R’, treat backslashes as literal characters. This is particularly useful for regular expressions and file paths.\n\nprint(r\"C:\\Users\\John\\Documents\")\nprint(\"C:\\\\Users\\\\John\\\\Documents\") # Compare with a normal string:\n\nC:\\Users\\John\\Documents\nC:\\Users\\John\\Documents\n\n\n\n\nrf-strings (Raw-Formatted Strings)\nRF-strings combine the features of raw strings and formatted strings. They are prefixed with ‘rf’ or ‘RF’.\nSyntax and usage:\n\nname = \"John\"\npath = r\"C:\\Users\"\nprint(rf\"{path}\\{name}\")\n\nC:\\Users\\John",
+    "crumbs": [
+      "Data Types",
+      "String"
+    ]
+  },
+  {
+    "objectID": "3_string.html#number-formatting-in-strings",
+    "href": "3_string.html#number-formatting-in-strings",
+    "title": "String",
+    "section": "Number Formatting in Strings",
+    "text": "Number Formatting in Strings\nformatting options:\n\n:.2f: This specifies we want 2 decimal places for a float.\n:10: This sets the total field width to 10 characters.\n:08.3f: This pads the number with zeros to a width of 8, including 3 decimal places.\n:.1%: This formats the number as a percentage with 1 decimal place.\n:,: This adds thousand separators to large numbers.\n\n\npi = 3.14159\nradius = 5\n\nprint(f\"Pi to 2 decimal places: {pi:.2f}\") # Limiting decimal places\nprint(f\"Pi in a field of 10 characters: {pi:10}\") # Specifying width\nprint(f\"Pi padded with zeros: {pi:08.3f}\") # Padding with zeros\n\nPi to 2 decimal places: 3.14\nPi in a field of 10 characters:    3.14159\nPi padded with zeros: 0003.142\n\n\n\narea = pi * radius ** 2 # Using expressions\nprint(f\"The area of a circle with radius {radius} is {area:.2f}\")\n\nscore = 0.8756 # Formatting percentages\nprint(f\"You scored {score:.1%}\")\n\nbig_number = 1000000 # Formatting large numbers\nprint(f\"A million: {big_number:,}\")\n\nscientific = 0.000123321 # Scientific notation\nprint(\"Scientific notation: {:.2e}\".format(scientific))\n\nThe area of a circle with radius 5 is 78.54\nYou scored 87.6%\nA million: 1,000,000\nScientific notation: 1.23e-04",
+    "crumbs": [
+      "Data Types",
+      "String"
+    ]
+  },
+  {
+    "objectID": "2_number.html",
+    "href": "2_number.html",
+    "title": "Number",
+    "section": "",
+    "text": "Python primarily uses two types of numbers: integers and floating-point numbers (floats). Understanding these is essential for calculations and data manipulation in Python.\n\n\nIntegers are whole numbers that can be positive, negative, or zero. They don’t have decimal points.\n-3, -1, 0, 1, 42, 1000\n\n\n\nFloats are numbers with decimal points. They can be positive or negative, and can use scientific notation.\n3.14, -0.001, 2.0, 1.0e-4  # 1.0e-4 is scientific notation for 0.0001",
+    "crumbs": [
+      "Data Types",
+      "Number"
+    ]
+  },
+  {
+    "objectID": "2_number.html#numbers-types",
+    "href": "2_number.html#numbers-types",
+    "title": "Number",
+    "section": "",
+    "text": "Python primarily uses two types of numbers: integers and floating-point numbers (floats). Understanding these is essential for calculations and data manipulation in Python.\n\n\nIntegers are whole numbers that can be positive, negative, or zero. They don’t have decimal points.\n-3, -1, 0, 1, 42, 1000\n\n\n\nFloats are numbers with decimal points. They can be positive or negative, and can use scientific notation.\n3.14, -0.001, 2.0, 1.0e-4  # 1.0e-4 is scientific notation for 0.0001",
+    "crumbs": [
+      "Data Types",
+      "Number"
+    ]
+  },
+  {
+    "objectID": "2_number.html#converting-between-int-and-float",
+    "href": "2_number.html#converting-between-int-and-float",
+    "title": "Number",
+    "section": "Converting between int and float",
+    "text": "Converting between int and float\nPython allows easy conversion between integers and floats:\n\nx = float(5) # Integer to float\nprint(f\"float(5) = {x}\")\n\nfloat(5) = 5.0\n\n\n\ny = int(5.7) # Float to integer\nprint(f\"int(5.7) = {y}\")\n\nint(5.7) = 5",
+    "crumbs": [
+      "Data Types",
+      "Number"
+    ]
+  },
+  {
+    "objectID": "2_number.html#precision-and-limitations",
+    "href": "2_number.html#precision-and-limitations",
+    "title": "Number",
+    "section": "Precision and limitations",
+    "text": "Precision and limitations\nImportant considerations when working with numbers in Python:\n\nIntegers in Python 3 have unlimited precision.\nFloats have limited precision, which can lead to unexpected results:\n\n\nprint(0.1 + 0.2)\n\n0.30000000000000004\n\n\nThis unexpected result occurs due to how computers represent floating-point numbers in binary. Most decimal fractions cannot be represented exactly as binary fractions. For example, 0.1 in binary is a repeating fraction:\n0.0001100110011001100110011001100110011001100110011...\nThis leads to tiny rounding errors. When doing math with these slightly inaccurate numbers, errors can add up, causing unexpected results. For precise calculations, especially with money, use Python’s decimal module instead of floats.",
+    "crumbs": [
+      "Data Types",
+      "Number"
+    ]
+  },
+  {
+    "objectID": "6_operation.html",
+    "href": "6_operation.html",
+    "title": "Operation",
+    "section": "",
+    "text": "Operations are the building blocks of computation in Python, allowing us to manipulate data and make decisions in our code.\nWe’ll cover four main types of operations:\n\nArithmetic Operations\nComparison Operations\nLogical Operations\nMembership Operations\nIdentity Operations",
+    "crumbs": [
+      "Control",
+      "Operation"
+    ]
+  },
+  {
+    "objectID": "6_operation.html#introduction-to-operations",
+    "href": "6_operation.html#introduction-to-operations",
+    "title": "Operation",
+    "section": "",
+    "text": "Operations are the building blocks of computation in Python, allowing us to manipulate data and make decisions in our code.\nWe’ll cover four main types of operations:\n\nArithmetic Operations\nComparison Operations\nLogical Operations\nMembership Operations\nIdentity Operations",
+    "crumbs": [
+      "Control",
+      "Operation"
+    ]
+  },
+  {
+    "objectID": "6_operation.html#arithmetic-operations",
+    "href": "6_operation.html#arithmetic-operations",
+    "title": "Operation",
+    "section": "Arithmetic Operations",
+    "text": "Arithmetic Operations\nArithmetic operations in Python allow us to perform mathematical calculations. Let’s look at the basic arithmetic operators:\n\n\n\n# Addition\nprint(\"5 + 3 =\", 5 + 3)\n\n5 + 3 = 8\n\n\n\n# Subtraction\nprint(\"5 - 3 =\", 5 - 3)\n\n5 - 3 = 2\n\n\n\n# Multiplication\nprint(\"5 * 3 =\", 5 * 3)\n\n5 * 3 = 15\n\n\n\n# Division (always returns a float)\nprint(\"5 / 3 =\", 5 / 3)\n\n5 / 3 = 1.6666666666666667\n\n\n\n\n# Exponentiation\nprint(\"5 ** 3 =\", 5 ** 3)\n\n5 ** 3 = 125\n\n\n\n# Floor Division (returns the largest integer &lt;= the result)\nprint(\"5 // 3 =\", 5 // 3)\n\n5 // 3 = 1\n\n\n\n# Modulus (remainder of division)\nprint(\"5 % 3 =\", 5 % 3)\n\n5 % 3 = 2\n\n\nIt’s important to note the difference between / and // in division operations, especially when working with integers.\n\n\nPython also provides augmented assignment operators that combine an arithmetic operation with assignment:\n\n\n\nx = 5\nx += 3  # Equivalent to x = x + 3\nprint(\"x after x += 3:\", x)\n\nx after x += 3: 8\n\n\n\nx -= 2  # Equivalent to x = x - 2\nprint(\"x after x -= 2:\", x)\n\nx after x -= 2: 6\n\n\n\n\nx *= 4  # Equivalent to x = x * 4\nprint(\"x after x *= 4:\", x)\n\nx after x *= 4: 24\n\n\n\nx /= 2  # Equivalent to x = x / 2\nprint(\"x after x /= 2:\", x)\n\nx after x /= 2: 12.0",
+    "crumbs": [
+      "Control",
+      "Operation"
+    ]
+  },
+  {
+    "objectID": "6_operation.html#comparison-operations",
+    "href": "6_operation.html#comparison-operations",
+    "title": "Operation",
+    "section": "Comparison Operations",
+    "text": "Comparison Operations\nComparison operations allow us to compare values and return boolean results (True or False). These are crucial for conditional statements and loops.\n\n\n\nx, y = 5, 10\n# Equal to\nprint(\"x == y:\", x == y)\n\n# Not equal to\nprint(\"x != y:\", x != y)\n\nx == y: False\nx != y: True\n\n\n\n\n# Greater than\nprint(\"x &gt; y:\", x &gt; y)\n\n# Less than\nprint(\"x &lt; y:\", x &lt; y)\n\nx &gt; y: False\nx &lt; y: True\n\n\n\n# Greater than or equal to\nprint(\"x &gt;= y:\", x &gt;= y)\n\n# Less than or equal to\nprint(\"x &lt;= y:\", x &lt;= y)\n\nx &gt;= y: False\nx &lt;= y: True\n\n\n\n\nThese operators work with numbers, strings, and other data types. For example, string comparisons are done lexicographically.\n\n# String comparison\nprint(\"'apple' &lt; 'banana':\", 'apple' &lt; 'banana')\nprint(\"'apple' == 'Apple':\", 'apple' == 'Apple')\n\n'apple' &lt; 'banana': True\n'apple' == 'Apple': False\n\n\nWhen Python compares strings:\n\nCharacter-by-Character Comparison:\n\nPython compares strings character by character, from left to right.\nIt uses the Unicode code point of each character for comparison.\n\nASCII and Unicode Values:\n\nFor ASCII characters, the comparison is straightforward. For example, a (97) comes before b (98).\nUnicode characters are compared based on their Unicode code points.\n\nCase Sensitivity:\n\nString comparisons are case-sensitive by default.\nUppercase letters have lower ASCII/Unicode values than lowercase letters.\n\nString Length:\n\nIf the characters are the same up to the length of the shorter string, the shorter string is considered “less than” the longer string.\n\nLexicographical Order:\n\nThis is similar to dictionary order, but based on character codes rather than alphabet position.\n\n\nIn the examples:\n\napple &lt; banana is True because a comes before b in lexicographical order.\napple == Apple is False because case matters, and uppercase A has a different Unicode value than lowercase a.",
+    "crumbs": [
+      "Control",
+      "Operation"
+    ]
+  },
+  {
+    "objectID": "6_operation.html#logical-operations",
+    "href": "6_operation.html#logical-operations",
+    "title": "Operation",
+    "section": "Logical Operations",
+    "text": "Logical Operations\nLogical operations allow us to combine boolean expressions. The three main logical operators in Python are and, or, and not.\n\n\n\nx, y = 5, 10\n\n# and operator\nprint(\"x &lt; 10 and y &gt; 5:\", x &lt; 10 and y &gt; 5)\n\n# or operator\nprint(\"x &lt; 3 or y &gt; 5:\", x &lt; 3 or y &gt; 5)\n\n# not operator\nprint(\"not x == y:\", not x == y)\n\nx &lt; 10 and y &gt; 5: True\nx &lt; 3 or y &gt; 5: True\nnot x == y: True\n\n\n\n\n\n\nX\nY\nX and Y\nX or Y\n\n\n\n\nT\nT\nT\nT\n\n\nT\nF\nF\nT\n\n\nF\nT\nF\nT\n\n\nF\nF\nF\nF",
+    "crumbs": [
+      "Control",
+      "Operation"
+    ]
+  },
+  {
+    "objectID": "6_operation.html#membership-operations",
+    "href": "6_operation.html#membership-operations",
+    "title": "Operation",
+    "section": "Membership Operations",
+    "text": "Membership Operations\nMembership operations are used to test whether a value or variable is found in a sequence (such as a string, list, tuple, set or dictionary).\nPython has two membership operators:\n\nin: Returns True if a value is in the object\nnot in: Returns True if a value is not in the object\n\n\n\n\n# List membership\nfruits = ['apple','banana','cherry']\nprint('banana' in fruits)\nprint('orange' in fruits)\nprint('orange' not in fruits)\n\nTrue\nFalse\nTrue\n\n\n\n\n# String membership\ntext = \"Hello, World!\"\nprint('H' in text)\nprint('hello' in text)\nprint('Python' not in text)\n\nTrue\nFalse\nTrue\n\n\n\n# Dictionary membership\n# (checks keys, not values)\nperson = {'name': 'Alice', 'age': 25}\nprint('name' in person)\nprint('Alice' in person)\nprint('height' not in person)\n\nTrue\nFalse\nTrue",
+    "crumbs": [
+      "Control",
+      "Operation"
+    ]
+  },
+  {
+    "objectID": "6_operation.html#identity-operations",
+    "href": "6_operation.html#identity-operations",
+    "title": "Operation",
+    "section": "Identity Operations",
+    "text": "Identity Operations\nIdentity operators are used to compare the memory locations of two objects. Python has two identity operators:\n\nis: Returns True if both variables are the same object\nis not: Returns True if both variables are not the same object\n\nIt’s important to note that is is not the same as ==. The == operator compares the value or equality of two objects, whereas is compares their identity.\nIt’s generally recommended to use == for value comparisons and reserve is for comparing with None or when you explicitly want to check if two variables refer to the exact same object.\n\n\n\n# None comparison\nx = None\nprint(x is None)\nprint(x == None)\n\nTrue\nTrue\n\n\n\n# Integer identity\na, b = 5, 5\nprint(a is b)\nprint(a == b)\nprint(f'id A: {id(a)}, id B: {id(b)}')\n\nTrue\nTrue\nid A: 4391183480, id B: 4391183480\n\n\n\n\n# Lists (mutable objects: can be changed after creation)\nlist1 = [1, 2, 3]\nlist2 = [1, 2, 3]\nprint(f\"list1 == list2: {list1 == list2}\")\nprint(f\"list1 is list2: {list1 is list2}\")\nprint(f\"id(list1): {id(list1)}, id(list2): {id(list2)}\")\n\nlist1 == list2: True\nlist1 is list2: False\nid(list1): 4504942208, id(list2): 4504740480",
+    "crumbs": [
+      "Control",
+      "Operation"
+    ]
+  },
+  {
+    "objectID": "11_numpy.html",
+    "href": "11_numpy.html",
+    "title": "Numpy",
+    "section": "",
+    "text": "NumPy (Numerical Python) is a fundamental package for scientific computing in Python. Its application in economics is widespread due to its efficient handling of large datasets and its comprehensive mathematical functions. This section explores the utilization of NumPy for basic economic calculations.",
+    "crumbs": [
+      "Library",
+      "Numpy"
+    ]
+  },
+  {
+    "objectID": "11_numpy.html#introduction-to-numpy-in-economics",
+    "href": "11_numpy.html#introduction-to-numpy-in-economics",
+    "title": "Numpy",
+    "section": "",
+    "text": "NumPy (Numerical Python) is a fundamental package for scientific computing in Python. Its application in economics is widespread due to its efficient handling of large datasets and its comprehensive mathematical functions. This section explores the utilization of NumPy for basic economic calculations.",
+    "crumbs": [
+      "Library",
+      "Numpy"
+    ]
+  },
+  {
+    "objectID": "11_numpy.html#installing-and-importing-numpy",
+    "href": "11_numpy.html#installing-and-importing-numpy",
+    "title": "Numpy",
+    "section": "Installing and Importing NumPy",
+    "text": "Installing and Importing NumPy\nBefore proceeding with calculations, it is necessary to install and import NumPy:\n\n# Installation (execute in command line)\n# pip install numpy\n\n# Importing in Python script\nimport numpy as np",
+    "crumbs": [
+      "Library",
+      "Numpy"
+    ]
+  },
+  {
+    "objectID": "11_numpy.html#creating-arrays-for-economic-data",
+    "href": "11_numpy.html#creating-arrays-for-economic-data",
+    "title": "Numpy",
+    "section": "Creating Arrays for Economic Data",
+    "text": "Creating Arrays for Economic Data\nNumPy’s primary object is the homogeneous multidimensional array. In economic contexts, these arrays often represent time series data, price vectors, or matrices of economic indicators.\n\n# Creating a 1D array of prices\nprices = np.array([100, 102, 104, 103, 106])\n\n# Creating a 2D array of supply and demand quantities\nsupply_demand = np.array([[100, 120, 140], [120, 110, 100]])\n\nprint(prices)\nprint(supply_demand)\n\n[100 102 104 103 106]\n[[100 120 140]\n [120 110 100]]",
+    "crumbs": [
+      "Library",
+      "Numpy"
+    ]
+  },
+  {
+    "objectID": "11_numpy.html#basic-statistical-calculations",
+    "href": "11_numpy.html#basic-statistical-calculations",
+    "title": "Numpy",
+    "section": "Basic Statistical Calculations",
+    "text": "Basic Statistical Calculations\nEconomic analysis often requires descriptive statistics to summarize data. NumPy provides functions for essential statistical calculations. Let’s compare NumPy implementations with standard Python implementations:\n\nMean (Average)\nThe mean represents the central tendency of a dataset.\nEquation: \\bar{x} = \\frac{1}{n} \\sum_{i=1}^n x_i\nStandard Python implementation:\n\nprices = [100, 102, 104, 103, 106]\nmean_price_py = sum(prices) / len(prices)\nprint(mean_price_py)\n\n103.0\n\n\nNumPy implementation:\n\nmean_price_np = np.mean(prices)\nprint(mean_price_np)\n\n103.0\n\n\n\n\nMedian\nThe median is the middle value when a dataset is ordered from least to greatest. It’s useful for understanding the central tendency when data is skewed.\nStandard Python implementation:\n\nsorted_prices = sorted(prices)\nn = len(sorted_prices)\nif n % 2 == 0: # even number\n    median_price_py = (sorted_prices[n//2 - 1] + sorted_prices[n//2]) / 2\nelse: # odd number\n    median_price_py = sorted_prices[n//2]\nprint(median_price_py)\n\n103\n\n\nNumPy implementation:\n\nmedian_price_np = np.median(prices)\nprint(median_price_np)\n\n103.0\n\n\n\n\nStandard Deviation\nStandard deviation measures the amount of variation or dispersion of a set of values. In economics, it’s used to quantify the amount of variation or dispersion of a set of data values.\nEquation: \\sigma = \\sqrt{\\frac{1}{N} \\sum_{i=1}^N (x_i - \\bar{x})^2}\nStandard Python implementation:\n\nmean = sum(prices) / len(prices)\n\nsquared_diff = [\n    (x - mean) ** 2 for x in prices]\n\nvariance = sum(squared_diff) / len(prices)\n\nprice_std_py = variance ** 0.5\n\nprint(price_std_py)\n\n2.0\n\n\nNumPy implementation (1):\n\nmean = np.sum(prices) / len(prices)\n\nsquared_diff = (prices - mean) ** 2\n\nvariance = np.sum(squared_diff) / len(prices)\n\nprice_std_manual_np = np.sqrt(variance)\n\nprint(price_std_manual_np)\n\n2.0\n\n\nNumPy implementation (2):\n\nprice_std_np = np.std(prices)\nprint(price_std_np)\n\n2.0\n\n\n\n\nComparison and Discussion\nAs demonstrated, NumPy provides more concise and readable implementations for these statistical calculations. The standard Python implementations require more lines of code and explicit loop constructs.\nKey advantages of using NumPy for these calculations include:\n\nConciseness: NumPy functions like np.mean(), np.median(), and np.std() encapsulate complex operations in single function calls.\nPerformance: NumPy operations are implemented in C, making them significantly faster than equivalent Python loops, especially for large datasets.\nPrecision: NumPy uses optimized algorithms that can provide better numerical stability and precision, particularly for operations like standard deviation on large datasets.\nVectorization: NumPy allows for vectorized operations on entire arrays, which is more efficient and easier to read and maintain than explicit loops.\nConsistency: NumPy provides a consistent interface for working with multi-dimensional data, which is particularly useful when dealing with more complex economic datasets.",
+    "crumbs": [
+      "Library",
+      "Numpy"
+    ]
+  },
+  {
+    "objectID": "11_numpy.html#time-value-of-money-calculations",
+    "href": "11_numpy.html#time-value-of-money-calculations",
+    "title": "Numpy",
+    "section": "Time Value of Money Calculations",
+    "text": "Time Value of Money Calculations\nThe time value of money is a core principle in finance and economics. NumPy’s exponential and financial functions facilitate these calculations:\n\nFuture Value\nFuture Value (FV) calculates the value of a current asset at a future date based on an assumed growth rate.\nEquation: FV = PV \\cdot e^{rt}\nWhere:\n\nFV = Future Value\nPV = Present Value\nr = interest rate (as a decimal)\nt = number of time periods\n\n\ndef FV(PV:float, rate:float, time:int) -&gt; float:\n    return PV * np.exp(rate * time)\n\nprint(FV(1000.0, 0.05, 5))\n\n1284.0254166877414",
+    "crumbs": [
+      "Library",
+      "Numpy"
+    ]
+  },
+  {
+    "objectID": "11_numpy.html#matrix-operations-for-input-output-analysis",
+    "href": "11_numpy.html#matrix-operations-for-input-output-analysis",
+    "title": "Numpy",
+    "section": "Matrix Operations for Input-Output Analysis",
+    "text": "Matrix Operations for Input-Output Analysis\nInput-Output analysis in economics often involves matrix operations, which NumPy handles efficiently. This analysis examines the interdependencies between different sectors of the economy.\n\nLeontief Inverse\nThe Leontief inverse is crucial in input-output analysis. It’s used to compute the total output required to meet a given final demand.\nEquation: X = (I - A)^{-1} \\cdot D\nWhere:\n\nX = Total output vector\nI = Identity matrix\nA = Matrix of technical coefficients\nD = Final demand vector\n\n\nA = np.array([[0.2, 0.3], [0.4, 0.1]])\nD = np.array([[100], [200]])\nI = np.eye(A.shape[0])\n\nprint('Matrix A')\nprint(A)\n\nprint('\\nMatrix D')\nprint(D)\n\nprint('\\nMatrix I')\nprint(I)\n\nprint('\\n')\nprint(np.linalg.inv(I - A) @ D)\nprint(np.matmul(np.linalg.inv(I - A), D))\n\nMatrix A\n[[0.2 0.3]\n [0.4 0.1]]\n\nMatrix D\n[[100]\n [200]]\n\nMatrix I\n[[1. 0.]\n [0. 1.]]\n\n\n[[250.        ]\n [333.33333333]]\n[[250.        ]\n [333.33333333]]\n\n\n\nnp.eye(): create an identity matrix\nA.shape: get the dimension of A\nnp.linalg: linear algebra module\n@ operator: matrix multiplication, equivalent to np.matmul(A, B)",
+    "crumbs": [
+      "Library",
+      "Numpy"
+    ]
+  },
+  {
+    "objectID": "11_numpy.html#calculating-economic-indicators",
+    "href": "11_numpy.html#calculating-economic-indicators",
+    "title": "Numpy",
+    "section": "Calculating Economic Indicators",
+    "text": "Calculating Economic Indicators\nNumPy can be used to calculate various economic indicators:\n\nGDP Growth Rate\nThe GDP growth rate measures how fast the economy is growing. It’s typically calculated on an annual basis.\nEquation: \\text{GDP Growth Rate} = \\frac{\\text{GDP}_t - \\text{GDP}_{t-1}}{\\text{GDP}_{t-1}} \\times 100\\%\n\ngdp_values = np.array([100, 102, 105, 108, 110])\n\ngdp_growth_rates = (gdp_values[1:] - gdp_values[:-1]) / gdp_values[:-1] * 100\n\nprint(gdp_growth_rates)\n\n[2.         2.94117647 2.85714286 1.85185185]\n\n\n\n\nInflation Rate\nThe inflation rate measures the rate at which the general level of prices for goods and services is rising, consequently eroding purchasing power.\nEquation: \\text{Inflation Rate} = \\frac{\\text{CPI}_t - \\text{CPI}_{t-1}}{\\text{CPI}_{t-1}} \\times 100\\%\n\ncpi_values = np.array([200, 204, 209, 213, 218])\n\ninflation_rates = (cpi_values[1:] - cpi_values[:-1]) / cpi_values[:-1] * 100\n\nprint(inflation_rates)\n\n[2.         2.45098039 1.9138756  2.34741784]",
+    "crumbs": [
+      "Library",
+      "Numpy"
+    ]
+  },
+  {
+    "objectID": "11_numpy.html#optimization-problems",
+    "href": "11_numpy.html#optimization-problems",
+    "title": "Numpy",
+    "section": "Optimization Problems",
+    "text": "Optimization Problems\nMany economic problems involve optimization. NumPy, in conjunction with SciPy, can solve these problems efficiently.\n\nCost Minimization (more info.)\nThis example demonstrates a simple cost minimization problem subject to a constraint.\n\n\nObjective function: \\min f(x) = x_1^2 + x_2^2\n\nSubject to: x_1 + x_2 = 1\n\n\n\nfrom scipy.optimize import minimize\n\ndef cost(x):\n    return x[0]**2 + x[1]**2\n\ndef constraint(x):\n    return x[0] + x[1] - 1\n\nresult = minimize(cost, [0.5, 0.5], method='SLSQP',\n            constraints={'type': 'eq', 'fun': constraint})\n            \nprint(result)\n\n message: Optimization terminated successfully\n success: True\n  status: 0\n     fun: 0.5\n       x: [ 5.000e-01  5.000e-01]\n     nit: 1\n     jac: [ 1.000e+00  1.000e+00]\n    nfev: 3\n    njev: 1",
+    "crumbs": [
+      "Library",
+      "Numpy"
+    ]
+  },
+  {
+    "objectID": "8_loop.html",
+    "href": "8_loop.html",
+    "title": "Loop",
+    "section": "",
+    "text": "Loops in Python provide a mechanism for executing a set of instructions repeatedly. They are fundamental constructs in programming that allow for efficient handling of iterative tasks. Python offers two primary types of loops: ‘for’ loops and ‘while’ loops, each serving different purposes in code execution.",
+    "crumbs": [
+      "Control",
+      "Loop"
+    ]
+  },
+  {
+    "objectID": "8_loop.html#introduction-to-loops",
+    "href": "8_loop.html#introduction-to-loops",
+    "title": "Loop",
+    "section": "",
+    "text": "Loops in Python provide a mechanism for executing a set of instructions repeatedly. They are fundamental constructs in programming that allow for efficient handling of iterative tasks. Python offers two primary types of loops: ‘for’ loops and ‘while’ loops, each serving different purposes in code execution.",
+    "crumbs": [
+      "Control",
+      "Loop"
+    ]
+  },
+  {
+    "objectID": "8_loop.html#the-for-loop",
+    "href": "8_loop.html#the-for-loop",
+    "title": "Loop",
+    "section": "The for Loop",
+    "text": "The for Loop\nThe for loop in Python is designed to iterate over a sequence (such as a list, tuple, string, or range) or other iterable objects. It executes a set of statements once for each item in the sequence.\nBasic syntax:\nfor item in sequence:\n    # code to be executed\n\n\nExample:\n\nfor i in range(5):\n    print(i)\n\n0\n1\n2\n3\n4\n\n\nrange() function return a sequence of a specific integer.\n\nLoop througn list items.\n\nfruits = [\"apple\", \"banana\", \"cherry\"]\nfor fruit in fruits:\n    print(fruit)\n\napple\nbanana\ncherry",
+    "crumbs": [
+      "Control",
+      "Loop"
+    ]
+  },
+  {
+    "objectID": "8_loop.html#the-while-loop",
+    "href": "8_loop.html#the-while-loop",
+    "title": "Loop",
+    "section": "The while Loop",
+    "text": "The while Loop\nThe while loop executes a set of statements as long as a given condition is true. It’s particularly useful when the number of iterations is not known beforehand.\nBasic syntax:\nwhile condition:\n    # code to be executed\nExample:\n\ncount = 0\nwhile count &lt; 5:\n    print(count)\n    count += 1\n\n0\n1\n2\n3\n4",
+    "crumbs": [
+      "Control",
+      "Loop"
+    ]
+  },
+  {
+    "objectID": "8_loop.html#loop-control-statements",
+    "href": "8_loop.html#loop-control-statements",
+    "title": "Loop",
+    "section": "Loop Control Statements",
+    "text": "Loop Control Statements\nPython provides several statements to control the flow of loops:\n\nbreak: Terminates the loop prematurely\ncontinue: Skips the rest of the code inside the loop for the current iteration\nelse: Specifies a block of code to be executed when the loop is exhausted\n\nExample:\n\nfor num in range(10):\n    if num == 5:\n        break\n    print(num)\nelse:\n    print(\"Loop completed normally\")\n\n0\n1\n2\n3\n4\n\n\n\nfor num in range(10):\n    if num &lt;= 7:\n        continue\n    print(num)\nelse:\n    print(\"Loop completed normally\")\n\n8\n9\nLoop completed normally",
+    "crumbs": [
+      "Control",
+      "Loop"
+    ]
+  },
+  {
+    "objectID": "8_loop.html#nested-loops",
+    "href": "8_loop.html#nested-loops",
+    "title": "Loop",
+    "section": "Nested Loops",
+    "text": "Nested Loops\nLoops can be nested inside other loops, allowing for more complex iterations:\n\nA = [1, 2, 3]\nB = ['a', 'b', 'c', 'd']\n\nfor i in A:\n    for j in B:\n        print(f\"({i}, {j})\")\n\n(1, a)\n(1, b)\n(1, c)\n(1, d)\n(2, a)\n(2, b)\n(2, c)\n(2, d)\n(3, a)\n(3, b)\n(3, c)\n(3, d)",
+    "crumbs": [
+      "Control",
+      "Loop"
+    ]
+  },
+  {
+    "objectID": "8_loop.html#list-comprehensions",
+    "href": "8_loop.html#list-comprehensions",
+    "title": "Loop",
+    "section": "List Comprehensions",
+    "text": "List Comprehensions\nPython offers a concise way to create lists based on existing lists, known as list comprehensions:\n\nsquares = [x**2 for x in range(10)]\nprint(squares)\n\n[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]\n\n\nThis is equivalent to:\n\nsquares = []\nfor x in range(10):\n    squares.append(x**2)\nprint(squares)\n\n[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]",
+    "crumbs": [
+      "Control",
+      "Loop"
+    ]
+  },
+  {
+    "objectID": "0_introduction.html",
+    "href": "0_introduction.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "Python is a high-level, interpreted programming language created by Guido van Rossum and first released in 1991. It’s designed to be easy to read and write, with a clean and straightforward syntax that emphasizes code readability.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "0_introduction.html#what-is-python",
+    "href": "0_introduction.html#what-is-python",
+    "title": "Introduction",
+    "section": "",
+    "text": "Python is a high-level, interpreted programming language created by Guido van Rossum and first released in 1991. It’s designed to be easy to read and write, with a clean and straightforward syntax that emphasizes code readability.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "0_introduction.html#why-python-is-popular",
+    "href": "0_introduction.html#why-python-is-popular",
+    "title": "Introduction",
+    "section": "Why Python is Popular",
+    "text": "Why Python is Popular\n\nReadability: Its clear, readable syntax makes it easy to learn and maintain.\nVersatility: Python is used in web development, data science, AI, machine learning, automation, and more.\nLarge Standard Library: Python comes with a comprehensive standard library, reducing the need for external modules.\nStrong Community: A large, active community contributes to Python’s ecosystem with numerous third-party packages.\nCross-platform: Python runs on various platforms (Windows, macOS, Linux).\nInterpreted Language: No compilation step is needed, speeding up the development process.\nIntegration: Python can be easily integrated with other languages like C and C++.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "0_introduction.html#basic-concepts-of-python-programming",
+    "href": "0_introduction.html#basic-concepts-of-python-programming",
+    "title": "Introduction",
+    "section": "Basic Concepts of Python Programming",
+    "text": "Basic Concepts of Python Programming\n\nSyntax: Python uses indentation to define code blocks, making it visually clear and enforcing clean code structure.\nVariables: Python is dynamically typed, meaning you don’t need to declare variable types explicitly.\nData Types: Python has several built-in data types, including:\n\nNumeric types (int, float, complex)\nSequence types (list, tuple, range)\nText type (str)\nMapping type (dict)\nSet types (set, frozenset)\nBoolean type (bool)\n\nControl Structures: Python supports standard control structures like if-else statements, for and while loops.\nFunctions: Defined using the def keyword, functions in Python can have default arguments and return multiple values.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "0_introduction.html#getting-started-with-writing-python-programs",
+    "href": "0_introduction.html#getting-started-with-writing-python-programs",
+    "title": "Introduction",
+    "section": "Getting Started with Writing Python Programs",
+    "text": "Getting Started with Writing Python Programs\nPython is a beginner-friendly programming language that is widely used for a variety of applications, from web development to data analysis and artificial intelligence. Here’s a guide to help you begin writing Python programs:\n\n1. Install Python\n\nCheck Installation: First, check if Python is already installed on your computer. Open a terminal (Command Prompt on Windows, Terminal on macOS/Linux) and type:\npython --version\nor\npython3 --version\nDownload and Install: If Python isn’t installed, download it from python.org and follow the installation instructions. During installation on Windows, ensure you check the box to “Add Python to PATH.”\n\n\n\n2. Choose an Editor or Integrated Development Environment (IDE)\n\nText Editors: You can start writing Python code in a simple text editor like Notepad (Windows), TextEdit (macOS), or Gedit (Linux).\nCode Editors: For a better experience, consider using code editors like Visual Studio Code, Sublime Text, or Atom. These provide features like syntax highlighting and code suggestions.\nIDEs: If you want more advanced tools, consider using an IDE like PyCharm or Spyder, which provide integrated debugging, project management, and other features.\n\n\n\n3. Write Your First Python Program\n\nOpen your chosen text editor or IDE and create a new file.\nStart with the most basic Python program, the “Hello, World!” program. Type the following code:\nprint(\"Hello, World!\")\nSave the file with a .py extension, for example, hello.py.\n\n\n\n4. Run Your Python Program\n\nUsing Terminal or Command Prompt:\n\nOpen a terminal or command prompt.\nNavigate to the directory where you saved your Python file using the cd command:\ncd path/to/your/file\nRun your Python program by typing:\npython hello.py\nor, if python3 is required:\npython3 hello.py\n\nYou should see the output Hello, World! printed in the terminal.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "0_introduction.html#python-integrated-development-environment-ide",
+    "href": "0_introduction.html#python-integrated-development-environment-ide",
+    "title": "Introduction",
+    "section": "Python Integrated Development Environment (IDE)",
+    "text": "Python Integrated Development Environment (IDE)\nIDE is a software application that provides comprehensive facilities to computer programmers for software development with Python. IDEs typically consist of a source code editor, build automation tools, and a debugger. They offer various features that make writing, testing, and debugging Python code more efficient and convenient. Here’s an overview of some common aspects of Python IDEs:\n\nKey Features of Python IDEs:\n\nCode Editor:\n\nA powerful code editor with syntax highlighting, code completion, and formatting helps you write Python code more easily and accurately.\nMany IDEs also support linting, which checks your code for errors and potential issues as you type.\n\nIntegrated Debugger:\n\nIDEs come with built-in debugging tools that allow you to set breakpoints, step through code, inspect variables, and understand the flow of your program.\nThis helps in identifying and fixing bugs more efficiently than using print statements.\n\nCode Navigation:\n\nFeatures like go-to definition, find references, and code folding make navigating large codebases easier.\nThese tools help you quickly locate functions, classes, and variables, improving your productivity.\n\nProject Management:\n\nIDEs usually include tools for managing projects, such as organizing files, dependencies, and virtual environments.\nThey often have built-in support for version control systems like Git, allowing you to manage your code’s history and collaborate with others.\n\nIntegration with Tools:\n\nIDEs can integrate with other tools commonly used in Python development, such as testing frameworks (e.g., PyTest, Unittest), package managers (e.g., pip, Conda), and databases.\nThey often support plugins or extensions, allowing you to add more functionality to your IDE.\n\nInteractive Console:\n\nMany Python IDEs include an interactive Python console, which allows you to run Python commands and see results immediately, making it useful for testing small snippets of code or experimenting with new ideas.\n\nCross-Platform Support:\n\nMost Python IDEs are cross-platform, meaning they can run on various operating systems like Windows, macOS, and Linux.\n\n\n\n\nPopular Python IDEs:\nOffline\n\nVisual Studio Code\nPyCharm\nJupyter\n\nOnline\n\nColab\nreplit\nZed\nKeggle",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "0_introduction.html#ipython-notebook-.ipynb",
+    "href": "0_introduction.html#ipython-notebook-.ipynb",
+    "title": "Introduction",
+    "section": "IPython Notebook (.ipynb)",
+    "text": "IPython Notebook (.ipynb)\nIPython Notebook, now more commonly known as Jupyter Notebook, is an open-source web application that allows you to create and share documents containing live code, equations, visualizations, and narrative text. It’s particularly popular among data scientists, engineers, researchers, and educators for a variety of reasons:\n\nKey Features:\n\nInteractive Coding: You can write and execute code in multiple programming languages (most commonly Python) within the same document.\nRich Text Support: In addition to code, you can include Markdown (a lightweight markup language) to add headings, bullet points, hyperlinks, images, etc.\nVisualization: It supports the display of charts and graphs generated by libraries like Matplotlib, Seaborn, Plotly, etc., directly within the notebook.\nData Integration: Jupyter Notebooks can handle data processing, cleaning, and exploration tasks, making them ideal for data analysis and machine learning.\nNotebooks as Documents: They can be saved and shared as .ipynb files, making it easy to share your work with others, including code, results, and explanations.\nExtensions and Plugins: The platform can be extended with various plugins and widgets, allowing for a customized and powerful environment.\n\n\n\nCommon Uses:\n\nData Science and Machine Learning: For experimenting with data, training models, and visualizing results.\nEducation: As a teaching tool to demonstrate concepts and walk students through programming exercises.\nResearch: For creating and sharing computational experiments, including detailed documentation.\n\n\n\nHow It Works:\nJupyter Notebook runs in a browser, but the code is executed on a server, which can be your local machine or a remote server. This allows you to keep all your work in a single document, making it easier to reproduce and share your work.",
+    "crumbs": [
+      "Introduction"
+    ]
+  },
+  {
+    "objectID": "9_function.html",
+    "href": "9_function.html",
+    "title": "Function",
+    "section": "",
+    "text": "Functions are reusable blocks of code that perform a specific task. They help us organize our code, make it more readable, and avoid repetition. Functions are a key aspect of the “Don’t Repeat Yourself” (DRY) principle in programming.\nIn this session, we’ll cover:\n\nDefining and calling functions\nParameters and return values\nVariable scope\nLambda functions\nAdvanced function concepts",
+    "crumbs": [
+      "Function",
+      "Function"
+    ]
+  },
+  {
+    "objectID": "9_function.html#introduction-to-functions",
+    "href": "9_function.html#introduction-to-functions",
+    "title": "Function",
+    "section": "",
+    "text": "Functions are reusable blocks of code that perform a specific task. They help us organize our code, make it more readable, and avoid repetition. Functions are a key aspect of the “Don’t Repeat Yourself” (DRY) principle in programming.\nIn this session, we’ll cover:\n\nDefining and calling functions\nParameters and return values\nVariable scope\nLambda functions\nAdvanced function concepts",
+    "crumbs": [
+      "Function",
+      "Function"
+    ]
+  },
+  {
+    "objectID": "9_function.html#defining-functions",
+    "href": "9_function.html#defining-functions",
+    "title": "Function",
+    "section": "Defining Functions",
+    "text": "Defining Functions\nLet’s begin by creating a simple function:\n\ndef greet():\n    print(\"Hello, World!\")\n\n# Calling the function\ngreet()\n\nHello, World!\n\n\nHere’s the anatomy of a function:\n\nThe def keyword tells Python we’re defining a function\nThe function name (in this case, greet)\nParentheses () (which can contain parameters, but are empty in this case)\nA colon : to start the function body\nThe indented code block that makes up the function body\n\nWe call a function by using its name followed by parentheses.",
+    "crumbs": [
+      "Function",
+      "Function"
+    ]
+  },
+  {
+    "objectID": "9_function.html#defining-functions-with-inputs",
+    "href": "9_function.html#defining-functions-with-inputs",
+    "title": "Function",
+    "section": "Defining Functions with Input(s)",
+    "text": "Defining Functions with Input(s)\nLet’s create a function that takes a parameter(s):\n\ndef introduce(name, country):\n    print(f\"I'm, {name} from {country}.\")\n\nintroduce(\"April\", \"Japan\")\n\nI'm, April from Japan.\n\n\nThe default value and suggested data type of input parameters can also be defined.\n\ndef introduce(name=\"Jonh\",\n    country:str=\"India\"):\n\n    print(f\"I'm, {name} from {country}.\")\n\nintroduce()\nintroduce(\"Bob\")\nintroduce(country = 5) # use keyword argument\n\nI'm, Jonh from India.\nI'm, Bob from India.\nI'm, Jonh from 5.",
+    "crumbs": [
+      "Function",
+      "Function"
+    ]
+  },
+  {
+    "objectID": "9_function.html#defining-functions-with-return-values",
+    "href": "9_function.html#defining-functions-with-return-values",
+    "title": "Function",
+    "section": "Defining Functions with Return Values",
+    "text": "Defining Functions with Return Values\nFunctions return values by using return keyword:\n\ndef add_numbers(a, b):\n    return a + b\n\nresult = add_numbers(5, 3)\nprint(f\"5 + 3 = {result}\")\n\n5 + 3 = 8\n\n\nPython functions can return multiple values:\n\ndef calculate(a, b):\n    add = a + b\n    subtract = a - b\n    return add, subtract\n\nresult1, result2 = calculate(10, 5)\nprint(f\"10 + 5 = {result1}, 10 - 5 = {result2}\")\n\n10 + 5 = 15, 10 - 5 = 5",
+    "crumbs": [
+      "Function",
+      "Function"
+    ]
+  },
+  {
+    "objectID": "9_function.html#variable-scope",
+    "href": "9_function.html#variable-scope",
+    "title": "Function",
+    "section": "Variable Scope",
+    "text": "Variable Scope\n\n\nUnderstanding variable scope is crucial when working with functions:\n\nx = 10  # Global variable\n\ndef print_x():\n    print(x)  # Accessing global variable\n\nprint_x()\n\ndef change_x():\n    x = 20  # Local variable\n    print(x)\n\nchange_x()\nprint(x)  # Global x remains unchanged\n\n10\n20\n10\n\n\n\nIf we want to modify a global variable inside a function, we use the global keyword:\n\nx = 10\n\ndef change_global_x():\n    global x\n    x = 20\n    print(x)\n\nchange_global_x()\nprint(x)  # Global x is changed\n\n20\n20",
+    "crumbs": [
+      "Function",
+      "Function"
+    ]
+  },
+  {
+    "objectID": "9_function.html#type-annotations",
+    "href": "9_function.html#type-annotations",
+    "title": "Function",
+    "section": "Type Annotations",
+    "text": "Type Annotations\nType annotations allow us to specify the expected types of function parameters and return values.\n\n\n\nBasic Type Annotations\nHere’s how we can add type annotations to a simple function:\n\ndef greet(name: str) -&gt; str:\n    return f\"Hello, {name}!\"\n\nprint(greet(\"Alice\"))\n\nHello, Alice!\n\n\nIn this example, : str after name indicates that name should be a string, and -&gt; str indicates that the function returns a string.\n\n\n\nType Checking\nWhile Python itself doesn’t enforce these types at runtime, we can use tools like mypy for static type checking:\n\ndef add_numbers(a: int, b: int) -&gt; int:\n    return a + b\n\nresult = add_numbers(\"5\", \"10\")\nprint(result)\n\n510\n\n\nThis code will run without errors in Python, but a type checker would flag it as an error because we’re passing strings to a function that expects integers.",
+    "crumbs": [
+      "Function",
+      "Function"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "4_list.html",
+    "href": "4_list.html",
+    "title": "List",
+    "section": "",
+    "text": "In Python, a list is an ordered, mutable collection of items. Lists can contain elements of different types, including other lists. They are defined by enclosing comma-separated values in square brackets [ ].\nKey characteristics of lists:\n\nOrdered: Elements maintain their order.\nMutable: Can be modified after creation.\nDynamic: Can grow or shrink in size.\nHeterogeneous: Can contain items of different types.",
+    "crumbs": [
+      "Data Types",
+      "List"
+    ]
+  },
+  {
+    "objectID": "4_list.html#introduction",
+    "href": "4_list.html#introduction",
+    "title": "List",
+    "section": "",
+    "text": "In Python, a list is an ordered, mutable collection of items. Lists can contain elements of different types, including other lists. They are defined by enclosing comma-separated values in square brackets [ ].\nKey characteristics of lists:\n\nOrdered: Elements maintain their order.\nMutable: Can be modified after creation.\nDynamic: Can grow or shrink in size.\nHeterogeneous: Can contain items of different types.",
+    "crumbs": [
+      "Data Types",
+      "List"
+    ]
+  },
+  {
+    "objectID": "4_list.html#creating-lists",
+    "href": "4_list.html#creating-lists",
+    "title": "List",
+    "section": "Creating Lists",
+    "text": "Creating Lists\nLists can be created in several ways:\n\nempty_list = []\nnumbers = [1, 2, 3, 4, 5]\nfruits = [\"apple\", \"banana\", \"cherry\"]\nmixed = [1, \"hello\", 3.14, True]\nnested = [1, [2, 3], [4, 5, 6]]\n\nprint(empty_list)\nprint(numbers)\nprint(fruits)\nprint(mixed)\nprint(nested)\n\n[]\n[1, 2, 3, 4, 5]\n['apple', 'banana', 'cherry']\n[1, 'hello', 3.14, True]\n[1, [2, 3], [4, 5, 6]]",
+    "crumbs": [
+      "Data Types",
+      "List"
+    ]
+  },
+  {
+    "objectID": "4_list.html#accessing-list-elements",
+    "href": "4_list.html#accessing-list-elements",
+    "title": "List",
+    "section": "Accessing List Elements",
+    "text": "Accessing List Elements\n\nIndexing\nPython uses zero-based indexing. Negative indices count from the end of the list.\n\nfruits = [\"apple\", \"banana\", \"cherry\"]\nprint(fruits[0])\nprint(fruits[-1])\n\napple\ncherry\n\n\n\n\nSlicing\nSlicing allows access to a range of elements. The syntax is [start:end:step], where start is inclusive and end is exclusive.\n\nnumbers = [0, 1, 2, 3, 4, 5]\nprint(numbers[1:4])\nprint(numbers[:3])\nprint(numbers[2:])\nprint(numbers[::2])\n\n[1, 2, 3]\n[0, 1, 2]\n[2, 3, 4, 5]\n[0, 2, 4]",
+    "crumbs": [
+      "Data Types",
+      "List"
+    ]
+  },
+  {
+    "objectID": "4_list.html#modifying-lists",
+    "href": "4_list.html#modifying-lists",
+    "title": "List",
+    "section": "Modifying Lists",
+    "text": "Modifying Lists\n\nChanging Elements\nIndividual elements can be modified by assigning new values to specific indices.\n\nfruits = [\"apple\", \"banana\", \"cherry\"]\nfruits[1] = \"blueberry\"\nprint(fruits)\n\n['apple', 'blueberry', 'cherry']\n\n\n\n\nAdding Elements\nElements can be added to lists using various methods:\n\nfruits = [\"apple\", \"banana\"]\nfruits.append(\"cherry\")        # Adds to the end\nfruits.insert(1, \"blueberry\")  # Inserts at specific index\nfruits.extend([\"date\", \"fig\"]) # Adds multiple elements\nprint(fruits)\n\n['apple', 'blueberry', 'banana', 'cherry', 'date', 'fig']",
+    "crumbs": [
+      "Data Types",
+      "List"
+    ]
+  },
+  {
+    "objectID": "4_list.html#modifying-lists-1",
+    "href": "4_list.html#modifying-lists-1",
+    "title": "List",
+    "section": "Modifying Lists",
+    "text": "Modifying Lists\n\nRemoving Elements\nElements can be removed from lists in several ways:\n\nfruits = [\"apple\", \"banana\",\n          \"cherry\", \"date\"]\n\n# Remove by value\nfruits.remove(\"banana\")\nprint(fruits)\n\n['apple', 'cherry', 'date']\n\n\n\n# Remove by index\npopped = fruits.pop(1)\nprint(f\"Removed {popped}\")\nprint(fruits)\n\nRemoved cherry\n['apple', 'date']\n\n\n\n# Remove last item\nlast = fruits.pop()\nprint(f\"Removed {last}\")\nprint(fruits)\n\nRemoved date\n['apple']\n\n\n\n# Clear all items\nfruits.clear()\nprint(fruits)\n\n[]",
+    "crumbs": [
+      "Data Types",
+      "List"
+    ]
+  },
+  {
+    "objectID": "4_list.html#list-operations",
+    "href": "4_list.html#list-operations",
+    "title": "List",
+    "section": "List Operations",
+    "text": "List Operations\n\nConcatenation\nLists can be combined using the + operator:\n\ncombined = [1, 2, 3] + [4, 5, 6]\nprint(combined)\n\n[1, 2, 3, 4, 5, 6]\n\n\n\n\nRepetition\nLists can be repeated using the * operator:\n\nrepeated = [1, 2, 3] * 3\nprint(repeated)\n\n[1, 2, 3, 1, 2, 3, 1, 2, 3]\n\n\n\n\nMembership Test\nThe in keyword checks if an item exists in a list:\n\nfruits = [\"apple\", \"banana\", \"cherry\"]\nprint(\"banana\" in fruits)\nprint(\"mango\" in fruits)\n\nTrue\nFalse",
+    "crumbs": [
+      "Data Types",
+      "List"
+    ]
+  },
+  {
+    "objectID": "10_library.html",
+    "href": "10_library.html",
+    "title": "Create, Import, and Install Libraries",
+    "section": "",
+    "text": "A library in programming is a collection of pre-written code that provides reusable functionality for common tasks. Libraries extend a programming language’s capabilities, allowing developers to utilize well-tested code for various functions without writing everything from scratch. This approach enhances productivity and enables the implementation of complex features more efficiently.\nLibraries in Python can be categorized into three main types:\n\nInternal (Standard) Libraries: These are included with Python’s standard distribution. They provide core functionality and are readily available without additional installation. Examples include ‘math’, ‘datetime’, and ‘os’.\nLocal Libraries: These are custom modules or packages created by developers for a specific project or organization. They are typically stored in the project directory or a designated location on the local machine. Local libraries allow for code reuse within a project or across related projects within an organization.\nExternal Libraries: These are third-party libraries developed independently of the Python core. They offer specialized functionality and require separate installation. Popular examples include ‘numpy’ for numerical computing, ‘pandas’ for data analysis, and ‘matplotlib’ for plotting.",
+    "crumbs": [
+      "Library",
+      "Create, Import, and Install Libraries"
+    ]
+  },
+  {
+    "objectID": "10_library.html#library",
+    "href": "10_library.html#library",
+    "title": "Create, Import, and Install Libraries",
+    "section": "",
+    "text": "A library in programming is a collection of pre-written code that provides reusable functionality for common tasks. Libraries extend a programming language’s capabilities, allowing developers to utilize well-tested code for various functions without writing everything from scratch. This approach enhances productivity and enables the implementation of complex features more efficiently.\nLibraries in Python can be categorized into three main types:\n\nInternal (Standard) Libraries: These are included with Python’s standard distribution. They provide core functionality and are readily available without additional installation. Examples include ‘math’, ‘datetime’, and ‘os’.\nLocal Libraries: These are custom modules or packages created by developers for a specific project or organization. They are typically stored in the project directory or a designated location on the local machine. Local libraries allow for code reuse within a project or across related projects within an organization.\nExternal Libraries: These are third-party libraries developed independently of the Python core. They offer specialized functionality and require separate installation. Popular examples include ‘numpy’ for numerical computing, ‘pandas’ for data analysis, and ‘matplotlib’ for plotting.",
+    "crumbs": [
+      "Library",
+      "Create, Import, and Install Libraries"
+    ]
+  },
+  {
+    "objectID": "10_library.html#creating-and-importing-local-library",
+    "href": "10_library.html#creating-and-importing-local-library",
+    "title": "Create, Import, and Install Libraries",
+    "section": "Creating and Importing Local Library",
+    "text": "Creating and Importing Local Library\nAs your Python projects grow, you’ll often want to organize your code into separate files or modules. Let’s explore how to create a local library of functions and import them into your main code.\n\nFirst, let’s create a new file called my_functions.py in the same directory as our main script. This will be our local library.\n\ndef calculate_area(length, width):\n    \"\"\"\n    Calculate the area of a rectangle.\n    \"\"\"\n    return length * width\n\nPI = 3.14159\ndef calculate_circle_area(radius):\n    \"\"\"\n    Calculate the area of a circle.\n    \"\"\"\n    return PI * radius ** 2\nThis file defines three functions and a constant that we can use in other parts of our project.",
+    "crumbs": [
+      "Library",
+      "Create, Import, and Install Libraries"
+    ]
+  },
+  {
+    "objectID": "10_library.html#creating-and-importing-local-library-cont.",
+    "href": "10_library.html#creating-and-importing-local-library-cont.",
+    "title": "Create, Import, and Install Libraries",
+    "section": "Creating and Importing Local Library (cont.)",
+    "text": "Creating and Importing Local Library (cont.)\n\nImporting functions to your script licated in the same directory:\n\n\nImport the entire module\n\n\nimport my_functions\n\n# Use the functions\nprint(my_functions.calculate_area(5, 3))\nprint(my_functions.calculate_circle_area(2))\n\n15\n12.56636\n\n\nWhen you run main.py, it will import my_functions.py and you can use its functions by prefixing them with my_functions..",
+    "crumbs": [
+      "Library",
+      "Create, Import, and Install Libraries"
+    ]
+  },
+  {
+    "objectID": "10_library.html#creating-and-importing-local-library-cont.-1",
+    "href": "10_library.html#creating-and-importing-local-library-cont.-1",
+    "title": "Create, Import, and Install Libraries",
+    "section": "Creating and Importing Local Library (cont.)",
+    "text": "Creating and Importing Local Library (cont.)\n\nImporting functions to your script licated in the same directory:\n\n\nIf you only need certain functions, you can import them specifically:\n\n\nfrom my_functions import calculate_area, calculate_circle_area\n\nprint(calculate_area(4, 6))\nprint(calculate_circle_area(4))\n\n24\n50.26544\n\n\n\nYou can also use aliases to avoid naming conflicts or simply for convenience:\n\n\nfrom my_functions import calculate_circle_area as circle_area\n\nprint(circle_area(3))\n\n28.27431",
+    "crumbs": [
+      "Library",
+      "Create, Import, and Install Libraries"
+    ]
+  },
+  {
+    "objectID": "10_library.html#creating-and-importing-local-library-cont.-2",
+    "href": "10_library.html#creating-and-importing-local-library-cont.-2",
+    "title": "Create, Import, and Install Libraries",
+    "section": "Creating and Importing Local Library (cont.)",
+    "text": "Creating and Importing Local Library (cont.)\n\nImporting functions to your script licated in the same directory:\n\n\nImporting Everything (Use Cautiously)\n\nYou can import all functions and variables from a module using *, but this is generally discouraged as it can lead to naming conflicts and make it unclear where things are coming from:\n\nfrom my_functions import *\n\nprint(calculate_area(2, 8))\nprint(calculate_circle_area(5))\nprint(PI)\n\n16\n78.53975\n3.14159",
+    "crumbs": [
+      "Library",
+      "Create, Import, and Install Libraries"
+    ]
+  },
+  {
+    "objectID": "10_library.html#installing-external-libraries",
+    "href": "10_library.html#installing-external-libraries",
+    "title": "Create, Import, and Install Libraries",
+    "section": "Installing External Libraries",
+    "text": "Installing External Libraries\nWhile Python’s standard library provides a robust set of tools for many programming tasks, external libraries often offer additional functionality that can significantly enhance a programmer’s capabilities. This section will explore the process of installing and utilizing external libraries in Python.\n\nPackage Managers\nPython utilizes package managers to facilitate the installation and management of external libraries. The two primary package managers are:\n\npip: The default package installer for Python\nconda: An open-source package management system and environment management system\n\nThis discussion will focus on pip, as it is included with Python installations from version 3.4 onward.",
+    "crumbs": [
+      "Library",
+      "Create, Import, and Install Libraries"
+    ]
+  },
+  {
+    "objectID": "10_library.html#installing-external-libraries-cont.",
+    "href": "10_library.html#installing-external-libraries-cont.",
+    "title": "Create, Import, and Install Libraries",
+    "section": "Installing External Libraries (cont.)",
+    "text": "Installing External Libraries (cont.)\n\nVirtual Environments\nWhen working on multiple projects, it is often beneficial to create isolated Python environments. This practice prevents conflicts between library versions and allows for project-specific dependencies. The venv module, included in Python 3.3 and later, provides this functionality.\nTo create a virtual environment:\npython -m venv myenv\nTo activate the virtual environment:\n\nOn Windows: myenv\\Scripts\\activate\nOn Unix or MacOS: source myenv/bin/activate\n\nOnce activated, any libraries installed will be specific to this environment.",
+    "crumbs": [
+      "Library",
+      "Create, Import, and Install Libraries"
+    ]
+  },
+  {
+    "objectID": "10_library.html#installing-external-libraries-cont.-1",
+    "href": "10_library.html#installing-external-libraries-cont.-1",
+    "title": "Create, Import, and Install Libraries",
+    "section": "Installing External Libraries (cont.)",
+    "text": "Installing External Libraries (cont.)\n\nUsing pip to Install Libraries\nThe basic syntax for installing a library using pip is as follows:\npip install library_name\nFor example, to install the popular data analysis library pandas, one would execute:\npip install pandas\nIt is also possible to install a specific version of a library:\npip install pandas==1.2.0",
+    "crumbs": [
+      "Library",
+      "Create, Import, and Install Libraries"
+    ]
+  },
+  {
+    "objectID": "10_library.html#installing-external-libraries-cont.-2",
+    "href": "10_library.html#installing-external-libraries-cont.-2",
+    "title": "Create, Import, and Install Libraries",
+    "section": "Installing External Libraries (cont.)",
+    "text": "Installing External Libraries (cont.)\n\nRequirements Files\nFor projects with multiple dependencies, it is common practice to list all required libraries in a requirements.txt file. This file typically contains a list of libraries and their versions:\npandas==1.2.0\nnumpy==1.19.5\nmatplotlib==3.3.3\nTo install all libraries listed in a requirements file:\npip install -r requirements.txt\nOnce installed, external libraries can be imported and used in Python scripts. For example:\nimport pandas as pd\n\ndata = pd.read_csv('data.csv')\nprint(data.head())",
+    "crumbs": [
+      "Library",
+      "Create, Import, and Install Libraries"
+    ]
+  },
+  {
+    "objectID": "7_condition.html",
+    "href": "7_condition.html",
+    "title": "Condition",
+    "section": "",
+    "text": "Conditional statements in Python, as in many programming languages, enable decision-making processes within code. These statements facilitate the execution of different code blocks based on varying conditions.\nThe primary mechanism for implementing conditional statements in Python is the if statement, complemented by else and elif clauses. These constructs allow for the selective execution of code blocks contingent upon the truth value of specified conditions.",
+    "crumbs": [
+      "Control",
+      "Condition"
+    ]
+  },
+  {
+    "objectID": "7_condition.html#introduction-to-conditional-statements",
+    "href": "7_condition.html#introduction-to-conditional-statements",
+    "title": "Condition",
+    "section": "",
+    "text": "Conditional statements in Python, as in many programming languages, enable decision-making processes within code. These statements facilitate the execution of different code blocks based on varying conditions.\nThe primary mechanism for implementing conditional statements in Python is the if statement, complemented by else and elif clauses. These constructs allow for the selective execution of code blocks contingent upon the truth value of specified conditions.",
+    "crumbs": [
+      "Control",
+      "Condition"
+    ]
+  },
+  {
+    "objectID": "7_condition.html#the-if-statement",
+    "href": "7_condition.html#the-if-statement",
+    "title": "Condition",
+    "section": "The if Statement",
+    "text": "The if Statement\nThe if statement represents the most fundamental form of a conditional statement. It permits the execution of a code block only when a specified condition evaluates to true.\nConsider this example:\n\nage = 20\n\nif age &gt;= 18:\n    print(\"You are an adult.\")\n\nprint(\"This will always be printed.\")\n\nYou are an adult.\nThis will always be printed.\n\n\nIn this instance, the condition age &gt;= 18 evaluates to True, resulting in the execution of the indented code block. The final print statement, being outside the if block, is executed regardless of the condition’s truth value.\nIt is important to note that Python utilizes indentation to define code blocks. The indented code under the if statement is executed only when the condition evaluates to True.\n\ntemperature = 15\n\nif temperature &lt; 20:\n    print(\"It's a bit chilly.\")\n    print(\"You might want to wear a jacket.\")\n\nprint(\"Enjoy your day!\")\n\nIt's a bit chilly.\nYou might want to wear a jacket.\nEnjoy your day!",
+    "crumbs": [
+      "Control",
+      "Condition"
+    ]
+  },
+  {
+    "objectID": "7_condition.html#the-else-clause",
+    "href": "7_condition.html#the-else-clause",
+    "title": "Condition",
+    "section": "The else Clause",
+    "text": "The else Clause\nThe else clause provides an alternative execution path when the condition in the if statement evaluates to False:\n\nage = 15\n\nif age &gt;= 18:\n    print(\"You are an adult.\")\nelse:\n    print(\"You are a minor.\")\n\nYou are a minor.\n\n\nThe else clause specifies an alternative code block to be executed when the if condition is False.\n\nis_raining = True\n\nif is_raining:\n    print(\"Remember to take an umbrella!\")\nelse:\n    print(\"Enjoy the sunny weather!\")\n\nRemember to take an umbrella!\n\n\nFor scenarios requiring multiple condition checks, Python offers the elif (short for “else if”) clause as an efficient alternative to nested if-else statements:\n\n\n\nscore = 65\n\nif score &gt;= 80:\n    print(\"A\")\nelif score &gt;= 70:\n    print(\"B\")\nelif score &gt;= 60:\n    print(\"C\")\nelif score &gt;= 50:\n    print(\"D\")\nelse:\n    print(\"F\")\n\nC\n\n\n\n\nday = \"Wednesday\"\n\nif day == \"Monday\":\n    print(\"Start of the work week.\")\nelif day == \"Friday\":\n    print(\"TGIF!\")\nelif day == \"Saturday\" or day == \"Sunday\":\n    print(\"Weekend!\")\nelse:\n    print(\"Midweek.\")\n\nMidweek.\n\n\n\n\nMultiple elif clauses can be employed as needed. Python evaluates each condition sequentially and executes the code block associated with the first True condition encountered.",
+    "crumbs": [
+      "Control",
+      "Condition"
+    ]
+  },
+  {
+    "objectID": "7_condition.html#nested-conditional-statements",
+    "href": "7_condition.html#nested-conditional-statements",
+    "title": "Condition",
+    "section": "Nested Conditional Statements",
+    "text": "Nested Conditional Statements\nConditional statements can be embedded within other conditional statements, a practice known as nesting:\n\nis_sunny = True\ntemperature = 28\n\nif is_sunny:\n    if temperature &gt; 25:\n        print(\"It's a hot, sunny day!\")\n    else:\n        print(\"It's a mild, sunny day.\")\nelse:\n    print(\"It's not sunny today.\")\n\nIt's a hot, sunny day!\n\n\nWhile nested conditionals can facilitate more complex decision-making processes, excessive nesting should be avoided as it can compromise code readability.",
+    "crumbs": [
+      "Control",
+      "Condition"
+    ]
+  },
+  {
+    "objectID": "7_condition.html#conditional-expressions-ternary-operator",
+    "href": "7_condition.html#conditional-expressions-ternary-operator",
+    "title": "Condition",
+    "section": "Conditional Expressions (Ternary Operator)",
+    "text": "Conditional Expressions (Ternary Operator)\nPython provides a concise syntax for simple if-else statements, often referred to as the ternary operator:\n\nage = 20\n\nstatus = \"adult\" if age &gt;= 18 else \"minor\"\nprint(status)\n\nadult\n\n\nThe syntax follows the pattern: value_if_true if condition else value_if_false\nWhile this construct can be useful for simple conditions, full if-else statements are generally preferred for more complex logic to maintain code readability.",
+    "crumbs": [
+      "Control",
+      "Condition"
+    ]
+  }
+]
