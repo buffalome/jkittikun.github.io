@@ -4999,7 +4999,7 @@ vertical-align: -.125em;
 <section id="defining-functions" class="level2">
 <h2 class="anchored" data-anchor-id="defining-functions">Defining Functions</h2>
 <p>Let’s begin by creating a simple function:</p>
-<div id="8869b0c7" class="cell" data-execution_count="1">
+<div id="a9071259" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> greet():</span>
 <span id="cb1-2"><a href="#cb1-2"></a>    <span class="bu">print</span>(<span class="st">&quot;Hello, World!&quot;</span>)</span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
@@ -5022,7 +5022,7 @@ vertical-align: -.125em;
 <section id="defining-functions-with-inputs" class="level2">
 <h2 class="anchored" data-anchor-id="defining-functions-with-inputs">Defining Functions with Input(s)</h2>
 <p>Let’s create a function that takes a parameter(s):</p>
-<div id="334ce430" class="cell" data-output-location="column" data-execution_count="2">
+<div id="56147f1f" class="cell" data-output-location="column" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">def</span> introduce(name, country):</span>
 <span id="cb3-2"><a href="#cb3-2"></a>    <span class="bu">print</span>(<span class="ss">f&quot;I&#39;m, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss"> from </span><span class="sc">{</span>country<span class="sc">}</span><span class="ss">.&quot;</span>)</span>
 <span id="cb3-3"><a href="#cb3-3"></a></span>
@@ -5032,7 +5032,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <p>The default value and suggested data type of input parameters can also be defined.</p>
-<div id="f9df3329" class="cell" data-output-location="column" data-execution_count="3">
+<div id="f8391687" class="cell" data-output-location="column" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">def</span> introduce(name<span class="op">=</span><span class="st">&quot;Jonh&quot;</span>,</span>
 <span id="cb5-2"><a href="#cb5-2"></a>    country:<span class="bu">str</span><span class="op">=</span><span class="st">&quot;India&quot;</span>):</span>
 <span id="cb5-3"><a href="#cb5-3"></a></span>
@@ -5051,7 +5051,7 @@ I&#39;m, Jonh from 5.</code></pre>
 <section id="defining-functions-with-return-values" class="level2">
 <h2 class="anchored" data-anchor-id="defining-functions-with-return-values">Defining Functions with Return Values</h2>
 <p>Functions return values by using <code>return</code> keyword:</p>
-<div id="9fc0d237" class="cell" data-execution_count="4">
+<div id="579e5307" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">def</span> add_numbers(a, b):</span>
 <span id="cb7-2"><a href="#cb7-2"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
 <span id="cb7-3"><a href="#cb7-3"></a></span>
@@ -5062,7 +5062,7 @@ I&#39;m, Jonh from 5.</code></pre>
 </div>
 </div>
 <p>Python functions can return multiple values:</p>
-<div id="c53bebdc" class="cell" data-execution_count="5">
+<div id="022a2ec9" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">def</span> calculate(a, b):</span>
 <span id="cb9-2"><a href="#cb9-2"></a>    add <span class="op">=</span> a <span class="op">+</span> b</span>
 <span id="cb9-3"><a href="#cb9-3"></a>    subtract <span class="op">=</span> a <span class="op">-</span> b</span>
@@ -5080,7 +5080,7 @@ I&#39;m, Jonh from 5.</code></pre>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>Understanding variable scope is crucial when working with functions:</p>
-<div id="e87547be" class="cell" data-execution_count="6">
+<div id="af8b0c31" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>x <span class="op">=</span> <span class="dv">10</span>  <span class="co"># Global variable</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a></span>
 <span id="cb11-3"><a href="#cb11-3"></a><span class="kw">def</span> print_x():</span>
@@ -5102,7 +5102,7 @@ I&#39;m, Jonh from 5.</code></pre>
 </div>
 </div><div class="column" style="width:50%;">
 <p>If we want to modify a global variable inside a function, we use the <code>global</code> keyword:</p>
-<div id="e305844c" class="cell" data-execution_count="7">
+<div id="6493408b" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a></span>
 <span id="cb13-3"><a href="#cb13-3"></a><span class="kw">def</span> change_global_x():</span>
@@ -5128,7 +5128,7 @@ I&#39;m, Jonh from 5.</code></pre>
 <section id="basic-type-annotations" class="level3">
 <h3 class="anchored" data-anchor-id="basic-type-annotations">Basic Type Annotations</h3>
 <p>Here’s how we can add type annotations to a simple function:</p>
-<div id="43924ce8" class="cell" data-execution_count="8">
+<div id="53c61854" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">def</span> greet(name: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
 <span id="cb15-2"><a href="#cb15-2"></a>    <span class="cf">return</span> <span class="ss">f&quot;Hello, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">!&quot;</span></span>
 <span id="cb15-3"><a href="#cb15-3"></a></span>
@@ -5143,7 +5143,7 @@ I&#39;m, Jonh from 5.</code></pre>
 <section id="type-checking" class="level3">
 <h3 class="anchored" data-anchor-id="type-checking">Type Checking</h3>
 <p>While Python itself doesn’t enforce these types at runtime, we can use tools like mypy for static type checking:</p>
-<div id="ee9460a2" class="cell" data-execution_count="9">
+<div id="928b0864" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="kw">def</span> add_numbers(a: <span class="bu">int</span>, b: <span class="bu">int</span>) <span class="op">-&gt;</span> <span class="bu">int</span>:</span>
 <span id="cb17-2"><a href="#cb17-2"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
 <span id="cb17-3"><a href="#cb17-3"></a></span>

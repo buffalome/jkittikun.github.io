@@ -4943,23 +4943,11 @@ vertical-align: -.125em;
   <ul>
   <li><a href="#library" id="toc-library" class="nav-link active" data-scroll-target="#library">Library</a></li>
   <li><a href="#creating-and-importing-local-library" id="toc-creating-and-importing-local-library" class="nav-link" data-scroll-target="#creating-and-importing-local-library">Creating and Importing Local Library</a></li>
-  <li><a href="#creating-and-importing-local-library-cont." id="toc-creating-and-importing-local-library-cont." class="nav-link" data-scroll-target="#creating-and-importing-local-library-cont.">Creating and Importing Local Library (cont.)</a></li>
-  <li><a href="#creating-and-importing-local-library-cont.-1" id="toc-creating-and-importing-local-library-cont.-1" class="nav-link" data-scroll-target="#creating-and-importing-local-library-cont.-1">Creating and Importing Local Library (cont.)</a></li>
-  <li><a href="#creating-and-importing-local-library-cont.-2" id="toc-creating-and-importing-local-library-cont.-2" class="nav-link" data-scroll-target="#creating-and-importing-local-library-cont.-2">Creating and Importing Local Library (cont.)</a></li>
   <li><a href="#installing-external-libraries" id="toc-installing-external-libraries" class="nav-link" data-scroll-target="#installing-external-libraries">Installing External Libraries</a>
   <ul class="collapse">
   <li><a href="#package-managers" id="toc-package-managers" class="nav-link" data-scroll-target="#package-managers">Package Managers</a></li>
-  </ul></li>
-  <li><a href="#installing-external-libraries-cont." id="toc-installing-external-libraries-cont." class="nav-link" data-scroll-target="#installing-external-libraries-cont.">Installing External Libraries (cont.)</a>
-  <ul class="collapse">
   <li><a href="#virtual-environments" id="toc-virtual-environments" class="nav-link" data-scroll-target="#virtual-environments">Virtual Environments</a></li>
-  </ul></li>
-  <li><a href="#installing-external-libraries-cont.-1" id="toc-installing-external-libraries-cont.-1" class="nav-link" data-scroll-target="#installing-external-libraries-cont.-1">Installing External Libraries (cont.)</a>
-  <ul class="collapse">
   <li><a href="#using-pip-to-install-libraries" id="toc-using-pip-to-install-libraries" class="nav-link" data-scroll-target="#using-pip-to-install-libraries">Using <code>pip</code> to Install Libraries</a></li>
-  </ul></li>
-  <li><a href="#installing-external-libraries-cont.-2" id="toc-installing-external-libraries-cont.-2" class="nav-link" data-scroll-target="#installing-external-libraries-cont.-2">Installing External Libraries (cont.)</a>
-  <ul class="collapse">
   <li><a href="#requirements-files" id="toc-requirements-files" class="nav-link" data-scroll-target="#requirements-files">Requirements Files</a></li>
   </ul></li>
   </ul>
@@ -5028,16 +5016,13 @@ vertical-align: -.125em;
 <span id="cb1-11"><a href="#cb1-11"></a><span class="co">    &quot;&quot;&quot;</span></span>
 <span id="cb1-12"><a href="#cb1-12"></a>    <span class="cf">return</span> PI <span class="op">*</span> radius <span class="op">**</span> <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This file defines three functions and a constant that we can use in other parts of our project.</p>
-</section>
-<section id="creating-and-importing-local-library-cont." class="level2">
-<h2 class="anchored" data-anchor-id="creating-and-importing-local-library-cont.">Creating and Importing Local Library (cont.)</h2>
 <ol start="2" type="1">
 <li>Importing functions to your script licated in the same directory:</li>
 </ol>
 <ol type="a">
 <li>Import the entire module</li>
 </ol>
-<div id="8cb29e39" class="cell" data-execution_count="1">
+<div id="94472d93" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> my_functions</span>
 <span id="cb2-2"><a href="#cb2-2"></a></span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="co"># Use the functions</span></span>
@@ -5049,16 +5034,10 @@ vertical-align: -.125em;
 </div>
 </div>
 <p>When you run <code>main.py</code>, it will import <code>my_functions.py</code> and you can use its functions by prefixing them with <code>my_functions.</code>.</p>
-</section>
-<section id="creating-and-importing-local-library-cont.-1" class="level2">
-<h2 class="anchored" data-anchor-id="creating-and-importing-local-library-cont.-1">Creating and Importing Local Library (cont.)</h2>
-<ol start="2" type="1">
-<li>Importing functions to your script licated in the same directory:</li>
-</ol>
 <ol start="2" type="a">
 <li>If you only need certain functions, you can import them specifically:</li>
 </ol>
-<div id="10b5ed67" class="cell" data-execution_count="2">
+<div id="f5c4d3ec" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">from</span> my_functions <span class="im">import</span> calculate_area, calculate_circle_area</span>
 <span id="cb4-2"><a href="#cb4-2"></a></span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="bu">print</span>(calculate_area(<span class="dv">4</span>, <span class="dv">6</span>))</span>
@@ -5071,7 +5050,7 @@ vertical-align: -.125em;
 <ol start="3" type="a">
 <li>You can also use aliases to avoid naming conflicts or simply for convenience:</li>
 </ol>
-<div id="a06dc13f" class="cell" data-execution_count="3">
+<div id="517a8051" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">from</span> my_functions <span class="im">import</span> calculate_circle_area <span class="im">as</span> circle_area</span>
 <span id="cb6-2"><a href="#cb6-2"></a></span>
 <span id="cb6-3"><a href="#cb6-3"></a><span class="bu">print</span>(circle_area(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5079,17 +5058,11 @@ vertical-align: -.125em;
 <pre><code>28.27431</code></pre>
 </div>
 </div>
-</section>
-<section id="creating-and-importing-local-library-cont.-2" class="level2">
-<h2 class="anchored" data-anchor-id="creating-and-importing-local-library-cont.-2">Creating and Importing Local Library (cont.)</h2>
-<ol start="2" type="1">
-<li>Importing functions to your script licated in the same directory:</li>
-</ol>
 <ol start="4" type="a">
 <li>Importing Everything (Use Cautiously)</li>
 </ol>
 <p>You can import all <code>functions</code> and <code>variables</code> from a module using <code>*</code>, but this is generally discouraged as it can lead to naming conflicts and make it unclear where things are coming from:</p>
-<div id="77949999" class="cell" data-execution_count="4">
+<div id="23af3d5f" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="im">from</span> my_functions <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a></span>
 <span id="cb8-3"><a href="#cb8-3"></a><span class="bu">print</span>(calculate_area(<span class="dv">2</span>, <span class="dv">8</span>))</span>
@@ -5114,9 +5087,6 @@ vertical-align: -.125em;
 </ol>
 <p>This discussion will focus on pip, as it is included with Python installations from version 3.4 onward.</p>
 </section>
-</section>
-<section id="installing-external-libraries-cont." class="level2">
-<h2 class="anchored" data-anchor-id="installing-external-libraries-cont.">Installing External Libraries (cont.)</h2>
 <section id="virtual-environments" class="level3">
 <h3 class="anchored" data-anchor-id="virtual-environments">Virtual Environments</h3>
 <p>When working on multiple projects, it is often beneficial to create isolated Python environments. This practice prevents conflicts between library versions and allows for project-specific dependencies. The <code>venv</code> module, included in Python 3.3 and later, provides this functionality.</p>
@@ -5129,9 +5099,6 @@ vertical-align: -.125em;
 </ul>
 <p>Once activated, any libraries installed will be specific to this environment.</p>
 </section>
-</section>
-<section id="installing-external-libraries-cont.-1" class="level2">
-<h2 class="anchored" data-anchor-id="installing-external-libraries-cont.-1">Installing External Libraries (cont.)</h2>
 <section id="using-pip-to-install-libraries" class="level3">
 <h3 class="anchored" data-anchor-id="using-pip-to-install-libraries">Using <code>pip</code> to Install Libraries</h3>
 <p>The basic syntax for installing a library using pip is as follows:</p>
@@ -5141,9 +5108,6 @@ vertical-align: -.125em;
 <p>It is also possible to install a specific version of a library:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>pip install pandas<span class="op">==</span><span class="fl">1.2.0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-</section>
-<section id="installing-external-libraries-cont.-2" class="level2">
-<h2 class="anchored" data-anchor-id="installing-external-libraries-cont.-2">Installing External Libraries (cont.)</h2>
 <section id="requirements-files" class="level3">
 <h3 class="anchored" data-anchor-id="requirements-files">Requirements Files</h3>
 <p>For projects with multiple dependencies, it is common practice to list all required libraries in a <code>requirements.txt</code> file. This file typically contains a list of libraries and their versions:</p>

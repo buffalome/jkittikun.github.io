@@ -5031,7 +5031,7 @@ vertical-align: -.125em;
 <p>For Excel support, we also need:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>pip install openpyxl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Let’s start by importing Pandas:</p>
-<div id="6e14ea5d" class="cell" data-execution_count="1">
+<div id="59e7dfdc" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -5040,7 +5040,7 @@ vertical-align: -.125em;
 <section id="from-a-dictionary" class="level3">
 <h3 class="anchored" data-anchor-id="from-a-dictionary">From a dictionary</h3>
 <p>When creating a DataFrame from a dictionary, the keys become column names, and the values become the data in those columns.</p>
-<div id="29818380" class="cell" data-execution_count="2">
+<div id="d522deab" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>data <span class="op">=</span> {</span>
 <span id="cb4-2"><a href="#cb4-2"></a>    <span class="st">&#39;Name&#39;</span>: [<span class="st">&#39;John&#39;</span>, <span class="st">&#39;Anna&#39;</span>, <span class="st">&#39;Peter&#39;</span>, <span class="st">&#39;Linda&#39;</span>],</span>
 <span id="cb4-3"><a href="#cb4-3"></a>    <span class="st">&#39;Age&#39;</span>: [<span class="dv">28</span>, <span class="dv">34</span>, <span class="dv">29</span>, <span class="dv">32</span>],</span>
@@ -5106,7 +5106,7 @@ vertical-align: -.125em;
 <section id="from-a-list-of-dictionaries" class="level3">
 <h3 class="anchored" data-anchor-id="from-a-list-of-dictionaries">From a list of dictionaries</h3>
 <p>Sometimes, your data might be in the form of a list of dictionaries, where each dictionary represents a row of data. This method allows for more flexibility in the data structure, as each dictionary (row) doesn’t necessarily need to have the same keys (columns).</p>
-<div id="0692752f" class="cell" data-execution_count="3">
+<div id="a7019430" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>data <span class="op">=</span> [</span>
 <span id="cb6-2"><a href="#cb6-2"></a>    {<span class="st">&#39;Name&#39;</span>: <span class="st">&#39;John&#39;</span>, <span class="st">&#39;Age&#39;</span>: <span class="dv">28</span>, <span class="st">&#39;City&#39;</span>: <span class="st">&#39;New York&#39;</span>},</span>
 <span id="cb6-3"><a href="#cb6-3"></a>    {<span class="st">&#39;Name&#39;</span>: <span class="st">&#39;Anna&#39;</span>, <span class="st">&#39;Age&#39;</span>: <span class="dv">34</span>, <span class="st">&#39;City&#39;</span>: <span class="st">&#39;Paris&#39;</span>},</span>
@@ -5128,7 +5128,7 @@ vertical-align: -.125em;
 <section id="from-a-numpy-array" class="level3">
 <h3 class="anchored" data-anchor-id="from-a-numpy-array">From a NumPy array</h3>
 <p>NumPy arrays are efficient for numerical computations. When you have data in a NumPy array, you can easily convert it to a DataFrame for further analysis.</p>
-<div id="ad4153cd" class="cell" data-execution_count="4">
+<div id="4e8dd663" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb8-2"><a href="#cb8-2"></a></span>
 <span id="cb8-3"><a href="#cb8-3"></a>arr <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]])</span>
@@ -5148,7 +5148,7 @@ vertical-align: -.125em;
 <section id="from-a-csv-file" class="level3">
 <h3 class="anchored" data-anchor-id="from-a-csv-file">From a CSV file</h3>
 <p>CSV (Comma-Separated Values) files are one of the most common formats for storing tabular data. Pandas makes it easy to read these files into DataFrames.</p>
-<div id="5bff2445" class="cell" data-execution_count="5">
+<div id="e064e2dc" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&#39;ex_csv.csv&#39;</span>)</span>
 <span id="cb10-2"><a href="#cb10-2"></a><span class="bu">print</span>(df.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -5166,7 +5166,7 @@ vertical-align: -.125em;
 <p>Pandas uses the <code>read_excel()</code> function for reading Excel files.</p>
 <p>You may need to install additional library.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>pip install openpyxl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="39a787c2" class="cell" data-execution_count="6">
+<div id="76d8cb8c" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Basic reading</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a>df <span class="op">=</span> pd.read_excel(<span class="st">&#39;ex_excel.xlsx&#39;</span>)</span>
 <span id="cb13-3"><a href="#cb13-3"></a><span class="bu">print</span>(<span class="st">&#39;Basic reading&#39;</span>)</span>
@@ -5237,7 +5237,7 @@ Sheet2
 <section id="viewing-data" class="level3">
 <h3 class="anchored" data-anchor-id="viewing-data">Viewing Data</h3>
 <p>These methods allow you to quickly inspect your DataFrame:</p>
-<div id="bc47ef7e" class="cell" data-execution_count="7">
+<div id="c4f94d5b" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>data <span class="op">=</span> {</span>
 <span id="cb17-2"><a href="#cb17-2"></a>    <span class="st">&#39;Name&#39;</span>: [<span class="st">&#39;John&#39;</span>, <span class="st">&#39;Anna&#39;</span>, <span class="st">&#39;Peter&#39;</span>, <span class="st">&#39;Linda&#39;</span>],</span>
 <span id="cb17-3"><a href="#cb17-3"></a>    <span class="st">&#39;Age&#39;</span>: [<span class="dv">28</span>, <span class="dv">34</span>, <span class="dv">29</span>, <span class="dv">32</span>],</span>
@@ -5247,7 +5247,7 @@ Sheet2
 </div>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="9e586610" class="cell" data-execution_count="8">
+<div id="af505368" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a><span class="bu">print</span>(df.head(<span class="dv">3</span>))  <span class="co"># First 3 rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Name  Age      City
@@ -5257,7 +5257,7 @@ Sheet2
 </div>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="d1dde359" class="cell" data-execution_count="9">
+<div id="2308675f" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="bu">print</span>(df.tail(<span class="dv">3</span>))  <span class="co"># Last 3 rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Name  Age    City
@@ -5271,7 +5271,7 @@ Sheet2
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>DataFrame info, including column types and non-null counts</p>
-<div id="c02d1f66" class="cell" data-execution_count="10">
+<div id="16fa6b27" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a><span class="bu">print</span>(df.info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
@@ -5289,7 +5289,7 @@ None</code></pre>
 </div>
 </div><div class="column" style="width:50%;">
 <p>Statistical summary of numerical columns</p>
-<div id="764c37fa" class="cell" data-execution_count="11">
+<div id="2b7b7fd1" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a><span class="bu">print</span>(df.describe())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             Age
@@ -5312,7 +5312,7 @@ max    34.000000</code></pre>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>Accessing a single column</p>
-<div id="19aa6b14" class="cell" data-execution_count="12">
+<div id="0eddfa98" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a><span class="bu">print</span>(df[<span class="st">&#39;Name&#39;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0     John
@@ -5323,7 +5323,7 @@ Name: Name, dtype: object</code></pre>
 </div>
 </div>
 <p>Accessing multiple columns</p>
-<div id="52575c98" class="cell" data-execution_count="13">
+<div id="60eaa66a" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a><span class="bu">print</span>(df[[<span class="st">&#39;Name&#39;</span>, <span class="st">&#39;Age&#39;</span>]])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Name  Age
@@ -5335,7 +5335,7 @@ Name: Name, dtype: object</code></pre>
 </div>
 </div><div class="column" style="width:50%;">
 <p>Accessing a row by label</p>
-<div id="242e0a25" class="cell" data-execution_count="14">
+<div id="ef2ed0c2" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a><span class="bu">print</span>(df.loc[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Name        John
@@ -5345,7 +5345,7 @@ Name: 0, dtype: object</code></pre>
 </div>
 </div>
 <p>Accessing a row by integer index</p>
-<div id="c563deb4" class="cell" data-execution_count="15">
+<div id="1a3a3f07" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a><span class="bu">print</span>(df.iloc[<span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Name        John
@@ -5355,7 +5355,7 @@ Name: 0, dtype: object</code></pre>
 </div>
 </div>
 <p>Accessing a specific value</p>
-<div id="b7dc9823" class="cell" data-execution_count="16">
+<div id="5b64c73f" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a><span class="bu">print</span>(df.loc[<span class="dv">0</span>, <span class="st">&#39;Name&#39;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>John</code></pre>
@@ -5370,7 +5370,7 @@ Name: 0, dtype: object</code></pre>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>Adding a new column</p>
-<div id="7b343eb5" class="cell" data-execution_count="17">
+<div id="1e0007b5" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a>df[<span class="st">&#39;Salary&#39;</span>] <span class="op">=</span> [<span class="dv">50000</span>,<span class="dv">60000</span>,<span class="dv">55000</span>,<span class="dv">65000</span>]</span>
 <span id="cb36-2"><a href="#cb36-2"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -5383,7 +5383,7 @@ Name: 0, dtype: object</code></pre>
 </div>
 </div><div class="column" style="width:50%;">
 <p>Deleting a column</p>
-<div id="8b57e0aa" class="cell" data-execution_count="18">
+<div id="026a6130" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1"></a>df <span class="op">=</span> df.drop(<span class="st">&#39;Salary&#39;</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb38-2"><a href="#cb38-2"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -5402,7 +5402,7 @@ Name: 0, dtype: object</code></pre>
 <p>Filtering allows you to focus on specific subsets of your data:</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="f240198f" class="cell" data-execution_count="19">
+<div id="302c414d" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1"></a><span class="bu">print</span>(df[df[<span class="st">&#39;Age&#39;</span>] <span class="op">&gt;</span> <span class="dv">30</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Name  Age    City
@@ -5411,7 +5411,7 @@ Name: 0, dtype: object</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="40eab117" class="cell" data-execution_count="20">
+<div id="54b14102" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1"></a><span class="bu">print</span>(df[df[<span class="st">&#39;Age&#39;</span>] <span class="op">&gt;</span> <span class="dv">30</span>][<span class="st">&#39;City&#39;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>1     Paris
@@ -5421,14 +5421,14 @@ Name: City, dtype: object</code></pre>
 </div>
 </div>
 </div>
-<div id="1810bd61" class="cell" data-execution_count="21">
+<div id="194cf953" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a><span class="bu">print</span>(df[(df[<span class="st">&#39;Age&#39;</span>] <span class="op">&gt;</span> <span class="dv">30</span>) <span class="op">&amp;</span> (df[<span class="st">&#39;City&#39;</span>] <span class="op">==</span> <span class="st">&#39;London&#39;</span>)])  <span class="co"># AND condition</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Name  Age    City
 3  Linda   32  London</code></pre>
 </div>
 </div>
-<div id="1ec3b2c8" class="cell" data-execution_count="22">
+<div id="fb8fad44" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1"></a><span class="bu">print</span>(df[(df[<span class="st">&#39;Age&#39;</span>] <span class="op">&gt;</span> <span class="dv">30</span>) <span class="op">|</span> (df[<span class="st">&#39;City&#39;</span>] <span class="op">==</span> <span class="st">&#39;New York&#39;</span>)])  <span class="co"># OR condition</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Name  Age      City
@@ -5443,7 +5443,7 @@ Name: City, dtype: object</code></pre>
 <p>Filtering allows you to focus on specific subsets of your data:</p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="00826ae7" class="cell" data-execution_count="23">
+<div id="55cb1460" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1"></a><span class="bu">print</span>(df.loc[df[<span class="st">&#39;Age&#39;</span>] <span class="op">&gt;</span> <span class="dv">30</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Name  Age    City
@@ -5452,7 +5452,7 @@ Name: City, dtype: object</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="44be7118" class="cell" data-execution_count="24">
+<div id="c8718f0e" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1"></a><span class="bu">print</span>(df.loc[df[<span class="st">&#39;Age&#39;</span>] <span class="op">&gt;</span> <span class="dv">30</span>, <span class="st">&#39;City&#39;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>1     Paris
@@ -5462,14 +5462,14 @@ Name: City, dtype: object</code></pre>
 </div>
 </div>
 </div>
-<div id="9a7684d5" class="cell" data-execution_count="25">
+<div id="b288987d" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1"></a><span class="bu">print</span>(df.loc[(df[<span class="st">&#39;Age&#39;</span>] <span class="op">&gt;</span> <span class="dv">30</span>) <span class="op">&amp;</span> (df[<span class="st">&#39;City&#39;</span>] <span class="op">==</span> <span class="st">&#39;London&#39;</span>)])  <span class="co"># AND condition</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Name  Age    City
 3  Linda   32  London</code></pre>
 </div>
 </div>
-<div id="49aafd03" class="cell" data-execution_count="26">
+<div id="15d5d4cc" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1"></a><span class="bu">print</span>(df.loc[(df[<span class="st">&#39;Age&#39;</span>] <span class="op">&gt;</span> <span class="dv">30</span>) <span class="op">|</span> (df[<span class="st">&#39;City&#39;</span>] <span class="op">==</span> <span class="st">&#39;New York&#39;</span>)])  <span class="co"># OR condition</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Name  Age      City
@@ -5486,7 +5486,7 @@ Name: City, dtype: object</code></pre>
 <section id="sorting" class="level3">
 <h3 class="anchored" data-anchor-id="sorting">Sorting</h3>
 <p>Sorting allows you to order your data based on one or more columns:</p>
-<div id="ea7cb350" class="cell" data-execution_count="27">
+<div id="1f5433b1" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1"></a><span class="bu">print</span>(df.sort_values(<span class="st">&#39;Age&#39;</span>, ascending<span class="op">=</span><span class="va">False</span>))  <span class="co"># Sort descending</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Name  Age      City
@@ -5496,7 +5496,7 @@ Name: City, dtype: object</code></pre>
 0   John   28  New York</code></pre>
 </div>
 </div>
-<div id="41ea85ec" class="cell" data-execution_count="28">
+<div id="8d2f99f8" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1"></a><span class="bu">print</span>(df.sort_values([<span class="st">&#39;City&#39;</span>, <span class="st">&#39;Age&#39;</span>]))  <span class="co"># Sort by multiple columns</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Name  Age      City
@@ -5510,7 +5510,7 @@ Name: City, dtype: object</code></pre>
 <section id="grouping-and-aggregation" class="level3">
 <h3 class="anchored" data-anchor-id="grouping-and-aggregation">Grouping and Aggregation</h3>
 <p>Grouping allows you to split your data into groups based on some criteria and then perform calculations on each group:</p>
-<div id="248c7748" class="cell" data-execution_count="29">
+<div id="67031d36" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1"></a><span class="bu">print</span>(df.groupby(<span class="st">&#39;City&#39;</span>)[<span class="st">&#39;Age&#39;</span>].mean())  <span class="co"># Mean age by city</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>City
@@ -5521,7 +5521,7 @@ Paris       34.0
 Name: Age, dtype: float64</code></pre>
 </div>
 </div>
-<div id="0b9655b3" class="cell" data-execution_count="30">
+<div id="10cd2c0c" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1"></a><span class="bu">print</span>(df.groupby(<span class="st">&#39;City&#39;</span>).agg({<span class="st">&#39;Age&#39;</span>: <span class="st">&#39;mean&#39;</span>, <span class="st">&#39;Name&#39;</span>: <span class="st">&#39;count&#39;</span>}))  <span class="co"># Multiple aggregations</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           Age  Name
@@ -5549,7 +5549,7 @@ Paris     34.0     1</code></pre>
 <section id="applying-functions" class="level3">
 <h3 class="anchored" data-anchor-id="applying-functions">Applying Functions</h3>
 <p>You can apply custom functions to your data using the <code>apply</code> method:</p>
-<div id="c3d4909d" class="cell" data-execution_count="31">
+<div id="f9c040d0" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1"></a>df[<span class="st">&#39;Name_Length&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;Name&#39;</span>].<span class="bu">apply</span>(<span class="bu">len</span>)  <span class="co"># Apply a function to a column</span></span>
 <span id="cb64-2"><a href="#cb64-2"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -5565,7 +5565,7 @@ Paris     34.0     1</code></pre>
 <section id="merging" class="level3">
 <h3 class="anchored" data-anchor-id="merging">Merging</h3>
 <p>Combining data from different sources is a common task in data analysis:</p>
-<div id="cdf24a98" class="cell" data-execution_count="32">
+<div id="6f7e619e" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1"></a>df2 <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb66-2"><a href="#cb66-2"></a>    <span class="st">&#39;City&#39;</span>: [<span class="st">&#39;New York&#39;</span>, <span class="st">&#39;Paris&#39;</span>, <span class="st">&#39;Berlin&#39;</span>, <span class="st">&#39;London&#39;</span>],</span>
 <span id="cb66-3"><a href="#cb66-3"></a>    <span class="st">&#39;Country&#39;</span>: [<span class="st">&#39;USA&#39;</span>, <span class="st">&#39;France&#39;</span>, <span class="st">&#39;Germany&#39;</span>, <span class="st">&#39;UK&#39;</span>]</span>
@@ -5585,7 +5585,7 @@ Paris     34.0     1</code></pre>
 <section id="mapping-dataframes" class="level3">
 <h3 class="anchored" data-anchor-id="mapping-dataframes">Mapping DataFrames</h3>
 <p>Mapping allows you to replace values in a DataFrame based on a dictionary:</p>
-<div id="b5f1b53e" class="cell" data-execution_count="33">
+<div id="828d9e70" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1"></a>data <span class="op">=</span> {</span>
 <span id="cb68-2"><a href="#cb68-2"></a>    <span class="st">&#39;Name&#39;</span>: [<span class="st">&#39;John&#39;</span>, <span class="st">&#39;Anna&#39;</span>, <span class="st">&#39;Peter&#39;</span>, <span class="st">&#39;Linda&#39;</span>],</span>
 <span id="cb68-3"><a href="#cb68-3"></a>    <span class="st">&#39;Age&#39;</span>: [<span class="dv">28</span>, <span class="dv">34</span>, <span class="dv">29</span>, <span class="dv">32</span>],</span>
@@ -5617,7 +5617,7 @@ Paris     34.0     1</code></pre>
 <section id="concatenating-dataframes" class="level3">
 <h3 class="anchored" data-anchor-id="concatenating-dataframes">Concatenating DataFrames</h3>
 <p>Concatenation allows you to combine DataFrames along a particular axis:</p>
-<div id="f91b52e0" class="cell" data-execution_count="34">
+<div id="b5408a34" class="cell" data-execution_count="34">
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1"></a>df1 <span class="op">=</span> pd.DataFrame({<span class="st">&#39;A&#39;</span>: [<span class="st">&#39;A0&#39;</span>, <span class="st">&#39;A1&#39;</span>, <span class="st">&#39;A2&#39;</span>],</span>
 <span id="cb70-2"><a href="#cb70-2"></a>                  <span class="st">&#39;B&#39;</span>: [<span class="st">&#39;B0&#39;</span>, <span class="st">&#39;B1&#39;</span>, <span class="st">&#39;B2&#39;</span>]},</span>
 <span id="cb70-3"><a href="#cb70-3"></a>                  index<span class="op">=</span>[<span class="st">&#39;K0&#39;</span>, <span class="st">&#39;K1&#39;</span>, <span class="st">&#39;K2&#39;</span>])</span>
@@ -5627,7 +5627,7 @@ Paris     34.0     1</code></pre>
 <span id="cb70-7"><a href="#cb70-7"></a>                  index<span class="op">=</span>[<span class="st">&#39;K0&#39;</span>, <span class="st">&#39;K1&#39;</span>, <span class="st">&#39;K2&#39;</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Concatenate along columns (axis=1)</p>
-<div id="04265545" class="cell" data-execution_count="35">
+<div id="9ba3b500" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1"></a>result <span class="op">=</span> pd.concat([df1, df2], axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb71-2"><a href="#cb71-2"></a><span class="bu">print</span>(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -5638,7 +5638,7 @@ K2  A2  B2  C2  D2</code></pre>
 </div>
 </div>
 <p>Concatenate along rows (axis=0)</p>
-<div id="fda0a520" class="cell" data-execution_count="36">
+<div id="de1f2566" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1"></a>df3 <span class="op">=</span> pd.DataFrame({<span class="st">&#39;A&#39;</span>: [<span class="st">&#39;A3&#39;</span>, <span class="st">&#39;A4&#39;</span>],</span>
 <span id="cb73-2"><a href="#cb73-2"></a>                    <span class="st">&#39;B&#39;</span>: [<span class="st">&#39;B3&#39;</span>, <span class="st">&#39;B4&#39;</span>]},</span>
 <span id="cb73-3"><a href="#cb73-3"></a>                    index<span class="op">=</span>[<span class="st">&#39;K3&#39;</span>, <span class="st">&#39;K4&#39;</span>])</span>
@@ -5655,7 +5655,7 @@ K4  A4  B4</code></pre>
 </div>
 </div>
 <p>Concatenate with different indexes</p>
-<div id="d11d7a5d" class="cell" data-execution_count="37">
+<div id="a064bc27" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1"></a>df4 <span class="op">=</span> pd.DataFrame({<span class="st">&#39;A&#39;</span>: [<span class="st">&#39;A5&#39;</span>, <span class="st">&#39;A6&#39;</span>],</span>
 <span id="cb75-2"><a href="#cb75-2"></a>                    <span class="st">&#39;C&#39;</span>: [<span class="st">&#39;C5&#39;</span>, <span class="st">&#39;C6&#39;</span>]},</span>
 <span id="cb75-3"><a href="#cb75-3"></a>                    index<span class="op">=</span>[<span class="st">&#39;K1&#39;</span>, <span class="st">&#39;K6&#39;</span>])</span>
@@ -5671,7 +5671,7 @@ K1  A5  NaN   C5
 K6  A6  NaN   C6</code></pre>
 </div>
 </div>
-<div id="07d6a197" class="cell" data-execution_count="38">
+<div id="5226cd7d" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1"></a>result <span class="op">=</span> pd.concat([df1, df4], ignore_index<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb77-2"><a href="#cb77-2"></a><span class="bu">print</span>(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -5683,7 +5683,7 @@ K6  A6  NaN   C6</code></pre>
 4  A6  NaN   C6</code></pre>
 </div>
 </div>
-<div id="b1b250ca" class="cell" data-execution_count="39">
+<div id="13283e6a" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1"></a>result <span class="op">=</span> pd.concat([df1, df4]).reset_index() <span class="co"># reset index of DataFrame</span></span>
 <span id="cb79-2"><a href="#cb79-2"></a><span class="bu">print</span>(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -5700,7 +5700,7 @@ K6  A6  NaN   C6</code></pre>
 <section id="handling-missing-data" class="level2">
 <h2 class="anchored" data-anchor-id="handling-missing-data">Handling Missing Data</h2>
 <p>Missing data is common in real-world datasets. Let’s see how to handle it:</p>
-<div id="23c0a4ff" class="cell" data-execution_count="40">
+<div id="f2cabd65" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb81-2"><a href="#cb81-2"></a>    <span class="st">&#39;A&#39;</span>: [<span class="dv">1</span>, np.nan, <span class="dv">4</span>],</span>
 <span id="cb81-3"><a href="#cb81-3"></a>    <span class="st">&#39;B&#39;</span>: [<span class="dv">5</span>, np.nan, np.nan],</span>
@@ -5709,7 +5709,7 @@ K6  A6  NaN   C6</code></pre>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>Check for missing values</p>
-<div id="28f275eb" class="cell" data-execution_count="41">
+<div id="2854aeab" class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1"></a><span class="bu">print</span>(df.isnull())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       A      B      C
@@ -5719,7 +5719,7 @@ K6  A6  NaN   C6</code></pre>
 </div>
 </div>
 <p>Drop rows with missing values</p>
-<div id="f343fcb4" class="cell" data-execution_count="42">
+<div id="fc96d663" class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1"></a><span class="bu">print</span>(df.dropna())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     A    B  C
@@ -5728,7 +5728,7 @@ K6  A6  NaN   C6</code></pre>
 </div>
 </div><div class="column" style="width:50%;">
 <p>Fill missing values with 0</p>
-<div id="75ba6f0a" class="cell" data-execution_count="43">
+<div id="397525c9" class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1"></a><span class="bu">print</span>(df.fillna(<span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     A    B   C
@@ -5738,7 +5738,7 @@ K6  A6  NaN   C6</code></pre>
 </div>
 </div>
 <p>Fill missing values with mean</p>
-<div id="92cd42e7" class="cell" data-execution_count="44">
+<div id="de4f49d4" class="cell" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1"></a>df[<span class="st">&#39;B&#39;</span>] <span class="op">=</span> df[<span class="st">&#39;B&#39;</span>].fillna(df[<span class="st">&#39;B&#39;</span>].mean())</span>
 <span id="cb88-2"><a href="#cb88-2"></a><span class="bu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -5769,7 +5769,7 @@ K6  A6  NaN   C6</code></pre>
 </ul>
 <p>Let’s look at an example:</p>
 <p>Wide format data</p>
-<div id="37b4c5cd" class="cell" data-execution_count="45">
+<div id="26219d25" class="cell" data-execution_count="45">
 <div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1"></a>wide_data <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb90-2"><a href="#cb90-2"></a>    <span class="st">&#39;Name&#39;</span>: [<span class="st">&#39;Alice&#39;</span>, <span class="st">&#39;Bob&#39;</span>],</span>
 <span id="cb90-3"><a href="#cb90-3"></a>    <span class="st">&#39;Math&#39;</span>: [<span class="dv">90</span>, <span class="dv">70</span>],</span>
@@ -5786,7 +5786,7 @@ K6  A6  NaN   C6</code></pre>
 </div>
 </div>
 <p>Long format data</p>
-<div id="1e43baee" class="cell" data-execution_count="46">
+<div id="4f2b1523" class="cell" data-execution_count="46">
 <div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a href="#cb92-1"></a>long_data <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb92-2"><a href="#cb92-2"></a>    <span class="st">&#39;Name&#39;</span>: [<span class="st">&#39;Alice&#39;</span>, <span class="st">&#39;Alice&#39;</span>, <span class="st">&#39;Bob&#39;</span>, <span class="st">&#39;Bob&#39;</span>],</span>
 <span id="cb92-3"><a href="#cb92-3"></a>    <span class="st">&#39;Subject&#39;</span>: [<span class="st">&#39;Math&#39;</span>, <span class="st">&#39;Science&#39;</span>, <span class="st">&#39;Math&#39;</span>, <span class="st">&#39;Science&#39;</span>],</span>
@@ -5812,7 +5812,7 @@ K6  A6  NaN   C6</code></pre>
 <li>It turns columns into rows.</li>
 <li>In Pandas, we use the <code>melt()</code> function for this operation.</li>
 </ul>
-<div id="898ccbf1" class="cell" data-execution_count="47">
+<div id="e402756c" class="cell" data-execution_count="47">
 <div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1"></a><span class="co"># Unpivot operation (Wide to Long)</span></span>
 <span id="cb94-2"><a href="#cb94-2"></a>melted <span class="op">=</span> wide_data.melt(id_vars<span class="op">=</span>[<span class="st">&#39;Name&#39;</span>], var_name<span class="op">=</span><span class="st">&#39;Subject&#39;</span>, value_name<span class="op">=</span><span class="st">&#39;Score&#39;</span>)</span>
 <span id="cb94-3"><a href="#cb94-3"></a></span>
@@ -5835,7 +5835,7 @@ K6  A6  NaN   C6</code></pre>
 <li>It typically uses one column to create new columns.</li>
 <li>Values from another column fill these new columns.</li>
 </ul>
-<div id="1814f32b" class="cell" data-execution_count="48">
+<div id="bfe9ce84" class="cell" data-execution_count="48">
 <div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb96-1"><a href="#cb96-1"></a><span class="co"># Pivot operation (Long to Wide)</span></span>
 <span id="cb96-2"><a href="#cb96-2"></a>pivoted <span class="op">=</span> long_data.pivot(index<span class="op">=</span><span class="st">&#39;Name&#39;</span>, columns<span class="op">=</span><span class="st">&#39;Subject&#39;</span>, values<span class="op">=</span><span class="st">&#39;Score&#39;</span>)</span>
 <span id="cb96-3"><a href="#cb96-3"></a></span>
