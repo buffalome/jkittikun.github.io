@@ -5011,7 +5011,7 @@ vertical-align: -.125em;
 <p>Storing data in variables is called assignment. In Python, this is done using the equals sign (=). The basic format is:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>variable_name <span class="op">=</span> value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Here are some examples:</p>
-<div id="54f59d6d" class="cell" data-execution_count="1">
+<div id="b3e1f531" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a>name <span class="op">=</span> <span class="st">&quot;Alice&quot;</span></span>
 <span id="cb2-3"><a href="#cb2-3"></a>pi <span class="op">=</span> <span class="fl">3.14159</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5026,7 +5026,7 @@ vertical-align: -.125em;
 <section id="multiple-assignment" class="level2">
 <h2 class="anchored" data-anchor-id="multiple-assignment">Multiple Assignment</h2>
 <p>Python allows assigning values to multiple variables in one line of code. This can be done in two main ways:</p>
-<div id="f1892888" class="cell" data-execution_count="2">
+<div id="18c75191" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>a, b, c <span class="op">=</span> <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="bu">print</span>(<span class="ss">f&quot;a = </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">, b = </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">, c = </span><span class="sc">{</span>c<span class="sc">}</span><span class="ss">&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -5035,7 +5035,7 @@ vertical-align: -.125em;
 </div>
 <p>This gives <code>a</code> the value 1, <code>b</code> the value 2, and <code>c</code> the value 3.</p>
 <p>Another way is to give the same value to multiple variables at once:</p>
-<div id="da3b7870" class="cell" data-execution_count="3">
+<div id="11dbead4" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>a <span class="op">=</span> b <span class="op">=</span> c <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="bu">print</span>(<span class="ss">f&quot;a = </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">, b = </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">, c = </span><span class="sc">{</span>c<span class="sc">}</span><span class="ss">&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -5086,7 +5086,7 @@ vertical-align: -.125em;
 <section id="check-variable-types" class="level2">
 <h2 class="anchored" data-anchor-id="check-variable-types">Check Variable Types</h2>
 <p>You can check the type of a variable using the <code>type()</code> function:</p>
-<div id="62ce80ea" class="cell" data-execution_count="4">
+<div id="0cad8561" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>age <span class="op">=</span> <span class="dv">25</span>          <span class="co"># integer (int)</span></span>
 <span id="cb7-2"><a href="#cb7-2"></a>height <span class="op">=</span> <span class="fl">1.75</span>     <span class="co"># floating-point number (float)</span></span>
 <span id="cb7-3"><a href="#cb7-3"></a>name <span class="op">=</span> <span class="st">&quot;Bob&quot;</span>      <span class="co"># string (str)</span></span>
@@ -5107,7 +5107,7 @@ vertical-align: -.125em;
 <section id="variable-types-conversion" class="level2">
 <h2 class="anchored" data-anchor-id="variable-types-conversion">Variable Types Conversion</h2>
 <p>Python also allows type conversion between compatible types:</p>
-<div id="60eb4f30" class="cell" data-execution_count="5">
+<div id="c1da05d9" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>a <span class="op">=</span> <span class="bu">int</span>(<span class="fl">3.14</span>)    <span class="co"># Converts float to int: 3</span></span>
 <span id="cb9-2"><a href="#cb9-2"></a>b <span class="op">=</span> <span class="bu">float</span>(<span class="dv">5</span>)     <span class="co"># Converts int to float: 5.0</span></span>
 <span id="cb9-3"><a href="#cb9-3"></a>c <span class="op">=</span> <span class="bu">str</span>(<span class="dv">42</span>)      <span class="co"># Converts int to str: &quot;42&quot;</span></span>
@@ -5128,7 +5128,7 @@ vertical-align: -.125em;
 <section id="variable-reassignment" class="level2">
 <h2 class="anchored" data-anchor-id="variable-reassignment">Variable Reassignment</h2>
 <p>A useful feature of Python’s dynamic typing is the ability to change both the value and the type of a variable. For example:</p>
-<div id="5ce2d2d2" class="cell" data-execution_count="6">
+<div id="c3297051" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>x <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="bu">print</span>(x)</span>
 <span id="cb11-3"><a href="#cb11-3"></a>x <span class="op">=</span> <span class="st">&quot;Hello&quot;</span></span>
@@ -5144,7 +5144,7 @@ Hello</code></pre>
 <h2 class="anchored" data-anchor-id="variable-type-annotation">Variable Type Annotation</h2>
 <p>Variable type annotation, introduced in Python 3.5, allows programmers to clearly state the expected types of variables. This practice makes code easier to read, improves documentation, and helps find potential errors before the program runs.</p>
 <p>Examples of type annotations in Python:</p>
-<div id="2aea5680" class="cell" data-execution_count="7">
+<div id="dbabe012" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>name: <span class="bu">str</span> <span class="op">=</span> <span class="st">&quot;Alice&quot;</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a>age: <span class="bu">int</span> <span class="op">=</span> <span class="dv">30</span></span>
 <span id="cb13-3"><a href="#cb13-3"></a>height: <span class="bu">float</span> <span class="op">=</span> <span class="fl">1.75</span></span>
@@ -5155,7 +5155,7 @@ Hello</code></pre>
 </div>
 </div>
 <p>The annotation has nothing to do with the data type assigned.</p>
-<div id="3a2f00ed" class="cell" data-execution_count="8">
+<div id="eb7f584c" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>age: <span class="bu">int</span> <span class="op">=</span> <span class="fl">30.5</span></span>
 <span id="cb15-2"><a href="#cb15-2"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span>age<span class="sc">}</span><span class="ss">: type </span><span class="sc">{</span><span class="bu">type</span>(age)<span class="sc">}</span><span class="ss">&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">

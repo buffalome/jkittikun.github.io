@@ -4952,9 +4952,6 @@ vertical-align: -.125em;
   <ul class="collapse">
   <li><a href="#changing-elements" id="toc-changing-elements" class="nav-link" data-scroll-target="#changing-elements">Changing Elements</a></li>
   <li><a href="#adding-elements" id="toc-adding-elements" class="nav-link" data-scroll-target="#adding-elements">Adding Elements</a></li>
-  </ul></li>
-  <li><a href="#modifying-lists-1" id="toc-modifying-lists-1" class="nav-link" data-scroll-target="#modifying-lists-1">Modifying Lists</a>
-  <ul class="collapse">
   <li><a href="#removing-elements" id="toc-removing-elements" class="nav-link" data-scroll-target="#removing-elements">Removing Elements</a></li>
   </ul></li>
   <li><a href="#list-operations" id="toc-list-operations" class="nav-link" data-scroll-target="#list-operations">List Operations</a>
@@ -5014,7 +5011,7 @@ vertical-align: -.125em;
 <section id="creating-lists" class="level2">
 <h2 class="anchored" data-anchor-id="creating-lists">Creating Lists</h2>
 <p>Lists can be created in several ways:</p>
-<div id="7182727e" class="cell" data-execution_count="1">
+<div id="4210ce6a" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>empty_list <span class="op">=</span> []</span>
 <span id="cb1-2"><a href="#cb1-2"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
 <span id="cb1-3"><a href="#cb1-3"></a>fruits <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>]</span>
@@ -5040,7 +5037,7 @@ vertical-align: -.125em;
 <section id="indexing" class="level3">
 <h3 class="anchored" data-anchor-id="indexing">Indexing</h3>
 <p>Python uses zero-based indexing. Negative indices count from the end of the list.</p>
-<div id="56fd9f88" class="cell" data-execution_count="2">
+<div id="ccdc164f" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>fruits <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>]</span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="bu">print</span>(fruits[<span class="dv">0</span>])</span>
 <span id="cb3-3"><a href="#cb3-3"></a><span class="bu">print</span>(fruits[<span class="op">-</span><span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5053,7 +5050,7 @@ cherry</code></pre>
 <section id="slicing" class="level3">
 <h3 class="anchored" data-anchor-id="slicing">Slicing</h3>
 <p>Slicing allows access to a range of elements. The syntax is [start:end:step], where start is inclusive and end is exclusive.</p>
-<div id="8e851898" class="cell" data-output-location="column" data-execution_count="3">
+<div id="2ca664b8" class="cell" data-output-location="column" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>numbers <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="bu">print</span>(numbers[<span class="dv">1</span>:<span class="dv">4</span>])</span>
 <span id="cb5-3"><a href="#cb5-3"></a><span class="bu">print</span>(numbers[:<span class="dv">3</span>])</span>
@@ -5073,7 +5070,7 @@ cherry</code></pre>
 <section id="changing-elements" class="level3">
 <h3 class="anchored" data-anchor-id="changing-elements">Changing Elements</h3>
 <p>Individual elements can be modified by assigning new values to specific indices.</p>
-<div id="2ee4102d" class="cell" data-execution_count="4">
+<div id="b9d821a2" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>fruits <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>]</span>
 <span id="cb7-2"><a href="#cb7-2"></a>fruits[<span class="dv">1</span>] <span class="op">=</span> <span class="st">&quot;blueberry&quot;</span></span>
 <span id="cb7-3"><a href="#cb7-3"></a><span class="bu">print</span>(fruits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5085,7 +5082,7 @@ cherry</code></pre>
 <section id="adding-elements" class="level3">
 <h3 class="anchored" data-anchor-id="adding-elements">Adding Elements</h3>
 <p>Elements can be added to lists using various methods:</p>
-<div id="3304c938" class="cell" data-execution_count="5">
+<div id="76720cdb" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>fruits <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>]</span>
 <span id="cb9-2"><a href="#cb9-2"></a>fruits.append(<span class="st">&quot;cherry&quot;</span>)        <span class="co"># Adds to the end</span></span>
 <span id="cb9-3"><a href="#cb9-3"></a>fruits.insert(<span class="dv">1</span>, <span class="st">&quot;blueberry&quot;</span>)  <span class="co"># Inserts at specific index</span></span>
@@ -5096,13 +5093,10 @@ cherry</code></pre>
 </div>
 </div>
 </section>
-</section>
-<section id="modifying-lists-1" class="level2">
-<h2 class="anchored" data-anchor-id="modifying-lists-1">Modifying Lists</h2>
 <section id="removing-elements" class="level3">
 <h3 class="anchored" data-anchor-id="removing-elements">Removing Elements</h3>
 <p>Elements can be removed from lists in several ways:</p>
-<div id="11f4d0b4" class="cell" data-execution_count="6">
+<div id="d0b66753" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>fruits <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>,</span>
 <span id="cb11-2"><a href="#cb11-2"></a>          <span class="st">&quot;cherry&quot;</span>, <span class="st">&quot;date&quot;</span>]</span>
 <span id="cb11-3"><a href="#cb11-3"></a></span>
@@ -5113,7 +5107,7 @@ cherry</code></pre>
 <pre><code>[&#39;apple&#39;, &#39;cherry&#39;, &#39;date&#39;]</code></pre>
 </div>
 </div>
-<div id="6ccffb99" class="cell" data-execution_count="7">
+<div id="81b980dc" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Remove by index</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a>popped <span class="op">=</span> fruits.pop(<span class="dv">1</span>)</span>
 <span id="cb13-3"><a href="#cb13-3"></a><span class="bu">print</span>(<span class="ss">f&quot;Removed </span><span class="sc">{</span>popped<span class="sc">}</span><span class="ss">&quot;</span>)</span>
@@ -5123,7 +5117,7 @@ cherry</code></pre>
 [&#39;apple&#39;, &#39;date&#39;]</code></pre>
 </div>
 </div>
-<div id="914f9f61" class="cell" data-execution_count="8">
+<div id="44a0e16c" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Remove last item</span></span>
 <span id="cb15-2"><a href="#cb15-2"></a>last <span class="op">=</span> fruits.pop()</span>
 <span id="cb15-3"><a href="#cb15-3"></a><span class="bu">print</span>(<span class="ss">f&quot;Removed </span><span class="sc">{</span>last<span class="sc">}</span><span class="ss">&quot;</span>)</span>
@@ -5133,7 +5127,7 @@ cherry</code></pre>
 [&#39;apple&#39;]</code></pre>
 </div>
 </div>
-<div id="022bb29c" class="cell" data-execution_count="9">
+<div id="e70cbe22" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Clear all items</span></span>
 <span id="cb17-2"><a href="#cb17-2"></a>fruits.clear()</span>
 <span id="cb17-3"><a href="#cb17-3"></a><span class="bu">print</span>(fruits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -5148,7 +5142,7 @@ cherry</code></pre>
 <section id="concatenation" class="level3">
 <h3 class="anchored" data-anchor-id="concatenation">Concatenation</h3>
 <p>Lists can be combined using the + operator:</p>
-<div id="123ad153" class="cell" data-output-location="column" data-execution_count="10">
+<div id="5cbbe7cc" class="cell" data-output-location="column" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>combined <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>] <span class="op">+</span> [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
 <span id="cb19-2"><a href="#cb19-2"></a><span class="bu">print</span>(combined)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -5159,7 +5153,7 @@ cherry</code></pre>
 <section id="repetition" class="level3">
 <h3 class="anchored" data-anchor-id="repetition">Repetition</h3>
 <p>Lists can be repeated using the <code>*</code> operator:</p>
-<div id="270ea679" class="cell" data-output-location="column" data-execution_count="11">
+<div id="6c505765" class="cell" data-output-location="column" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>repeated <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>] <span class="op">*</span> <span class="dv">3</span></span>
 <span id="cb21-2"><a href="#cb21-2"></a><span class="bu">print</span>(repeated)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -5170,7 +5164,7 @@ cherry</code></pre>
 <section id="membership-test" class="level3">
 <h3 class="anchored" data-anchor-id="membership-test">Membership Test</h3>
 <p>The <code>in</code> keyword checks if an item exists in a list:</p>
-<div id="c24fd3a7" class="cell" data-output-location="column" data-execution_count="12">
+<div id="16b1cfc2" class="cell" data-output-location="column" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>fruits <span class="op">=</span> [<span class="st">&quot;apple&quot;</span>, <span class="st">&quot;banana&quot;</span>, <span class="st">&quot;cherry&quot;</span>]</span>
 <span id="cb23-2"><a href="#cb23-2"></a><span class="bu">print</span>(<span class="st">&quot;banana&quot;</span> <span class="kw">in</span> fruits)</span>
 <span id="cb23-3"><a href="#cb23-3"></a><span class="bu">print</span>(<span class="st">&quot;mango&quot;</span> <span class="kw">in</span> fruits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
